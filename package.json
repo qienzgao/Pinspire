@@ -1,5 +1,45 @@
 {
-  "name": "Pinspire",
+  "name": "pinspire",
   "private": true,
-  "dependencies": {}
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "engines": {
+    "node": "16.14.0",
+    "npm": "8.3.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "webpack",
+    "webpack": "webpack --watch --mode=development",
+    "start": "webpack -w --mode="
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qienzgao/Pinspire.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qienzgao/Pinspire/issues"
+  },
+  "homepage": "https://github.com/qienzgao/Pinspire#readme",
+  "dependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "redux": "^4.1.2",
+    "redux-logger": "^3.0.6",
+    "webpack": "^5.69.1",
+    "webpack-cli": "^4.9.2"
+  }
 }

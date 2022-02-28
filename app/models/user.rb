@@ -1,6 +1,6 @@
 class User < ApplicationRecord
     #figvaper
-    after_initialize: :ensure_session_token
+    after_initialize :ensure_session_token
     attr_reader :password
 
     validates :email, :age, :username, :session_token, :password_digest, presence: true

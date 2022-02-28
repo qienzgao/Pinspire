@@ -1,6 +1,6 @@
 class Api::SessionsControllerController < ApplicationController
-    after_initialize :ensure_logged_out, only: [:new, :create]
-    after_initialize :ensure_logged_in, only: [:destroy]
+    before_action :ensure_logged_out, only: [:new, :create]
+    before_action :ensure_logged_in, only: [:destroy]
 
     def new 
         @user = User.new 

@@ -11,7 +11,7 @@ const mSTP = ({ errors }) => ({
 const mDTP = dispatch => ({
     processForm: user => dispatch(login(user)),
     signup: (
-        <button onClick={() => dispatch(open('signup'))}>
+        <button className="otherwise" onClick={() => dispatch(open('signup'))}>
             Not on Pinspire yet? Sign up
         </button>
     ),

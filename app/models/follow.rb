@@ -1,5 +1,5 @@
 class Follow < ApplicationRecord
-    validates: :follower_id, :following_id, presence: true
+    validates :follower_id, :following_id, presence: true
 
     belongs_to :follower, 
         primary_key: :id, 

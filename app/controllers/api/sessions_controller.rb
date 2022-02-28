@@ -1,4 +1,4 @@
-class Api::SessionsControllerController < ApplicationController
+class Api::SessionsController < ApplicationController
     before_action :ensure_logged_out, only: [:new, :create]
     before_action :ensure_logged_in, only: [:destroy]
 

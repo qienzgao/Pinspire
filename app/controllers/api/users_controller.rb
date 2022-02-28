@@ -11,6 +11,7 @@ class Api::UsersController < ApplicationController
             render :show
         else
             render json: ['User not found'], status: 400
+        end 
     end
 
     def create
@@ -38,3 +39,4 @@ class Api::UsersController < ApplicationController
         params.require(:user).permit(:email, :username, :age, :password)
     end
 end
+

@@ -11,8 +11,8 @@ const mSTP = ({ errors }) => ({
 
 const mDTP = dispatch => ({
     processForm: (user) => dispatch(signup(user)),
-    else: (
-        <button onClick={() => dispatch(open('login'))}>
+    login: (
+        <button className="otherwise" onClick={() => dispatch(open('login'))}>
             Already a member? Log in
         </button>
     ),

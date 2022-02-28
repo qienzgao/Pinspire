@@ -65,6 +65,7 @@ class SignupForm extends React.Component {
                     />
                     <br />
                     <button className="signup-button" type="submit" value={this.props.formType}>Sign up</button>
+                    {this.props.login}
                 </div>
             </form>
         );

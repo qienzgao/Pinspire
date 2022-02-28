@@ -37,7 +37,7 @@ class LoginForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit} className="login-form-container">
+            <form className="login-form-container">
                 Welcome to Pinspire!
                 <br />
                 <button onClick={this.props.close} className="close-button">X</button>
@@ -56,7 +56,8 @@ class LoginForm extends React.Component {
                         className="login-input"
                     />
                     <br />
-                    <button className="login-button" type="submit" value={this.props.formType}>Log in</button>
+                    <button className="login-button" type="submit" onClick={this.handleSubmit}>Log in</button>
+                    {this.props.signup}
                 </div>
             </form>
         );

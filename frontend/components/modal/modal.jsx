@@ -18,7 +18,7 @@ const Modal = ({ modal, close }) => {
             return null;
     }
     return (
-        <div className="modal-background" onClick={close}>
+        <div className="modal-background">
             <div className="modal-child" onClick={e => e.stopPropagation()}>
                 {component}
             </div>

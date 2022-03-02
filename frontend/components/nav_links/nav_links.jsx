@@ -4,7 +4,7 @@ const NavLinks = ({ currentUser, logout, open}) => {
     const sessionLinks = () => (
         <div className='header'>
             <div className='pinspire-logo'>
-                <img className='pinspire-img' src="/app/assets/images/logo"/>
+                <img className='pinspire-img'/>
                 <h1 className='pinspire-title'>Pinspire</h1>
             </div>
 

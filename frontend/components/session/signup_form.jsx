@@ -38,11 +38,18 @@ class SignupForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit} className="signup-form-container">
-                Welcome to Pinspire!
+            <form className="signup-form-container">
+                <button onClick={this.props.close} className="close-button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div className='pinspire-sign'>
+                    <img className="pinspire-img" />
+                </div>
                 <br />
-                <div>Find new ideas to try</div>
-                <button onClick={this.props.close} className="close-x">X</button>
+                <div className='form-title'>
+                    <h1>Welcome to Pinspire</h1>
+                    <h3 id="find-ideas">Find new ideas to try</h3>
+                </div>
                 {this.renderErrors()}
                 <div className="signup-form">
                     <br />
@@ -50,21 +57,36 @@ class SignupForm extends React.Component {
                         value={this.state.username}
                         onChange={this.update('email')}
                         className="signup-input"
+                        placeholder='Email'
                    />
                     <br />
                     <input type="password"
                         value={this.state.password}
                         onChange={this.update('password')}
                         className="signup-input"
+                        placeholder='Password'
                     />
                     <br />
                     <input type="integer"
                         value={this.state.age}
                         onChange={this.update('age')}
                         className="signup-input"
+                        placeholder='Age'
                     />
-                    <br />
-                    <button className="signup-button" type="submit" value={this.props.formType}>Sign up</button>
+                    <button className="signup-button" type="submit" onSubmit={this.handleSubmit} >Continue</button>
+                    <h3>OR</h3>
+                    <button className='login-button' id='demo'>Continue with DemoLogin</button>
+                    <button className='login-button' id='demotea'>Continue as OolongTea</button>
+                    <div className='text'>
+                        <span>By continuing, you agree to accept Pinspire's
+                            <br />
+                            best wish of you being happy, healthy, lucky, lovely,
+                            <br />
+                            beautiful and brilliant!
+                            <br />
+                        </span>
+                        <span>________________</span>
+                    </div>
                     {this.props.login}
                 </div>
             </form>

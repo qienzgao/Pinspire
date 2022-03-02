@@ -9,7 +9,6 @@ import AllModals from "./modal/modal_container";
 const App = () => (
     <div>
         <AllModals/>
-        {/* <h1>Pinspire</h1> */}
         <header>
             <NavLinksContainer />
         </header>

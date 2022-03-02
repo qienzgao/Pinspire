@@ -42,9 +42,7 @@ class LoginForm extends React.Component {
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <div className='pinspire-sign'>
-                    <div className='pinspire-img'>
-                        logo
-                    </div>
+                    <img src="/app/assets/images/logo.png" className="pinspire-img"/>
                 </div>
                 <br/>
                 <div className='form-title'>
@@ -70,11 +68,21 @@ class LoginForm extends React.Component {
                     <div className='forget'>
                         <label>Forgot your password?</label>
                     </div>
-                    <br />
                     <button className="login-button" type="submit" onClick={this.handleSubmit}>Log in</button>
                     <br />
                     <h3>OR</h3>
-                    <button>Demo log in</button>
+                    <button className='login-button' id='demo'>Continue with DemoLogin</button>
+                    <button className='login-button' id='demotea'>Continue with OolongTea</button>
+                    <div className='text'>
+                        <span>By continuing, you agree to accept Pinspire's 
+                            <br/>
+                            best wish of you being happy, healthy, lucky, lovely, 
+                            <br/>
+                            beautiful and brilliant!
+                            <br />
+                        </span>
+                        <span>________________</span>
+                    </div>
                     {this.props.signup}
                 </div>
             </form>

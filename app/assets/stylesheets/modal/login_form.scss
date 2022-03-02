@@ -4,7 +4,7 @@
     position: relative;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 20px;
-    width: 470px;
+    width: 440px;
     // height: 600px;
     background-color: white;
     text-align: center;
@@ -13,6 +13,7 @@
     // align-items: center;
     // justify-content: center;
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    color: rgb(50, 50, 50);
 }
 
 .pinspire-sign {
@@ -26,13 +27,12 @@
     width: 40px;
     height: 40px;
     margin: auto; 
-    color: #e60023;
+    padding-right: 5px;
 }
 
 .form-title {
     font-size: 35px;
-    font-weight: 600;
-    color: rgb(50, 50, 50);
+    font-weight: 550;
 }
 
 .close-button {
@@ -61,11 +61,13 @@
 .login-form {
     justify-content: center;
     width: auto;
+    margin-left: 85px;
+    margin-right: 85px;
 }
 
 .login-form input {
-    min-width: 250px;
-    min-height: 22px;
+    width: 235px;
+    height: 22px;
     border-radius: 15px;
     border-color: rgb(216, 215, 215); 
     border-style: solid;
@@ -83,8 +85,8 @@
 }
 
 .forget {
-    min-width: 250px; 
-    min-height: 22px;
+    width: 250px; 
+    height: 22px;
     // padding: 12px;
     margin: 5px;
     font-size: 14px;
@@ -92,5 +94,71 @@
 }
 
 .forget label {
-    // float: left;
+    float: left;
 }
+
+.login-button {
+    width: 260px;
+    height: 40px;
+    border-radius: 25px;
+    border: none;  
+    background-color: #e60023;
+    padding: 12px;
+    margin: 4px;
+    font-size: 16px;
+    font-weight: 545;
+    color: white;
+    margin-top: 7px; 
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: darken($color: #e60023, $amount: 5);
+}
+
+.login-form h3 {
+    font-size: 15px;
+    font-weight: 570;
+    margin: 12px;
+}
+
+#demo {
+    background-color: rgb(9, 121, 250);
+    font-weight: 600;
+    color: white;
+    
+}
+
+#demotea {
+    border: solid 1px;
+    border-color: rgb(209, 208, 208);
+    background-color: white;
+    margin-top: 7px; 
+    margin-bottom: 20px;
+    color: inherit;
+    font-size: 14px;
+    color: rgb(78, 76, 76);
+}
+
+#demotea:hover {
+    border-color: rgb(200, 215, 248);
+    background-color: rgba(196, 214, 252, 0.315);
+}
+
+.text {
+    font-size: 11px;
+    line-height: 120%;
+    color: rgb(151, 150, 150);
+    margin-bottom: 5px;
+}
+
+.otherwise {
+    border: none;
+    background-color: transparent;
+    font-weight: 550;
+    font: 13px;
+    cursor: pointer;
+    color: rgb(50, 50, 50);
+    margin: 10px;
+}
+

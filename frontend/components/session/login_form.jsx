@@ -72,7 +72,7 @@ class LoginForm extends React.Component {
                     <br />
                     <h3>OR</h3>
                     <button className='login-button' id='demo'>Continue with DemoLogin</button>
-                    <button className='login-button' id='demotea'>Continue with OolongTea</button>
+                    <button className='login-button' id='demotea'>Continue as OolongTea</button>
                     <div className='text'>
                         <span>By continuing, you agree to accept Pinspire's 
                             <br/>

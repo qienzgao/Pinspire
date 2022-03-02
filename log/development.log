@@ -17755,3 +17755,586 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 93ms (Views: 85.0ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2022-03-01 23:24:10 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 301ms (Views: 299.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-01 23:24:46 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 58ms (Views: 51.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-01 23:46:23 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: ./splash/_variable.scss.
+Load paths:
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/config
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/images
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/javascripts
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/stylesheets
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.6.2/lib/assets/compiled
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.6.2/app/assets/javascripts
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.6.2/lib/assets/compiled
+  /Users/qiengao/Documents/aa_classwork/Pinspire/node_modules):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.scss:23
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__2647889742945717509_70254375427580'
+Started GET "/" for ::1 at 2022-03-01 23:49:42 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: ./splash/_variable.scss.
+Load paths:
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/config
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/images
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/javascripts
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/stylesheets
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.6.2/lib/assets/compiled
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.6.2/app/assets/javascripts
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.6.2/lib/assets/compiled
+  /Users/qiengao/Documents/aa_classwork/Pinspire/node_modules):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.scss:23
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__2647889742945717509_70254243898220'
+Started GET "/" for ::1 at 2022-03-01 23:49:46 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: ./splash/_variable.scss.
+Load paths:
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/config
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/images
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/javascripts
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/stylesheets
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.6.2/lib/assets/compiled
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.6.2/app/assets/javascripts
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.6.2/lib/assets/compiled
+  /Users/qiengao/Documents/aa_classwork/Pinspire/node_modules):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.scss:23
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__2647889742945717509_70254647895060'
+Started GET "/" for ::1 at 2022-03-01 23:49:56 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: ./splash/_variable.scss.
+Load paths:
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/config
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/images
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/javascripts
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/stylesheets
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.6.2/lib/assets/compiled
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.6.2/app/assets/javascripts
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.6.2/lib/assets/compiled
+  /Users/qiengao/Documents/aa_classwork/Pinspire/node_modules):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.scss:23
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__2647889742945717509_70254648321040'
+Started GET "/" for ::1 at 2022-03-01 23:50:17 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (The asset "application.css" is not present in the asset pipeline.
+):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:   </head>
+    11: 
+  
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__2647889742945717509_70254646963860'
+Started GET "/" for ::1 at 2022-03-01 23:50:47 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: ./splash/_variable.scss.
+Load paths:
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/config
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/images
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/javascripts
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/stylesheets
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.6.2/lib/assets/compiled
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.6.2/app/assets/javascripts
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.6.2/lib/assets/compiled
+  /Users/qiengao/Documents/aa_classwork/Pinspire/node_modules):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.scss:23
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__2647889742945717509_70254649864200'
+Started GET "/" for ::1 at 2022-03-01 23:52:04 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: ./splash/_variable.scss.
+Load paths:
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/config
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/images
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/javascripts
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/stylesheets
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.6.2/lib/assets/compiled
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.6.2/app/assets/javascripts
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.6.2/lib/assets/compiled
+  /Users/qiengao/Documents/aa_classwork/Pinspire/node_modules):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.scss:23
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__2647889742945717509_70254598516860'
+Started GET "/" for ::1 at 2022-03-01 23:52:14 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: ./splash/_variable.scss.
+Load paths:
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/config
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/images
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/javascripts
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/stylesheets
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.6.2/lib/assets/compiled
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.6.2/app/assets/javascripts
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.6.2/lib/assets/compiled
+  /Users/qiengao/Documents/aa_classwork/Pinspire/node_modules):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.scss:23
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__2647889742945717509_70254778138200'
+Started GET "/" for ::1 at 2022-03-01 23:54:41 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: ./splash/_variable.scss.
+Load paths:
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/config
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/images
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/javascripts
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/stylesheets
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.6.2/lib/assets/compiled
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.6.2/app/assets/javascripts
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.6.2/lib/assets/compiled
+  /Users/qiengao/Documents/aa_classwork/Pinspire/node_modules):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.scss:24
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__2647889742945717509_70254598552380'
+Started GET "/" for ::1 at 2022-03-01 23:54:49 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: ./splash/_variable.scss.
+Load paths:
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/config
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/images
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/javascripts
+  /Users/qiengao/Documents/aa_classwork/Pinspire/app/assets/stylesheets
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.6.2/lib/assets/compiled
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.6.2/app/assets/javascripts
+  /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.6.2/lib/assets/compiled
+  /Users/qiengao/Documents/aa_classwork/Pinspire/node_modules):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.scss:24
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__2647889742945717509_70254244392240'
+Started GET "/" for ::1 at 2022-03-01 23:57:47 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 485ms (Views: 478.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-01 23:58:36 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 62ms (Views: 58.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-01 23:59:55 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 68ms (Views: 61.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 00:00:41 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 87ms (Views: 82.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 00:01:37 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 69ms (Views: 64.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 00:02:46 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 100ms (Views: 93.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 00:03:05 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 78ms (Views: 72.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 00:04:36 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 54ms (Views: 52.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 00:04:42 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 73ms (Views: 65.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 00:07:30 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 283ms (Views: 274.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 00:07:31 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 00:12:22 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 88ms (Views: 82.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 00:12:24 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 33ms (Views: 24.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 00:14:05 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 265ms (Views: 261.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 00:14:29 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 263ms (Views: 259.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 00:32:25 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 79ms (Views: 76.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 00:34:00 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 73ms (Views: 65.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 00:37:35 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 293ms (Views: 288.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 00:45:37 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 312ms (Views: 310.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 00:50:21 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 330ms (Views: 324.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 00:50:22 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 00:51:58 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 70ms (Views: 64.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 00:52:05 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 59ms (Views: 51.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 01:00:29 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 323ms (Views: 316.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 01:00:50 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 71ms (Views: 66.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 01:00:52 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 43ms (Views: 38.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 01:01:20 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 299ms (Views: 294.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 01:01:21 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 29ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 01:02:21 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 31ms (Views: 24.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 01:02:22 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 30ms (Views: 25.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 01:02:43 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 309ms (Views: 301.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 01:03:19 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 52ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 01:03:46 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 74ms (Views: 66.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 01:06:05 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 84ms (Views: 77.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 01:06:15 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 98ms (Views: 93.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 01:06:24 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 67ms (Views: 61.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 01:07:35 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 71ms (Views: 64.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 01:08:22 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 69ms (Views: 64.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 01:11:12 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 99ms (Views: 86.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-02 01:11:14 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 29ms (Views: 25.8ms | ActiveRecord: 0.0ms)
+
+

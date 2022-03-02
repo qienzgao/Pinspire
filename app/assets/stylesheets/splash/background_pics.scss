@@ -53,12 +53,12 @@
 }
 
 .pic {
-    width: 236px;
+    width: 240px;
     height: 350px;
-    background-color: silver;
+    background-color: rgb(71, 209, 233);
     border-radius: 10px;
 }
 
 .pic:not(first-child) {
-    margin-top: 16px;
+    margin-top: 15px;
 }

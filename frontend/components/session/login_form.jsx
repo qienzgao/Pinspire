@@ -42,7 +42,7 @@ class LoginForm extends React.Component {
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <div className='pinspire-sign'>
-                    <img src="/app/assets/images/logo.png" className="pinspire-img"/>
+                    <img className="pinspire-img"/>
                 </div>
                 <br/>
                 <div className='form-title'>

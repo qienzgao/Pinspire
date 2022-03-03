@@ -2,10 +2,17 @@ class User < ApplicationRecord
     #figvaper
     after_initialize :ensure_session_token
     attr_reader :password
+    #    error['invalidEmail'] = `You missed a spot! Don't forget to add your email.`
+    #    } else if (!this.state.email.includes("@" && ".")) {
+    #         error['invalidEmail'] = `Hmm...that doesn't look like an email address.`
+    #     } else if (this.state.password.length < 6) {
+    #         error['invalidPass'] = `Your password is too short! You need 6 + characters.`
+    #     } else if (!Number.isInteger(this.state.age)) {
+    #         error['invalidAge'] = 'Please enter a valid number.'
 
     validates :email, :age, :username, :session_token, :password_digest, presence: true
     validates :email, :username, :session_token, uniqueness: true
-    validates :password, length: { minimum: 6, allow_nil: true }
+    validates :password, length: { minimum: 6, allow_nil: true } 
     validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, on: :create
             
 

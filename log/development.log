@@ -25047,3 +25047,24 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 22ms (Views: 20.3ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2022-03-03 16:44:50 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 265ms (Views: 263.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-03 16:45:44 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-03 16:47:44 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 257ms (Views: 256.1ms | ActiveRecord: 0.0ms)
+
+

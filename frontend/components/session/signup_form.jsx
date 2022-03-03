@@ -79,15 +79,15 @@ class SignupForm extends React.Component {
                         placeholder='Email'
                    />
                     <span className='errors'>{this.renderError().invalidEmail}</span>
-                    <br />
+                    
                     <input type="password"
                         value={this.state.password}
                         onChange={this.update('password')}
                         className="signup-input"
-                        placeholder='Password'
+                        placeholder='Create a password'
                     />
                     <span className='errors'>{this.renderError().invalidPass}</span>
-                    <br />
+                    
                     <input type="integer"
                         value={this.state.age}
                         onChange={this.update('age')}

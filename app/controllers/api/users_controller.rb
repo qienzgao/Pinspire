@@ -7,22 +7,19 @@ class Api::UsersController < ApplicationController
 
     def show
         @user = User.find(params[:id])
-        if @user
-            render "api/users/show"
-        else
-            render json: ['User not found'], status: 400
-        end 
+        # if @user
+        #     render :show
+        # else
+        #     render json: ['User not found'], status: 400
+        # end 
     end
 
     def create
-        # debugger
         @user = User.new(user_params)
         if @user.save
-            # debugger
             login!(@user)
-            render "api/users/show"
+            render :show
         else
-            # debugger
             render json: @user.errors.full_messages, status: 404
         end
     end
@@ -39,7 +36,7 @@ class Api::UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:email, :age, :password, :username)
+        params.require(:user).permit(:email, :age, :password)
     end
 end
 

@@ -8,9 +8,7 @@ import { CLOSE } from '../actions/modal_actions';
         case RECEIVE_ERRORS:
             return action.errors;
         case RECEIVE_CURRENT_USER:
-            return []; 
         case REMOVE_ERRORS:
-            return [];
         case CLOSE:
             return [];
         default:

@@ -11,7 +11,7 @@ class User < ApplicationRecord
     #         error['invalidAge'] = 'Please enter a valid number.'
 
     validates :email, :age, :session_token, :password_digest, presence: true
-    validates :email, :username, :session_token, uniqueness: true
+    validates :email, :session_token, uniqueness: true
     validates :password, length: { minimum: 6, allow_nil: true } 
     validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, on: :create
             

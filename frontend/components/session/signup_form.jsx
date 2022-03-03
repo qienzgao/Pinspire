@@ -25,10 +25,14 @@ class SignupForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.renderError();
         const user = Object.assign({}, this.state);
-        this.props.submit(user).then(this.props.close);
-    }
+        this.props.submit(user)
+            .then(user =>{this.props.loginDemo(user)
+                console.log("hello")
+                console.log(user)
+            })
+                .then(this.props.close)
+    }; 
 
     handleDemoUser(e) {
         e.preventDefault();
@@ -46,6 +50,7 @@ class SignupForm extends React.Component {
             invalidPass: '',
             invalidAge: ''
         };
+
         this.props.errors.map((error) => {
             if (error.includes('Password')) {
                 errorMSG['invalidPass'] = error
@@ -60,6 +65,7 @@ class SignupForm extends React.Component {
     }
 
     render() {
+        // let errors = this.renderError();
         return (
             <form className="signup-form-container" onSubmit={this.handleSubmit}>
                 <button onClick={this.props.close} className="close-button">

@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import { signup, login, removeErrors } from '../../actions/session_actions';
 import { open, close } from '../../actions/modal_actions';
 
-const mSTP = ( state ) => ({
-    errors: state.errors.session, 
+const mSTP = ({errors}) => ({
+    errors: errors.session, 
 });
 
 const mDTP = dispatch => ({

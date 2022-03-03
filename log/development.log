@@ -25068,3 +25068,10 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 257ms (Views: 256.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2022-03-03 16:55:49 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.0ms)
+
+

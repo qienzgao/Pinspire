@@ -20,7 +20,7 @@ class Api::UsersController < ApplicationController
             login!(@user)
             render :show
         else
-            render json: ['Something went wrong...'], status: 404
+            render json: @user.errors.full_messages, status: 404
         end
     end
 
@@ -36,7 +36,7 @@ class Api::UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:email, :username, :age, :password)
+        params.require(:user).permit(:email, :age, :password)
     end
 end
 

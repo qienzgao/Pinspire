@@ -6,9 +6,14 @@ class LoginForm extends React.Component {
         super(props);
         this.state = {
             email: '',
-            password: ''
+            password: '', 
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.renderError = this.renderError.bind(this); 
+    }
+
+    componentWillUnmount(){
+        this.props.removeErrors(); 
     }
 
     update(field) {
@@ -19,25 +24,31 @@ class LoginForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        this.renderError(); 
         const user = Object.assign({}, this.state);
-        this.props.processForm(user).then(this.props.close);
+        this.props.submit(user).then(this.props.close);
     }
 
-    renderErrors() {
-        return (
-            <ul>
-                {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {error}
-                    </li>
-                ))}
-            </ul>
-        );
+    renderError() {
+        let error = {
+            invalidEmail: '',
+            invalidPass: ''
+        }
+        this.setState(error); 
+        error = {}; 
+        if(!this.state.email.includes("@" && ".")) {
+            error['invalidEmail'] = `Hmm...that doesn't look like an email address.`
+        } else if (!this.state.email || !this.state.password) {
+            error['invalidPass'] = `You missed a spot!`
+        }
+        this.setState(error); 
     }
 
+    
     render() {
+        const errors = this.props.errors[0] && !this.state.invalidPass ? this.props.errors[0] : null;
         return (
-            <form className="login-form-container">
+            <form className="login-form-container" onSubmit={this.handleSubmit}>
                 <button onClick={this.props.close} className="close-button">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -48,15 +59,15 @@ class LoginForm extends React.Component {
                 <div className='form-title'>
                     <h1>Welcome to Pinspire</h1>
                 </div>
-                {this.renderErrors()}
                 <div className="login-form">
                     <br />
                     <input type="text"
-                        value={this.state.username}
+                        value={this.state.email}
                         onChange={this.update('email')}
                         className="login-input"
                         placeholder='Email'
                     />
+                    <span className='errors'>{this.state.invalidEmail}</span>
                     <br />
                     <input type="password"
                         value={this.state.password}
@@ -64,11 +75,13 @@ class LoginForm extends React.Component {
                         className="login-input"
                         placeholder='Password'
                     />
+                    <span className='errors'>{this.state.invalidPass}</span>
+                    <span className='errors'>{errors}</span>
                     <br />
                     <div className='forget'>
                         <label>Forgot your password?</label>
                     </div>
-                    <button className="login-button" type="submit" onClick={this.handleSubmit}>Log in</button>
+                    <button className="login-button" type="submit">Log in</button>
                     <br />
                     <h3>OR</h3>
                     <button className='login-button' id='demo'>Continue with DemoLogin</button>

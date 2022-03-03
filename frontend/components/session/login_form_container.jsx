@@ -5,7 +5,7 @@ import { login, removeErrors } from '../../actions/session_actions';
 import { open, close } from '../../actions/modal_actions';
 
 const mSTP = (state) => ({
-    errors: state.errors.SessionErrorsReducer,
+    errors: state.errors.session,
 });
 
 const mDTP = dispatch => ({

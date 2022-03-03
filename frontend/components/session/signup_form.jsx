@@ -7,11 +7,7 @@ class SignupForm extends React.Component {
         this.state = {
             email: '',
             password: '', 
-            age: '',
-            username: '', 
-            invalidEmail: '',
-            invalidPass: '',
-            invalidAge: '',
+            age: '' 
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderError = this.renderError.bind(this); 
@@ -32,9 +28,16 @@ class SignupForm extends React.Component {
         this.renderError();
         const user = Object.assign({}, this.state);
         this.props.submit(user).then(this.props.close);
-        this.setState({
-            username: this.state.email
-        })
+    }
+
+    handleDemoUser(e) {
+        e.preventDefault();
+        const demo = {
+            email: "OolongTea@email.com", 
+            password: "oolongtea", 
+        }
+        this.setState(demo);
+        this.props.loginDemo(demo).then(this.props.close);
     }
 
     renderError() {
@@ -97,8 +100,8 @@ class SignupForm extends React.Component {
                     <span className='errors'>{this.renderError().invalidAge}</span>
                     <button className="signup-button" type="submit">Continue</button>
                     <h3>OR</h3>
-                    <button className='login-button' id='demo'>Continue with DemoLogin</button>
-                    <button className='login-button' id='demotea'>Continue as OolongTea</button>
+                    <button className='login-button' id='demo' onClick={e => this.handleDemoUser(e)}>Continue with DemoLogin</button>
+                    <button className='login-button' id='demotea' onClick={e => this.handleDemoUser(e)}>Continue as OolongTea</button>
                     <div className='text'>
                         <span>By continuing, you agree to accept Pinspire's
                             <br />

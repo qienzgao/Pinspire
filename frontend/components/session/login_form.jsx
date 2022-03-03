@@ -29,6 +29,16 @@ class LoginForm extends React.Component {
         this.props.submit(user).then(this.props.close);
     }
 
+    handleDemoUser(e) {
+        e.preventDefault();
+        const demo = {
+            email: "OolongTea@email.com",
+            password: "oolongtea",
+        }
+        this.setState(demo);
+        this.props.submit(demo).then(this.props.close);
+    }
+
     renderError() {
         let error = {
             invalidEmail: '',
@@ -84,8 +94,8 @@ class LoginForm extends React.Component {
                     <button className="login-button" type="submit">Log in</button>
                     <br />
                     <h3>OR</h3>
-                    <button className='login-button' id='demo'>Continue with DemoLogin</button>
-                    <button className='login-button' id='demotea'>Continue as OolongTea</button>
+                    <button className='login-button' id='demo' onClick={e => this.handleDemoUser(e)}>Continue with DemoLogin</button>
+                    <button className='login-button' id='demotea' onClick={e => this.handleDemoUser(e)}>Continue as OolongTea</button>
                     <div className='text'>
                         <span>By continuing, you agree to accept Pinspire's 
                             <br/>

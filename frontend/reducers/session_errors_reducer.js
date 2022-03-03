@@ -1,8 +1,8 @@
 import { RECEIVE_CURRENT_USER, RECEIVE_ERRORS, REMOVE_ERRORS} from '../actions/session_actions';
 import { CLOSE } from '../actions/modal_actions'; 
 
- const SessionErrorsReducer = (oldState = [], action) => {
-    Object.freeze(oldState);
+ const SessionErrorsReducer = (state = [], action) => {
+    Object.freeze(state);
     // let nextState = Object.assign([], oldState)
     switch (action.type) {
         case RECEIVE_ERRORS:
@@ -14,7 +14,7 @@ import { CLOSE } from '../actions/modal_actions';
         case CLOSE:
             return [];
         default:
-            return oldState;
+            return state;
     }
 };
 

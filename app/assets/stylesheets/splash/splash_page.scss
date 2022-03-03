@@ -1,3 +1,5 @@
+// red #e60023
+
 .main-text {
     display: flex;
     flex-direction: column;
@@ -16,6 +18,8 @@
     font-size: 60px;
     font-weight: 600;
 }
+
+
     
 .categories {
     position: relative;
@@ -31,7 +35,7 @@
             transition-duration: 1s;
         }
         #dinner {
-            color: rgb(95, 45, 231);
+            color: rgb(218, 140, 67);
         }
         #decor {
             color: rgb(207, 74, 163)
@@ -40,7 +44,7 @@
             color:rgb(63, 115, 230)
         }
         #green {
-            color: rgb(65, 150, 100);
+            color: rgb(35, 180, 96);
         }
 }
 

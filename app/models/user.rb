@@ -31,10 +31,10 @@ class User < ApplicationRecord
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
-        if user && user.check_password?(password) 
-            user 
+        if user && user.is_password?(password) 
+            return user 
         else  
-            nil
+            return nil
         end
     end
     

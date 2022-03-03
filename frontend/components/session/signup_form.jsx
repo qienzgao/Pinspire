@@ -7,9 +7,18 @@ class SignupForm extends React.Component {
         this.state = {
             email: '',
             password: '', 
-            age: ''
+            age: '',
+            username: '', 
+            invalidEmail: '',
+            invalidPass: '',
+            invalidAge: '',
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.renderError = this.renderError.bind(this); 
+    }
+
+    componentWillUnmount() {
+        this.props.removeErrors();
     }
 
     update(field) {
@@ -20,25 +29,36 @@ class SignupForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        this.renderError();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user).then(this.props.close);
+        this.props.submit(user).then(this.props.close);
+        this.setState({
+            username: this.state.email
+        })
     }
 
-    renderErrors() {
-        return (
-            <ul>
-                {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {error}
-                    </li>
-                ))}
-            </ul>
-        );
+    renderError() {
+        let errorMSG = {
+            invalidEmail: '',
+            invalidPass: '',
+            invalidAge: ''
+        };
+        this.props.errors.map((error) => {
+            if (error.includes('Password')) {
+                errorMSG['invalidPass'] = error
+            } else if (error.includes('Email')) {
+                errorMSG['invalidEmail'] = error
+            } else if (error.includes('Age')) {
+                errorMSG['invalidAge'] = error
+            }
+            return errorMSG; 
+        })
+        return errorMSG; 
     }
 
     render() {
         return (
-            <form className="signup-form-container">
+            <form className="signup-form-container" onSubmit={this.handleSubmit}>
                 <button onClick={this.props.close} className="close-button">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -50,15 +70,15 @@ class SignupForm extends React.Component {
                     <h1>Welcome to Pinspire</h1>
                     <h3 id="find-ideas">Find new ideas to try</h3>
                 </div>
-                {this.renderErrors()}
                 <div className="signup-form">
                     <br />
                     <input type="text"
-                        value={this.state.username}
+                        value={this.state.email}
                         onChange={this.update('email')}
                         className="signup-input"
                         placeholder='Email'
                    />
+                    <span className='errors'>{this.renderError().invalidEmail}</span>
                     <br />
                     <input type="password"
                         value={this.state.password}
@@ -66,6 +86,7 @@ class SignupForm extends React.Component {
                         className="signup-input"
                         placeholder='Password'
                     />
+                    <span className='errors'>{this.renderError().invalidPass}</span>
                     <br />
                     <input type="integer"
                         value={this.state.age}
@@ -73,7 +94,8 @@ class SignupForm extends React.Component {
                         className="signup-input"
                         placeholder='Age'
                     />
-                    <button className="signup-button" type="submit" onSubmit={this.handleSubmit} >Continue</button>
+                    <span className='errors'>{this.renderError().invalidAge}</span>
+                    <button className="signup-button" type="submit">Continue</button>
                     <h3>OR</h3>
                     <button className='login-button' id='demo'>Continue with DemoLogin</button>
                     <button className='login-button' id='demotea'>Continue as OolongTea</button>

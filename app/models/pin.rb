@@ -6,8 +6,15 @@ class Pin < ApplicationRecord
         foreign_key: :user_id, 
         class_name: :User
 
-    belongs_to :board, 
+    has_many :pins_on_board, 
         primary_key: :id, 
-        foreign_key: :board_id, 
-        class_name: :Board
+        foreign_key: :pin_id, 
+        class_name: :SavedPin
+
+    has_many :boards, 
+        through: :pins_on_board, 
+        source: :board
+
+    has_one_attached :img
+    
 end

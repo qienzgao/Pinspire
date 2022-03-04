@@ -7,8 +7,12 @@ class Board < ApplicationRecord
         foreign_key: :user_id,
         class_name: :User
 
-    has_many :subpins, 
+    has_many :pins_on_board, 
         primary_key: :id, 
         foreign_key: :board_id, 
-        class_name: :Pin
+        class_name: :SavedPin
+
+    has_many :pins, 
+        through: :pins_on_board, 
+        source: :pin
 end

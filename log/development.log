@@ -30524,3 +30524,659 @@ Processing by Api::SessionsController#destroy as JSON
 Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 1.6ms)
 
 
+Started GET "/" for ::1 at 2022-03-04 09:39:02 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 799ms (Views: 796.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-04 09:39:06 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 34ms (Views: 28.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2022-03-04 09:39:08 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"OolongTea@email.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "OolongTea@email.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:63
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "OolongTea@email.com"], ["id", 33], ["LIMIT", 1]]
+  ↳ app/models/user.rb:63
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "M7G83AXOTP7cDTgu+49NZw=="], ["id", 33], ["LIMIT", 1]]
+  ↳ app/models/user.rb:63
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "M7G83AXOTP7cDTgu+49NZw=="], ["updated_at", "2022-03-04 14:39:08.485575"], ["id", 33]]
+  ↳ app/models/user.rb:63
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:63
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.3ms)
+Completed 200 OK in 321ms (Views: 4.8ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/" for ::1 at 2022-03-04 09:40:03 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 31ms (Views: 22.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2022-03-04 09:40:33 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"OolongTea@email.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "OolongTea@email.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:63
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "OolongTea@email.com"], ["id", 33], ["LIMIT", 1]]
+  ↳ app/models/user.rb:63
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "lkgWG/X4uTQPFE40C9krdQ=="], ["id", 33], ["LIMIT", 1]]
+  ↳ app/models/user.rb:63
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "lkgWG/X4uTQPFE40C9krdQ=="], ["updated_at", "2022-03-04 14:40:33.775525"], ["id", 33]]
+  ↳ app/models/user.rb:63
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:63
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.3ms)
+Completed 200 OK in 313ms (Views: 4.0ms | ActiveRecord: 5.6ms)
+
+
+Started DELETE "/api/session" for ::1 at 2022-03-04 09:40:44 -0500
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "lkgWG/X4uTQPFE40C9krdQ=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:63
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "OolongTea@email.com"], ["id", 33], ["LIMIT", 1]]
+  ↳ app/models/user.rb:63
+  [1m[36mUser Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "DLxGo6WLEjTtAomnRM8Yxg=="], ["id", 33], ["LIMIT", 1]]
+  ↳ app/models/user.rb:63
+  [1m[36mUser Update (2.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "DLxGo6WLEjTtAomnRM8Yxg=="], ["updated_at", "2022-03-04 14:40:44.037029"], ["id", 33]]
+  ↳ app/models/user.rb:63
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:63
+Completed 200 OK in 24ms (Views: 0.3ms | ActiveRecord: 9.1ms)
+
+
+Started POST "/api/session" for ::1 at 2022-03-04 09:40:46 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"OolongTea@email.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "OolongTea@email.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:63
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "OolongTea@email.com"], ["id", 33], ["LIMIT", 1]]
+  ↳ app/models/user.rb:63
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "br5m85YqGDe/Xb7fRhOO8w=="], ["id", 33], ["LIMIT", 1]]
+  ↳ app/models/user.rb:63
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "br5m85YqGDe/Xb7fRhOO8w=="], ["updated_at", "2022-03-04 14:40:46.882944"], ["id", 33]]
+  ↳ app/models/user.rb:63
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:63
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.3ms)
+Completed 200 OK in 309ms (Views: 4.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2022-03-04 09:56:45 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 284ms (Views: 282.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-04 09:56:48 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 33ms (Views: 30.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-04 09:59:09 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 265ms (Views: 262.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-04 16:04:31 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 39ms (Views: 37.1ms | ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bundle.js-1a59cc7e95b03d1c2c7e95894e75b8176225ea573f302b2f2c6483d0061e339f.map"):
+  
+actionpack (5.2.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.6.2) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.6.2) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.6.2) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.6.2) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/api/session" for ::1 at 2022-03-04 16:04:35 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"OolongTea@email.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "OolongTea@email.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:63
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "OolongTea@email.com"], ["id", 33], ["LIMIT", 1]]
+  ↳ app/models/user.rb:63
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "vhOswwwjTdZzAdkDsN65kQ=="], ["id", 33], ["LIMIT", 1]]
+  ↳ app/models/user.rb:63
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "vhOswwwjTdZzAdkDsN65kQ=="], ["updated_at", "2022-03-04 21:04:35.951046"], ["id", 33]]
+  ↳ app/models/user.rb:63
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:63
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.3ms)
+Completed 200 OK in 313ms (Views: 4.5ms | ActiveRecord: 9.6ms)
+
+
+Started DELETE "/api/session" for ::1 at 2022-03-04 16:04:39 -0500
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "vhOswwwjTdZzAdkDsN65kQ=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:63
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "OolongTea@email.com"], ["id", 33], ["LIMIT", 1]]
+  ↳ app/models/user.rb:63
+  [1m[36mUser Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "dowflpzgVGkhZjjFQohV6g=="], ["id", 33], ["LIMIT", 1]]
+  ↳ app/models/user.rb:63
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "dowflpzgVGkhZjjFQohV6g=="], ["updated_at", "2022-03-04 21:04:39.434932"], ["id", 33]]
+  ↳ app/models/user.rb:63
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:63
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 6.8ms)
+
+
+Started POST "/api/users" for ::1 at 2022-03-04 16:05:01 -0500
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"hello@email.com", "password"=>"[FILTERED]", "age"=>"18"}}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:19
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:19
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "GHvMKXngZLQDAiVG+kHCmw=="], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:19
+  [1m[36mUser Create (3.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "age", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "hello@email.com"], ["age", 18], ["session_token", "GHvMKXngZLQDAiVG+kHCmw=="], ["password_digest", "$2a$12$mow9KkQFny1HGDmP.pe8OeTBBxIOEZGHtqGfIfOlkIQsOzoSDmnVq"], ["created_at", "2022-03-04 21:05:02.284265"], ["updated_at", "2022-03-04 21:05:02.284265"]]
+  ↳ app/controllers/api/users_controller.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:63
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "hello@email.com"], ["id", 43], ["LIMIT", 1]]
+  ↳ app/models/user.rb:63
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "uM/g5ATKN5a/6qPbrhav5w=="], ["id", 43], ["LIMIT", 1]]
+  ↳ app/models/user.rb:63
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "uM/g5ATKN5a/6qPbrhav5w=="], ["updated_at", "2022-03-04 21:05:02.290448"], ["id", 43]]
+  ↳ app/models/user.rb:63
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:63
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.3ms)
+Completed 200 OK in 284ms (Views: 4.2ms | ActiveRecord: 5.7ms)
+
+
+Started POST "/api/session" for ::1 at 2022-03-04 16:05:02 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"type"=>"RECEIVE_CURRENT_USER", "currentUser"=>{"id"=>"43", "email"=>"hello@email.com", "age"=>"18"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+Completed 401 Unauthorized in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/api/session" for ::1 at 2022-03-04 16:05:08 -0500
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uM/g5ATKN5a/6qPbrhav5w=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:63
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "hello@email.com"], ["id", 43], ["LIMIT", 1]]
+  ↳ app/models/user.rb:63
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "UbO/mjgALPUB7pVwqXBXBQ=="], ["id", 43], ["LIMIT", 1]]
+  ↳ app/models/user.rb:63
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "UbO/mjgALPUB7pVwqXBXBQ=="], ["updated_at", "2022-03-04 21:05:08.036041"], ["id", 43]]
+  ↳ app/models/user.rb:63
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:63
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/api/session" for ::1 at 2022-03-04 16:05:17 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hello@email.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@email.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:63
+  [1m[36mUser Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "hello@email.com"], ["id", 43], ["LIMIT", 1]]
+  ↳ app/models/user.rb:63
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "OeHqPT4Pht0B1ZZwpH/Qhg=="], ["id", 43], ["LIMIT", 1]]
+  ↳ app/models/user.rb:63
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "OeHqPT4Pht0B1ZZwpH/Qhg=="], ["updated_at", "2022-03-04 21:05:17.401178"], ["id", 43]]
+  ↳ app/models/user.rb:63
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:63
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.3ms)
+Completed 200 OK in 312ms (Views: 5.3ms | ActiveRecord: 5.7ms)
+
+
+Started DELETE "/api/session" for ::1 at 2022-03-04 16:05:21 -0500
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "OeHqPT4Pht0B1ZZwpH/Qhg=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:63
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "hello@email.com"], ["id", 43], ["LIMIT", 1]]
+  ↳ app/models/user.rb:63
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "QdvLfs9EbF0kTOCNd4iAAw=="], ["id", 43], ["LIMIT", 1]]
+  ↳ app/models/user.rb:63
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "QdvLfs9EbF0kTOCNd4iAAw=="], ["updated_at", "2022-03-04 21:05:21.142425"], ["id", 43]]
+  ↳ app/models/user.rb:63
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:63
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 6.7ms)
+
+
+Started POST "/api/session" for ::1 at 2022-03-04 16:05:29 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"123@123.", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "123@123."], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+Completed 401 Unauthorized in 10ms (Views: 0.3ms | ActiveRecord: 1.5ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bundle.js-1a59cc7e95b03d1c2c7e95894e75b8176225ea573f302b2f2c6483d0061e339f.map"):
+  
+actionpack (5.2.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.6.2) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.6.2) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.6.2) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.6.2) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2022-03-04 16:45:41 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 35ms (Views: 33.4ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mPin Load (1.6ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  [1m[36mPin Create (3.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "details", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "asdf"], ["details", "asdf"], ["user_id", 35], ["created_at", "2022-03-04 21:55:26.829823"], ["updated_at", "2022-03-04 21:55:26.829823"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPin Load (0.3ms)[0m  [1m[34mSELECT  "pins".* FROM "pins" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/api/pins" for ::1 at 2022-03-04 16:57:03 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/pins"):
+  
+actionpack (5.2.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/pins" for ::1 at 2022-03-04 17:02:57 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::PinsController#show as JSON
+Completed 404 Not Found in 13ms (ActiveRecord: 5.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Pin without an ID):
+  
+app/controllers/api/pins_controller.rb:7:in `show'
+Started GET "/api/pins" for ::1 at 2022-03-04 17:04:34 -0500
+Processing by Api::PinsController#show as JSON
+Completed 404 Not Found in 13ms (ActiveRecord: 9.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Pin without an ID):
+  
+app/controllers/api/pins_controller.rb:8:in `show'
+Started GET "/api/pins" for ::1 at 2022-03-04 17:04:47 -0500
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::PinsController#show as JSON
+Completed 404 Not Found in 12ms (ActiveRecord: 6.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Pin without an ID):
+  
+app/controllers/api/pins_controller.rb:8:in `show'
+Started GET "/api/pins" for ::1 at 2022-03-04 17:07:13 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/qiengao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::PinsController#index as JSON
+  Rendering api/pins/index.json.jbuilder
+  [1m[36mPin Load (0.8ms)[0m  [1m[34mSELECT "pins".* FROM "pins"[0m
+  ↳ app/views/api/pins/index.json.jbuilder:1
+  Rendered api/pins/index.json.jbuilder (19.4ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 7.7ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "active_storage_attachments" does not exist
+LINE 8:                WHERE a.attrelid = '"active_storage_attachmen...
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+                     c.collname, col_description(a.attrelid, a.attnum) AS comment
+                FROM pg_attribute a
+                LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+                LEFT JOIN pg_type t ON a.atttypid = t.oid
+                LEFT JOIN pg_collation c ON a.attcollation = c.oid AND a.attcollation <> t.typcollation
+               WHERE a.attrelid = '"active_storage_attachments"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+):
+    1: @pins.each do |pin|
+    2:     json.set! pin.id do 
+    3:         json.extract! pin, :id, :title, :details, :user_id
+    4:         if pin.img.attached?
+    5:             json.imgUrl url_for(pin.img) 
+    6:         end
+    7:     end
+  
+app/views/api/pins/index.json.jbuilder:4:in `block (2 levels) in _app_views_api_pins_index_json_jbuilder__4593487953456923578_70348692558800'
+app/views/api/pins/index.json.jbuilder:2:in `block in _app_views_api_pins_index_json_jbuilder__4593487953456923578_70348692558800'
+app/views/api/pins/index.json.jbuilder:1:in `_app_views_api_pins_index_json_jbuilder__4593487953456923578_70348692558800'
+app/controllers/api/pins_controller.rb:4:in `index'
+Started GET "/api/pins" for ::1 at 2022-03-04 17:08:34 -0500
+Processing by Api::PinsController#index as JSON
+  Rendering api/pins/index.json.jbuilder
+  [1m[36mPin Load (0.5ms)[0m  [1m[34mSELECT "pins".* FROM "pins"[0m
+  ↳ app/views/api/pins/index.json.jbuilder:1
+  Rendered api/pins/index.json.jbuilder (1.5ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2022-03-04 17:11:53 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 825ms (Views: 823.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-04 17:13:36 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bundle.js-04a5d6c69cc35cdf4ce0961400ce375c9fb73ee2a59a75e58790533aa84a6c30.map"):
+  
+actionpack (5.2.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.6.2) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.6.2) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.6.2) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.6.2) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2022-03-04 17:16:37 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 331ms (Views: 330.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-04 17:18:02 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 260ms (Views: 258.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/pins" for ::1 at 2022-03-04 17:18:14 -0500
+Processing by Api::PinsController#index as JSON
+Started GET "/" for ::1 at 2022-03-04 17:26:04 -0500
+Started GET "/" for ::1 at 2022-03-04 17:26:04 -0500
+Started GET "/api/pins" for ::1 at 2022-03-04 17:26:04 -0500
+  Rendering api/pins/index.json.jbuilder
+  [1m[36mPin Load (7.0ms)[0m  [1m[34mSELECT "pins".* FROM "pins"[0m
+  ↳ app/views/api/pins/index.json.jbuilder:1
+  Rendered api/pins/index.json.jbuilder (13.5ms)
+Completed 200 OK in 470337ms (Views: 11.3ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/" for ::1 at 2022-03-04 17:26:04 -0500
+Processing by StaticPagesController#root as HTML
+Processing by Api::PinsController#index as JSON
+Processing by StaticPagesController#root as HTML
+  Rendering api/pins/index.json.jbuilder
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mPin Load (3.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins"[0m
+  ↳ app/views/api/pins/index.json.jbuilder:1
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered api/pins/index.json.jbuilder (12.6ms)
+Completed 200 OK in 2253ms (Views: 22.5ms | ActiveRecord: 3.2ms)
+
+
+  Rendered static_pages/root.html.erb within layouts/application (0.0ms)
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.0ms)
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bundle.js-34bd2df4be5bedeab96a8fd8529fc7b1bb624733f0d565c393423c3dd8a74d35.map"):
+  
+actionpack (5.2.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.6.2) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.6.2) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.6.2) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.6.2) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bundle.js-34bd2df4be5bedeab96a8fd8529fc7b1bb624733f0d565c393423c3dd8a74d35.map"):
+  
+actionpack (5.2.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.6.2) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.6.2) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.6.2) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.6.2) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Completed 200 OK in 1037ms (Views: 1032.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 3307ms (Views: 1075.7ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 1131ms (Views: 1126.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-04 17:26:33 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-04 17:26:34 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/pins" for ::1 at 2022-03-04 17:27:02 -0500
+Processing by Api::PinsController#index as JSON
+  Rendering api/pins/index.json.jbuilder
+  [1m[36mPin Load (1.5ms)[0m  [1m[34mSELECT "pins".* FROM "pins"[0m
+  ↳ app/views/api/pins/index.json.jbuilder:1
+  Rendered api/pins/index.json.jbuilder (15.6ms)
+Completed 200 OK in 23ms (Views: 8.9ms | ActiveRecord: 10.9ms)
+
+

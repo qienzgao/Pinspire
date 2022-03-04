@@ -11,7 +11,7 @@ const Splash = ({currentUser}) => {
                     </div>
                     <div className="changing">
                         <h2 id="decor" className="fade">home decor idea</h2>
-                    </div>
+                    </div> 
                     <div className="changing">
                         <h2 id="outfit" className="fade">new look outfit</h2>
                     </div>
@@ -82,7 +82,7 @@ const Splash = ({currentUser}) => {
     const homePage = () => (
         <div>
             <section className="main-text">
-                <h2 className="stable">LOADING</h2>
+                <h2 className="stable">It goes here...</h2>
             </section>
         </div>
     );

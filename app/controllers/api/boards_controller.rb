@@ -13,7 +13,7 @@ class Api::BoardsController < ApplicationController
         if @board.save
             render :show
         else
-            render json: @board.errors.full_messages, status 401
+            render json: @board.errors.full_messages, status: 401
         end
     end
 
@@ -22,7 +22,7 @@ class Api::BoardsController < ApplicationController
         if @board.update(board_params)
             render:show
         else
-            render json: @board.errors.full_messages, status 401
+            render json: @board.errors.full_messages, status: 401
         end
     end
 

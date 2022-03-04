@@ -1,7 +1,7 @@
 import React from "react";
 
-const Splash = () => {
-    return (
+const Splash = ({currentUser}) => {
+    const mainPage = () => (
         <div>
             <section className="main-text">
                 <h2 className="stable">Get your next</h2>
@@ -78,6 +78,18 @@ const Splash = () => {
             </div>
         </div>
     ); 
+
+    const homePage = () => (
+        <div>
+            <section className="main-text">
+                <h2 className="stable">LOADING</h2>
+            </section>
+        </div>
+    );
+
+    return (
+        currentUser ? homePage() : mainPage()
+    );
 }; 
 
 export default Splash; 

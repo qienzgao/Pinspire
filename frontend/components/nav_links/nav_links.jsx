@@ -1,5 +1,4 @@
 import React from 'react';
-
 const NavLinks = ({ currentUser, logout, open}) => {
     const sessionLinks = () => (
         <div className='header'>
@@ -33,15 +32,47 @@ const NavLinks = ({ currentUser, logout, open}) => {
             </nav>
         </div>
     );
-    const greet = () => (
-        <hgroup className="header-group">
-            <h2 className="header-name">Welcome back, {currentUser.name}!</h2>
-            <button className="header-button" onClick={() => logout()}>Log Out</button>
-        </hgroup>
+    const loaded = () => (
+            <div className='loggedin-header'>
+                <div className='inspiration'>
+                    <div className='pinspire-logo'>
+                        <img className='pinspire-img'/>
+                    </div>
+                    <div className='home'>
+                        <button className='home-button'>Home</button>
+                    </div>
+                    <div className='today'>
+                        <button className='today-button'>Today</button>
+                    </div>
+                </div>
+                    <div className='search-bar-container'>
+                        <input className="search-bar" type="text" placeholder='Search'> 
+                        </input>
+                    </div>
+
+                <div className="personal">
+                    <div className="icons" >
+                        <img className='linkedin-icon'/>
+                    </div>
+
+                    <div className="icons">
+                        <img className='git-icon'/>
+                    </div>
+
+                    <div className='profile'>
+                        <button className='profile-button'>P</button>
+                    </div>
+                    
+                    <div className='profile'>
+                        <button className="logout-button" onClick={() => logout()}>Log Out</button>
+                    </div>
+                </div>
+
+            </div>
     );
 
     return (
-        currentUser ? greet(currentUser) : sessionLinks()
+        currentUser ? loaded() : sessionLinks()
     );
 };
 

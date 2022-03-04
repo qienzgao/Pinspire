@@ -1,7 +1,7 @@
 import React from "react";
 import NavLinksContainer from "./nav_links/nav_links_container";
 import AllModals from "./modal/modal_container";
-import Splash from "./splash/splash";
+import SplashContainer from "./splash/splash_container";
 
 
 const App = () => (
@@ -10,7 +10,7 @@ const App = () => (
         <header>
             <NavLinksContainer />
         </header>
-        <Splash />
+            <SplashContainer/>
     </div>
 );
 

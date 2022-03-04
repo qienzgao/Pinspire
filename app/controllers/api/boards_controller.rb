@@ -14,6 +14,7 @@ class Api::BoardsController < ApplicationController
             render :show
         else
             render json: @board.errors.full_messages, status 401
+        end
     end
 
     def update

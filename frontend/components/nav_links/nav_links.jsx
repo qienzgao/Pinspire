@@ -36,12 +36,12 @@ const NavLinks = ({ currentUser, logout, open}) => {
     const greet = () => (
         <hgroup className="header-group">
             <h2 className="header-name">Welcome back, {currentUser.name}!</h2>
-            <button className="header-button" onClick={logout}>Log Out</button>
+            <button className="header-button" onClick={() => logout()}>Log Out</button>
         </hgroup>
     );
 
     return (
-        currentUser ? greet(currentUser, logout) : sessionLinks()
+        currentUser ? greet(currentUser) : sessionLinks()
     );
 };
 

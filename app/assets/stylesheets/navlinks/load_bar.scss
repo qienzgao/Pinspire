@@ -91,6 +91,13 @@
     flex-direction: row;
 }
 
+.search-icon {
+    margin-top: 17px;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    align-items: center;
+}
+
 .search-bar {
         width: 100%;
         border: none;
@@ -126,38 +133,27 @@
 .icons {
     position: relative;
     max-width: 100%;
-    height: 40px;
-}
-
-.icons img {
     display: block;
-    width: 40px;
-    height: 40px;
-    margin-left: 10px;
-    margin-right: 10px;
+    width: 45px;
+    height: 45px;
+    margin-left: 2px;
+    margin-right: 2px;
     margin-top: 17px;
     margin-bottom: 20px;
-    padding-right: 5px;
     cursor: pointer;
+    border: none;
+    border-radius: 100%;
+    background-color: transparent;
+
+    &:hover{
+        background-color: rgb(236, 235, 235);
+    }
+
+    .icon {
+        margin-top: 5px;
+        margin-left: 5px;
+    }
 }
-
-// .git-logo {
-//     position: relative;
-//     max-width: 100%;
-//     height: 40px;
-// }
-
-// .git-icon {
-//     display: block;
-//     width: 40px;
-//     height: 40px;
-//     margin-left: 10px;
-//     margin-right: 10px;
-//     margin-top: 17px;
-//     margin-bottom: 20px;
-//     padding-right: 5px;
-//     cursor: pointer;
-// }
 
 .profile {
     position: relative;
@@ -167,15 +163,21 @@
 
 .profile button {
     display: block;
-    width: 40px;
-    height: 40px;
-    margin-left: 10px;
-    margin-right: 10px;
+    width: 45px;
+    height: 45px;
+    margin-left: 2px;
+    margin-right: 2px;
     margin-top: 17px;
     margin-bottom: 20px;
     padding-right: 5px;
+    padding-top: 5px; 
     border-radius: 100%;
     cursor: pointer;
+    border: none; 
+    background-color: transparent;
+    &:hover{
+        background-color: rgb(236, 235, 235);
+    }
 }
 
 // .logout {

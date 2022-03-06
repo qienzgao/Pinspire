@@ -1,0 +1,33 @@
+.pin-wrapper {
+    display: inline-flex;
+    padding: 8px
+}
+
+.pin-container {
+    width: 230px;
+    // max-height: 100%;
+    background-color: silver;
+    border-radius: 18px;
+    box-sizing: border-box;
+    align-items: center;
+    cursor: zoom-in;
+    margin-bottom: 20px;
+    img {
+        object-fit: cover;
+        display: flex;
+        width: 100%;
+    }
+}
+
+#small {
+    height: 200px;
+}
+
+#medium {
+    height: 280px;
+}
+
+#large {
+    height: 350px;
+}
+

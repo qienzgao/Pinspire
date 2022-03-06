@@ -1,0 +1,29 @@
+.load-page {
+    position: absolute;
+    // display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 200vh;
+    margin-top: 20px;
+    padding-top: 70px;
+    display: flex;
+    // flex-direction: column;
+    // width: 100%;
+    // height: 100%;
+    // margin-top: 15px;
+    // justify-content: center;
+    
+}
+
+.pins-container {
+    width: 100%;
+    height: 100%;
+    margin: 0; 
+    text-align: center;
+    // flex-direction: column; 
+    // column-count: auto;
+    // margin: 0 auto; 
+    // height: 100%;
+    // max-width: 1260px;
+}
+

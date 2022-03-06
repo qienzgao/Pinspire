@@ -1,4 +1,5 @@
 import React from "react";
+import Pin from "../pin/pin";
 
 const Splash = ({currentUser}) => {
     const mainPage = () => (
@@ -25,49 +26,49 @@ const Splash = ({currentUser}) => {
             </section>
             <div className='background-pics'>
                 <div className="grid">
-                    <div className="column fade">
+                    <div className="column">
                         <div className="pic"></div>
                         <div className="pic"></div>
                         <div className="pic"></div>
                         <div className="pic"></div>
                         <div className="pic"></div>
                     </div>
-                    <div className="column fade">
+                    <div className="column">
                         <div className="pic"></div>
                         <div className="pic"></div>
                         <div className="pic"></div>
                         <div className="pic"></div>
                         <div className="pic"></div>
                     </div>
-                    <div className="column fade">
+                    <div className="column">
                         <div className="pic"></div>
                         <div className="pic"></div>
                         <div className="pic"></div>
                         <div className="pic"></div>
                         <div className="pic"></div>
                     </div>
-                    <div className="column fade">
+                    <div className="column">
                         <div className="pic"></div>
                         <div className="pic"></div>
                         <div className="pic"></div>
                         <div className="pic"></div>
                         <div className="pic"></div>
                     </div>
-                    <div className="column fade">
+                    <div className="column">
                         <div className="pic"></div>
                         <div className="pic"></div>
                         <div className="pic"></div>
                         <div className="pic"></div>
                         <div className="pic"></div>
                     </div>
-                    <div className="column fade">
+                    <div className="column">
                         <div className="pic"></div>
                         <div className="pic"></div>
                         <div className="pic"></div>
                         <div className="pic"></div>
                         <div className="pic"></div>
                     </div>
-                    <div className="column fade">
+                    <div className="column">
                         <div className="pic"></div>
                         <div className="pic"></div>
                         <div className="pic"></div>
@@ -80,10 +81,57 @@ const Splash = ({currentUser}) => {
     ); 
 
     const homePage = () => (
-        <div>
-            <section className="main-text">
-                <h2 className="stable">It goes here...</h2>
-            </section>
+        <div className="load-page">
+            <div className="pins-container">
+                <Pin size={"small"}/>
+                <Pin size={"medium"}/>
+                <Pin size={"large"}/>
+                <Pin size={"small"} />
+                <Pin size={"medium"} />
+                <Pin size={"large"} />
+                <Pin size={"small"} />
+                <Pin size={"medium"} />
+                <Pin size={"large"} />
+                <Pin size={"small"} />
+                <Pin size={"medium"} />
+                <Pin size={"large"} />
+                <Pin size={"small"} />
+                <Pin size={"medium"} />
+                <Pin size={"large"} />
+                <Pin size={"small"} />
+                <Pin size={"medium"} />
+                <Pin size={"large"} />
+                <Pin size={"small"} />
+                <Pin size={"medium"} />
+                <Pin size={"large"} />
+                <Pin size={"small"} />
+                <Pin size={"medium"} />
+                <Pin size={"large"} />
+                <Pin size={"small"} />
+                <Pin size={"medium"} />
+                <Pin size={"large"} />
+                <Pin size={"small"} />
+                <Pin size={"medium"} />
+                <Pin size={"large"} />
+                <Pin size={"small"} />
+                <Pin size={"medium"} />
+                <Pin size={"large"} />
+                <Pin size={"small"} />
+                <Pin size={"medium"} />
+                <Pin size={"large"} />
+                <Pin size={"small"} />
+                <Pin size={"medium"} />
+                <Pin size={"large"} />
+                <Pin size={"small"} />
+                <Pin size={"medium"} />
+                <Pin size={"large"} />
+                <Pin size={"small"} />
+                <Pin size={"medium"} />
+                <Pin size={"large"} />
+                <Pin size={"small"} />
+                <Pin size={"medium"} />
+                <Pin size={"large"} />
+            </div>
         </div>
     );
 

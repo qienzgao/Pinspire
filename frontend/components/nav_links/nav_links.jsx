@@ -1,4 +1,8 @@
 import React from 'react';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+
 const NavLinks = ({ currentUser, logout, open}) => {
     const sessionLinks = () => (
         <div className='header'>
@@ -46,17 +50,20 @@ const NavLinks = ({ currentUser, logout, open}) => {
                     </div>
                 </div>
                     <div className='search-bar-container'>
-                        <input className="search-bar" type="text" placeholder='Search'> 
-                        </input>
+                        <input className="search-bar" type="text" placeholder='Search'/>
                     </div>
 
                 <div className="personal">
                     <div className="icons" >
-                        <img className='linkedin-icon'/>
+                        <a href="https://www.linkedin.com/in/qien-gao-1390071a7/">
+                            <LinkedInIcon className="icon" color="action" fontSize='large'/>
+                        </a>
                     </div>
 
                     <div className="icons">
-                        <img className='git-icon'/>
+                        <a href="https://github.com/qienzgao">
+                            <GitHubIcon className="icon" color="action" fontSize="large"/>
+                        </a>
                     </div>
 
                     <div className='profile'>
@@ -64,7 +71,9 @@ const NavLinks = ({ currentUser, logout, open}) => {
                     </div>
                     
                     <div className='profile'>
-                        <button className="logout-button" onClick={() => logout()}>Log Out</button>
+                        <button className="logout-button" onClick={() => logout()}>
+                            <KeyboardArrowDownIcon color='action'/>
+                        </button>
                     </div>
                 </div>
 

@@ -26,11 +26,9 @@ const receiveErrors = errors => ({
 });
 
 export const fetchPins = () => dispatch => {
-    console.log("test two")
     return (
     PinAPIUtil.fetchPins()
-        .then(pins => console.log(pins))
-        // .then(pins => dispatch(receivePins(pins)))
+        .then(pins => dispatch(receivePins(pins)))
 )};
 
 export const fetchPin = pinId => dispatch => (

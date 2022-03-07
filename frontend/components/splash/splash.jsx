@@ -83,6 +83,7 @@ const Splash = ({currentUser}) => {
     const homePage = () => (
         <div className="load-page">
             <div className="pins-container">
+                {/* <div className="pins-column"> */}
                 <Pin size={"small"}/>
                 <Pin size={"medium"}/>
                 <Pin size={"large"}/>
@@ -91,7 +92,28 @@ const Splash = ({currentUser}) => {
                 <Pin size={"large"} />
                 <Pin size={"small"} />
                 <Pin size={"medium"} />
+                {/* </div>
+                <div className="pins-column"> */}
                 <Pin size={"large"} />
+                <Pin size={"small"} />
+                <Pin size={"medium"} />
+                <Pin size={"large"} />
+                <Pin size={"small"} />
+                <Pin size={"medium"} />
+                <Pin size={"large"} />
+                <Pin size={"small"} />
+                {/* </div>
+                <div className="pins-column"> */}
+                <Pin size={"medium"} />
+                <Pin size={"large"} />
+                <Pin size={"small"} />
+                <Pin size={"medium"} />
+                <Pin size={"large"} />
+                <Pin size={"small"} />
+                <Pin size={"medium"} />
+                <Pin size={"large"} />
+                {/* </div>
+                <div className="pins-column"> */}
                 <Pin size={"small"} />
                 <Pin size={"medium"} />
                 <Pin size={"large"} />
@@ -101,6 +123,8 @@ const Splash = ({currentUser}) => {
                 <Pin size={"small"} />
                 <Pin size={"medium"} />
                 <Pin size={"large"} />
+                {/* </div>
+                <div className="pins-column"> */}
                 <Pin size={"small"} />
                 <Pin size={"medium"} />
                 <Pin size={"large"} />
@@ -109,6 +133,8 @@ const Splash = ({currentUser}) => {
                 <Pin size={"large"} />
                 <Pin size={"small"} />
                 <Pin size={"medium"} />
+                {/* </div>
+                <div className="pins-column"> */}
                 <Pin size={"large"} />
                 <Pin size={"small"} />
                 <Pin size={"medium"} />
@@ -116,21 +142,7 @@ const Splash = ({currentUser}) => {
                 <Pin size={"small"} />
                 <Pin size={"medium"} />
                 <Pin size={"large"} />
-                <Pin size={"small"} />
-                <Pin size={"medium"} />
-                <Pin size={"large"} />
-                <Pin size={"small"} />
-                <Pin size={"medium"} />
-                <Pin size={"large"} />
-                <Pin size={"small"} />
-                <Pin size={"medium"} />
-                <Pin size={"large"} />
-                <Pin size={"small"} />
-                <Pin size={"medium"} />
-                <Pin size={"large"} />
-                <Pin size={"small"} />
-                <Pin size={"medium"} />
-                <Pin size={"large"} />
+                {/* </div>   */}
             </div>
         </div>
     );

@@ -6,10 +6,8 @@ class Pin extends React.Component {
     }
     render() {
         return (
-            <div className='pin-wrapper'>
-                <div className='pin-container' id={`${this.props.size}`}>
-                    <img/>
-                </div>
+            <div className='pin-container' id={`${this.props.size}`}>
+                <img/>
             </div>
         )
     }

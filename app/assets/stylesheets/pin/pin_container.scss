@@ -1,17 +1,18 @@
 .pin-wrapper {
     display: inline-flex;
-    padding: 8px
+    padding: 8px;
+    width: 230px;
+    // max-height: 100%;
 }
 
 .pin-container {
     width: 230px;
-    // max-height: 100%;
     background-color: silver;
     border-radius: 18px;
     box-sizing: border-box;
     align-items: center;
     cursor: zoom-in;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     img {
         object-fit: cover;
         display: flex;
@@ -20,14 +21,14 @@
 }
 
 #small {
-    height: 200px;
+    grid-row-end: span 26;
 }
 
 #medium {
-    height: 280px;
+    grid-row-end: span 33;
 }
 
 #large {
-    height: 350px;
+    grid-row-end: span 36;
 }
 

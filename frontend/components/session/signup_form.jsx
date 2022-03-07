@@ -27,10 +27,7 @@ class SignupForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.submit(user)
-            .then(user =>{this.props.loginDemo(user)
-                console.log("hello")
-                console.log(user)
-            })
+            .then(user =>{this.props.loginDemo(user)})
                 .then(this.props.close)
     }; 
 
@@ -69,7 +66,7 @@ class SignupForm extends React.Component {
         return (
             <form className="signup-form-container" onSubmit={this.handleSubmit}>
                 <button onClick={this.props.close} className="close-button">
-                    <span aria-hidden="true">&times;</span>
+                    <span>&times;</span>
                 </button>
                 <div className='pinspire-sign'>
                     <img className="pinspire-img" />
@@ -118,7 +115,9 @@ class SignupForm extends React.Component {
                         </span>
                         <span>________________</span>
                     </div>
-                    {this.props.login}
+                    <button className="otherwise" onClick={this.props.login}>
+                        Already a member? Log in
+                    </button>
                 </div>
             </form>
         );

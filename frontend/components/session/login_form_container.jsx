@@ -10,11 +10,7 @@ const mSTP = (state) => ({
 
 const mDTP = dispatch => ({
     submit: user => dispatch(login(user)),
-    signup: (
-        <button className="otherwise" onClick={() => dispatch(open('signup'))}>
-            Not on Pinspire yet? Sign up
-        </button>
-    ),
+    signup: () => dispatch(open('signup')),
     close: () => dispatch(close()), 
     removeErrors: () => dispatch(removeErrors())
 });

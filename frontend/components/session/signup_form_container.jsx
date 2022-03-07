@@ -11,11 +11,7 @@ const mSTP = ({errors}) => ({
 const mDTP = dispatch => ({
     submit: (user) => dispatch(signup(user)),
     loginDemo: (user) => dispatch(login(user)), 
-    login: (
-        <button className="otherwise" onClick={() => dispatch(open('login'))}>
-            Already a member? Log in
-        </button>
-    ),
+    login: () => dispatch(open('login')), 
     close: () => dispatch(close()),
     removeErrors: () => dispatch(removeErrors())
 });

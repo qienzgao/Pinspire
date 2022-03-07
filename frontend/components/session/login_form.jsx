@@ -106,7 +106,9 @@ class LoginForm extends React.Component {
                         </span>
                         <span>________________</span>
                     </div>
-                    {this.props.signup}
+                    <button className="otherwise" onClick={this.props.signup}>
+                        Not on Pinspire yet? Sign up
+                    </button>
                 </div>
             </form>
         );

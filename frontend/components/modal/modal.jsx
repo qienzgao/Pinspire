@@ -1,6 +1,7 @@
 import React from 'react';
 import LoginForm from '../session/login_form_container';
 import SignupForm from '../session/signup_form_container';
+import SavedModal from '../pin/pin_saved_modal';
 
 const Modal = ({ modal }) => {
     if (!modal) {
@@ -13,6 +14,9 @@ const Modal = ({ modal }) => {
             break;
         case 'signup':
             component = <SignupForm />;
+            break;
+        case 'saved':
+            component = <SavedModal/>;
             break;
         default:
             return null;

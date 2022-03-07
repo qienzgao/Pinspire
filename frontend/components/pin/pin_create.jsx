@@ -21,7 +21,7 @@ class PinCreate extends React.Component {
         const formData = new FormData();
         formData.append('pin[title]', this.state.title);
         formData.append('pin[details]', this.state.details);
-        formData.append('pin[user_id]', this.props.user);
+        formData.append('pin[user_id]', this.props.user.id);
     }
 
     render() {

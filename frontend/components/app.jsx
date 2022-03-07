@@ -13,8 +13,7 @@ const App = () => (
         <header>
             <NavLinksContainer />
         </header>
-
-            <Route path="/" component={SplashContainer} />
+            <Route exact path="/" component={SplashContainer} />
 
         <Switch>
             <AuthRoute path="/pins/create" component={PinCreateContainer} />

@@ -2,6 +2,7 @@ import React from 'react';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { Link } from 'react-router-dom';
 
 const NavLinks = ({ currentUser, logout, open}) => {
     const sessionLinks = () => (
@@ -71,9 +72,11 @@ const NavLinks = ({ currentUser, logout, open}) => {
                     </div>
                     
                     <div className='profile'>
-                        <button className="logout-button" onClick={() => logout()}>
-                            <KeyboardArrowDownIcon color='action'/>
-                        </button>
+                        <Link to="/">
+                            <button className="logout-button" onClick={() => logout()}>
+                                <KeyboardArrowDownIcon color='action'/>
+                            </button>
+                        </Link>
                     </div>
                 </div>
 

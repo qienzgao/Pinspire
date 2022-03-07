@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
     #celll
+    protect_from_forgery with: :exception
     helper_method :current_user, :logged_in?
     
     def current_user 
@@ -8,11 +9,7 @@ class ApplicationController < ActionController::Base
     end 
 
     def ensure_logged_in
-        redirect_to new_session_url unless logged_in?
-    end 
-    
-    def ensure_logged_out 
-        redirect_to users_url if logged_in?
+        render json: { base:['Invalid credentials'] } unless logged_in?
     end 
     
     def login!(user)

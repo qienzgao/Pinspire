@@ -6,7 +6,8 @@ import NavLinks from './nav_links';
 // import {currentUser} from '../../actions/session_actions'; 
 
 const mSTP = state => ({
-    currentUser: state.session.currentUser
+    currentUser: state.entities.users[state.session.id],
+    users: state.entities.users
 });
 
 const mDTP = dispatch => ({

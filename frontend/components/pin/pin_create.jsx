@@ -6,21 +6,22 @@ class PinCreate extends React.Component {
         this.state = {
             title: '',
             details: '', 
-            user_id: this.props.user.id,
         };
-        this.handleSubmit = this.handleSubmit.bind(this); 
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     create(field){
-        return e => this.setState({
+        return ( e => this.setState({
             [field]: e.currentTarget.value
-        }); 
+        })); 
     }
 
-    handleSubmit(){
+    handleSubmit(e){
         e.preventDefault(); 
-        const pin = Object.assign({}, this.state); 
-        this.props.submit(pin);
+        const formData = new FormData();
+        formData.append('pin[title]', this.state.title);
+        formData.append('pin[details]', this.state.details);
+        formData.append('pin[user_id]', this.props.user);
     }
 
     render() {
@@ -48,7 +49,7 @@ class PinCreate extends React.Component {
                     </div>
 
                     <div className='user-display'>
-                        <h3>{this.props.user.email}</h3>
+                        {/* <h3>{this.props.currentUser.email}</h3> */}
                     </div>
 
                     <input type="text"

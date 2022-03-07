@@ -146,7 +146,7 @@ const Splash = ({currentUser}) => {
                 {/* </div>   */}
             </div>
             <div className="create-pin-button-container">
-                <Link to="/pins/new"><button className="create-pin-button">Create Pin</button></Link>
+                <Link to="/pins/create"><button className="create-pin-button">Create Pin</button></Link>
             </div>
         </div>
     );

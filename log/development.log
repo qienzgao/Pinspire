@@ -41726,3 +41726,425 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 39ms (Views: 32.0ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/" for ::1 at 2022-03-07 11:32:20 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Cm9ykBJzwEYO9bbc8xW9Gw=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 35ms (Views: 22.4ms | ActiveRecord: 0.3ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bundle.js-8876f0d42c1eb320f60ef9ddc67dff6e56a5bec28015dda37be57848a13bf98d.map"):
+  
+actionpack (5.2.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.6.2) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.6.2) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.6.2) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.6.2) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bundle.js-8876f0d42c1eb320f60ef9ddc67dff6e56a5bec28015dda37be57848a13bf98d.map"):
+  
+actionpack (5.2.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.6.2) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.6.2) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.6.2) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.6.2) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bundle.js-8876f0d42c1eb320f60ef9ddc67dff6e56a5bec28015dda37be57848a13bf98d.map"):
+  
+actionpack (5.2.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.6.2) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.6.2) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.6.2) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.6.2) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2022-03-07 14:03:44 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Cm9ykBJzwEYO9bbc8xW9Gw=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 315ms (Views: 309.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2022-03-07 14:24:34 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Cm9ykBJzwEYO9bbc8xW9Gw=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 316ms (Views: 308.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2022-03-07 14:29:41 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Cm9ykBJzwEYO9bbc8xW9Gw=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 326ms (Views: 315.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2022-03-07 14:30:13 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Cm9ykBJzwEYO9bbc8xW9Gw=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (6.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 308ms (Views: 296.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/pins/" for ::1 at 2022-03-07 14:30:20 -0500
+Processing by Api::PinsController#create as JSON
+  Parameters: {"pin"=>{"title"=>"hello", "details"=>"hello", "user_id"=>"33"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/pins_controller.rb:14
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/api/pins_controller.rb:14
+  [1m[36mPin Create (3.2ms)[0m  [1m[32mINSERT INTO "pins" ("title", "details", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "hello"], ["details", "hello"], ["user_id", 33], ["created_at", "2022-03-07 19:30:20.135883"], ["updated_at", "2022-03-07 19:30:20.135883"]]
+  ↳ app/controllers/api/pins_controller.rb:14
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/pins_controller.rb:14
+  Rendering api/pins/show.json.jbuilder
+  Rendered api/pins/show.json.jbuilder (8.3ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 21.0ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "active_storage_attachments" does not exist
+LINE 8:                WHERE a.attrelid = '"active_storage_attachmen...
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+                     c.collname, col_description(a.attrelid, a.attnum) AS comment
+                FROM pg_attribute a
+                LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+                LEFT JOIN pg_type t ON a.atttypid = t.oid
+                LEFT JOIN pg_collation c ON a.attcollation = c.oid AND a.attcollation <> t.typcollation
+               WHERE a.attrelid = '"active_storage_attachments"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+):
+    1: json.extract! @pin, :id, :title, :details, :user_id
+    2: if @pin.img.attached?
+    3:     json.imgUrl url_for(@pin.img) 
+    4: end
+  
+app/views/api/pins/show.json.jbuilder:2:in `_app_views_api_pins_show_json_jbuilder__2873949042609107719_70125328769360'
+app/controllers/api/pins_controller.rb:15:in `create'
+Started GET "/" for ::1 at 2022-03-07 14:32:57 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Cm9ykBJzwEYO9bbc8xW9Gw=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 313ms (Views: 305.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/pins/" for ::1 at 2022-03-07 14:33:02 -0500
+Processing by Api::PinsController#create as JSON
+  Parameters: {"pin"=>{"title"=>"hello", "details"=>"hello", "user_id"=>"33"}}
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/pins_controller.rb:14
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/api/pins_controller.rb:14
+  [1m[36mPin Create (1.4ms)[0m  [1m[32mINSERT INTO "pins" ("title", "details", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "hello"], ["details", "hello"], ["user_id", 33], ["created_at", "2022-03-07 19:33:02.539020"], ["updated_at", "2022-03-07 19:33:02.539020"]]
+  ↳ app/controllers/api/pins_controller.rb:14
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/pins_controller.rb:14
+  Rendering api/pins/show.json.jbuilder
+  Rendered api/pins/show.json.jbuilder (4.4ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 6.6ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "active_storage_attachments" does not exist
+LINE 8:                WHERE a.attrelid = '"active_storage_attachmen...
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+                     c.collname, col_description(a.attrelid, a.attnum) AS comment
+                FROM pg_attribute a
+                LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+                LEFT JOIN pg_type t ON a.atttypid = t.oid
+                LEFT JOIN pg_collation c ON a.attcollation = c.oid AND a.attcollation <> t.typcollation
+               WHERE a.attrelid = '"active_storage_attachments"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+):
+    1: json.extract! @pin, :id, :title, :details, :user_id
+    2: if @pin.img.attached?
+    3:     json.imgUrl url_for(@pin.img) 
+    4: end
+  
+app/views/api/pins/show.json.jbuilder:2:in `_app_views_api_pins_show_json_jbuilder__2873949042609107719_70125697592980'
+app/controllers/api/pins_controller.rb:15:in `create'
+Started GET "/" for ::1 at 2022-03-07 14:33:46 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Cm9ykBJzwEYO9bbc8xW9Gw=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 46ms (Views: 38.9ms | ActiveRecord: 5.6ms)
+
+
+Started POST "/api/pins/" for ::1 at 2022-03-07 14:33:53 -0500
+Processing by Api::PinsController#create as JSON
+  Parameters: {"pin"=>{"title"=>"hello", "details"=>"hello", "user_id"=>"33"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/pins_controller.rb:14
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/api/pins_controller.rb:14
+  [1m[36mPin Create (0.5ms)[0m  [1m[32mINSERT INTO "pins" ("title", "details", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "hello"], ["details", "hello"], ["user_id", 33], ["created_at", "2022-03-07 19:33:53.618051"], ["updated_at", "2022-03-07 19:33:53.618051"]]
+  ↳ app/controllers/api/pins_controller.rb:14
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/pins_controller.rb:14
+  Rendering api/pins/show.json.jbuilder
+  Rendered api/pins/show.json.jbuilder (5.2ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 10.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `img' for #<Pin:0x00007f8ee2f807c8>):
+    1: json.extract! @pin, :id, :title, :details, :user_id
+    2: if @pin.img.attached?
+    3:     json.imgUrl url_for(@pin.img) 
+    4: end
+  
+app/views/api/pins/show.json.jbuilder:2:in `_app_views_api_pins_show_json_jbuilder__2873949042609107719_70125834654140'
+app/controllers/api/pins_controller.rb:15:in `create'
+Started GET "/" for ::1 at 2022-03-07 14:37:07 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Cm9ykBJzwEYO9bbc8xW9Gw=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 308ms (Views: 301.8ms | ActiveRecord: 4.9ms)
+
+
+Started POST "/api/pins/" for ::1 at 2022-03-07 14:37:12 -0500
+Processing by Api::PinsController#create as JSON
+  Parameters: {"pin"=>{"title"=>"test", "details"=>"test", "user_id"=>"33"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/pins_controller.rb:14
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/api/pins_controller.rb:14
+  [1m[36mPin Create (0.3ms)[0m  [1m[32mINSERT INTO "pins" ("title", "details", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "test"], ["details", "test"], ["user_id", 33], ["created_at", "2022-03-07 19:37:13.001981"], ["updated_at", "2022-03-07 19:37:13.001981"]]
+  ↳ app/controllers/api/pins_controller.rb:14
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/pins_controller.rb:14
+  Rendering api/pins/show.json.jbuilder
+  Rendered api/pins/show.json.jbuilder (6.9ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 9.2ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "active_storage_attachments" does not exist
+LINE 8:                WHERE a.attrelid = '"active_storage_attachmen...
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+                     c.collname, col_description(a.attrelid, a.attnum) AS comment
+                FROM pg_attribute a
+                LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+                LEFT JOIN pg_type t ON a.atttypid = t.oid
+                LEFT JOIN pg_collation c ON a.attcollation = c.oid AND a.attcollation <> t.typcollation
+               WHERE a.attrelid = '"active_storage_attachments"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+):
+    1: json.extract! @pin, :id, :title, :details, :user_id
+    2: if @pin.img.attached?
+    3:     json.imgUrl url_for(@pin.img) 
+    4: end
+  
+app/views/api/pins/show.json.jbuilder:2:in `_app_views_api_pins_show_json_jbuilder__2873949042609107719_70125712606240'
+app/controllers/api/pins_controller.rb:15:in `create'
+Started GET "/" for ::1 at 2022-03-07 14:39:35 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Cm9ykBJzwEYO9bbc8xW9Gw=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 308ms (Views: 295.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/pins/" for ::1 at 2022-03-07 14:39:35 -0500
+Processing by Api::PinsController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: pin):
+  
+app/controllers/api/pins_controller.rb:42:in `pin_params'
+app/controllers/api/pins_controller.rb:13:in `create'
+Started GET "/" for ::1 at 2022-03-07 14:40:09 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Cm9ykBJzwEYO9bbc8xW9Gw=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 317ms (Views: 307.7ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/pins/" for ::1 at 2022-03-07 14:40:14 -0500
+Processing by Api::PinsController#create as JSON
+  Parameters: {"pin"=>{"title"=>"hello", "details"=>"hello", "user_id"=>"33"}}
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/pins_controller.rb:14
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/api/pins_controller.rb:14
+  [1m[36mPin Create (1.1ms)[0m  [1m[32mINSERT INTO "pins" ("title", "details", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "hello"], ["details", "hello"], ["user_id", 33], ["created_at", "2022-03-07 19:40:14.843971"], ["updated_at", "2022-03-07 19:40:14.843971"]]
+  ↳ app/controllers/api/pins_controller.rb:14
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/pins_controller.rb:14
+  Rendering api/pins/show.json.jbuilder
+  Rendered api/pins/show.json.jbuilder (3.3ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 6.9ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "active_storage_attachments" does not exist
+LINE 8:                WHERE a.attrelid = '"active_storage_attachmen...
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+                     c.collname, col_description(a.attrelid, a.attnum) AS comment
+                FROM pg_attribute a
+                LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+                LEFT JOIN pg_type t ON a.atttypid = t.oid
+                LEFT JOIN pg_collation c ON a.attcollation = c.oid AND a.attcollation <> t.typcollation
+               WHERE a.attrelid = '"active_storage_attachments"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+):
+    1: json.extract! @pin, :id, :title, :details, :user_id
+    2: if @pin.img.attached?
+    3:     json.imgUrl url_for(@pin.img) 
+    4: end
+  
+app/views/api/pins/show.json.jbuilder:2:in `_app_views_api_pins_show_json_jbuilder__2873949042609107719_70125712494060'
+app/controllers/api/pins_controller.rb:15:in `create'
+Started GET "/" for ::1 at 2022-03-07 14:40:29 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Cm9ykBJzwEYO9bbc8xW9Gw=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 43ms (Views: 34.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2022-03-07 14:43:14 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Cm9ykBJzwEYO9bbc8xW9Gw=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 313ms (Views: 303.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2022-03-07 14:43:19 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Cm9ykBJzwEYO9bbc8xW9Gw=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 34ms (Views: 28.3ms | ActiveRecord: 0.4ms)
+
+

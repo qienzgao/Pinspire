@@ -1,5 +1,6 @@
 import React from "react";
 import Pin from "../pin/pin";
+import { Link } from "react-router-dom";
 
 const Splash = ({currentUser}) => {
     const mainPage = () => (
@@ -143,6 +144,9 @@ const Splash = ({currentUser}) => {
                 <Pin size={"medium"} />
                 <Pin size={"large"} />
                 {/* </div>   */}
+            </div>
+            <div className="create-pin-button-container">
+                <Link to="/pins/new"><button className="create-pin-button">Create Pin</button></Link>
             </div>
         </div>
     );

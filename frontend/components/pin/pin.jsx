@@ -4,9 +4,14 @@ class Pin extends React.Component {
     constructor(props){
         super(props)
     }
+
+    show(){
+        console.log('clicked')
+    }
+
     render() {
         return (
-            <div className='pin-container' id={`${this.props.size}`}>
+            <div className={`pin-container ${this.props.size}`} onClick={this.show}>
                 <img/>
             </div>
         )

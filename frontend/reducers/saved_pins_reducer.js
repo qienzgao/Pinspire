@@ -1,4 +1,4 @@
-import { RECEIVE_SAVEDPINS, RECEIVE_SAVEDPIN, REMOVE_SAVEDPIN } from '../actions/pinstoboard_actions';
+import { RECEIVE_SAVEDPINS, RECEIVE_SAVEDPIN, REMOVE_SAVEDPIN } from '../actions/saved_pin_actions';
 
 const SavedPinsReducer = (oldState = {}, action) => {
     Object.freeze(oldState);

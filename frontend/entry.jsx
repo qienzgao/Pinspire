@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { fetchPins } from './actions/pin_action';
+import { fetchPins } from './actions/pin_actions';
 import Root from './components/root';
 import configureStore from './store/store';
 

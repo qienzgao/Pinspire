@@ -5,6 +5,7 @@ import NavLinksContainer from "./nav_links/nav_links_container";
 import AllModals from "./modal/modal_container";
 import SplashContainer from "./splash/splash_container";
 import PinCreateContainer from "./pin/pin_create_container";
+import PinShowContainer from "./pin/pin_show_container";
 
 
 const App = () => (
@@ -17,6 +18,7 @@ const App = () => (
 
         <Switch>
             <AuthRoute path="/pins/create" component={PinCreateContainer} />
+            <AuthRoute exact path="/pins/:pinId" component={PinShowContainer} />
         </Switch>
     </div>
 );

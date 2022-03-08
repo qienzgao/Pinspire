@@ -1,6 +1,6 @@
 import { RECEIVE_PINS, RECEIVE_PIN, REMOVE_PIN } from '../actions/pin_actions';
 
-const pinsReducer = (oldState = {}, action) => {
+const PinsReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
     let nextState = Object.assign({}, oldState);
 
@@ -18,4 +18,4 @@ const pinsReducer = (oldState = {}, action) => {
     }
 };
 
-export default pinsReducer;
+export default PinsReducer;

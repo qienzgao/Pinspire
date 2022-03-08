@@ -6,9 +6,12 @@ class PinCreate extends React.Component {
         this.state = {
             title: '',
             details: '',
-            user_id: this.props.user.id 
+            user_id: this.props.user.id, 
+            imgFile: null, 
+            imgUrl: null
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleFile = this.handleFile.bind(this); 
     }
 
     create(field){
@@ -23,10 +26,26 @@ class PinCreate extends React.Component {
         formData.append('pin[title]', this.state.title);
         formData.append('pin[details]', this.state.details);
         formData.append('pin[user_id]', this.state.user_id);
+        if (this.state.imgFile) {
+            formData.append('pin[img]', this.state.imgFile)
+        }; 
         this.props.submit(formData)
     }
 
+    handleFile(e) {
+        e.preventDefault(); 
+        const file = e.currentTarget.files[0]; 
+        const fileReader = new FileReader(); 
+        fileReader.onloadend = () => {
+            this.setState({imgFile: file, imgUrl: fileReader.result})
+        }; 
+        if (file) {
+            fileReader.readAsDataURL(file);
+        }
+    }
+
     render() {
+        const preview = <img src={this.state.imgUrl}/>
         return (
             <form className="create-pin-form" onSubmit={this.handleSubmit}>
                 <div className='submit-create'>
@@ -37,6 +56,10 @@ class PinCreate extends React.Component {
                     <div className='img-container'>
                         <div className='img-upload'>
                             <span>upload img here</span>
+                            <input type="file" onChange={this.handleFile} />
+                            <br/>
+                            {preview}
+                            <span>preview</span>
                         </div>
                     </div>
                     <br />

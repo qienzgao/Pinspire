@@ -38,8 +38,7 @@ export const fetchPin = pinId => dispatch => (
 
 export const createPin = pin => dispatch => (
     PinAPIUtil.createPin(pin)
-        .then(createdPin => (dispatch(receivePin(createdPin)))
-        ), errors => (dispatch(receiveErrors(errors.responseJSON)))
+        .then(createdPin => dispatch(receivePin(createdPin)))
 );
 
 export const updatePin = pin => dispatch => (

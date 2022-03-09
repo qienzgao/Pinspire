@@ -7,21 +7,35 @@
 
 .pin-container {
     width: 230px;
-    background-color: silver;
+    background-color: transparent; 
     border-radius: 18px;
     box-sizing: border-box;
     align-items: center;
     cursor: zoom-in;
     margin-bottom: 30px;
-    img {
-        object-fit: cover;
-        display: flex;
-        width: 100%;
+}
+
+.pin-img {
+    width: 230px;
+    height: 100%;
+    object-fit: cover;
+    display: flex;
+    border-radius: 18px;
+    box-sizing: border-box;
+    align-items: center;
+    cursor: zoom-in;
+    margin-bottom: 30px;
+    &:hover {
+        background-color: rgba(182, 179, 179, 0.363);
     }
 }
 
+.ex-small {
+    grid-row-end : span 20
+}
+
 .small {
-    grid-row-end: span 26;
+    grid-row-end: span 25;
 }
 
 .medium {
@@ -29,6 +43,10 @@
 }
 
 .large {
-    grid-row-end: span 36;
+    grid-row-end: span 38;
+}
+
+.ex-large {
+    grid-row-end: span 42;
 }
 

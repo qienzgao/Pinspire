@@ -13,9 +13,20 @@
     align-items: center;
     cursor: zoom-in;
     margin-bottom: 30px;
+
+    &:hover .hidden-button {
+        z-index: 1;
+        opacity: 1;
+    }
+
+    &:hover .pin-img{
+        z-index: -1;
+        filter: brightness(70%)
+    }
 }
 
 .pin-img {
+    z-index: -1;
     width: 230px;
     height: 100%;
     object-fit: cover;
@@ -25,9 +36,27 @@
     align-items: center;
     cursor: zoom-in;
     margin-bottom: 30px;
-    &:hover {
-        background-color: rgba(182, 179, 179, 0.363);
-    }
+    
+}
+
+.hidden-button {
+    position: absolute;
+    opacity: 0;
+    margin: 12px;
+    margin-left: 150px;
+}
+
+.save-button {
+    float: right;
+    border: none;
+    color: white; 
+    background-color: #e60023;
+    width: 70px;
+    height: 45px ;
+    cursor: pointer;
+    border-radius: 30px;
+    font-size: 17px;
+    font-weight: 540;
 }
 
 .ex-small {

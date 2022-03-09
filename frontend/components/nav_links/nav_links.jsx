@@ -44,10 +44,10 @@ const NavLinks = ({ currentUser, logout, open}) => {
                         <img className='pinspire-img'/>
                     </div>
                     <div className='home'>
-                        <button className='home-button'>Home</button>
+                    <Link to="/" ><button className='home-button'>Home</button></Link>
                     </div>
                     <div className='today'>
-                        <button className='today-button'>Today</button>
+                    <Link to="/"><button className='today-button'>Today</button></Link>
                     </div>
                 </div>
                     <div className='search-bar-container'>

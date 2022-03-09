@@ -1,4 +1,6 @@
 import React from 'react';
+import ArrowCircleUpRoundedIcon from '@mui/icons-material/ArrowCircleUpRounded';
+
 
 class PinCreate extends React.Component {
     constructor(props) {
@@ -26,11 +28,16 @@ class PinCreate extends React.Component {
         formData.append('pin[title]', this.state.title);
         formData.append('pin[details]', this.state.details);
         formData.append('pin[user_id]', this.state.user_id);
+
         if (this.state.imgFile) {
             formData.append('pin[img]', this.state.imgFile)
         }; 
+
         this.props.submit(formData)
-    }
+                .then((savedPin) => {
+                    this.props.history.push(`/pins/${savedPin.pin.id}`)
+                });
+            }
 
     handleFile(e) {
         e.preventDefault(); 
@@ -45,47 +52,61 @@ class PinCreate extends React.Component {
     }
 
     render() {
-        const preview = <img src={this.state.imgUrl}/>
+        const preview = <div className="preview-container">
+            <img className="preview" src={this.state.imgUrl} />
+        </div>
+
+        const upload = <div className="upload-wrapper">
+            <div className='img-upload'>
+                <ArrowCircleUpRoundedIcon className='upload-icon'/>
+                <span className='drag-text'>Drag and drop or click to upload</span>
+                <input className="input-button" type="file" onChange={this.handleFile} />
+            </div>
+        </div>
+
         return (
-            <form className="create-pin-form" onSubmit={this.handleSubmit}>
-                <div className='submit-create'>
-                    <button className="create-button" type="submit">Save</button>
-                </div>
-                <br />
-                <div className="create-pin-container">
-                    <div className='img-container'>
-                        <div className='img-upload'>
-                            <span>upload img here</span>
-                            <input type="file" onChange={this.handleFile} />
-                            <br/>
-                            {preview}
-                            <span>preview</span>
-                        </div>
+            <div className="background">
+                {/* <div className='form-wrapper'> */}
+                <form className="create-pin-form" onSubmit={this.handleSubmit}>
+                    <div className='submit-create'>
+                        <button className="create-button" type="submit">Save</button>
                     </div>
                     <br />
-                    <div className='title-container'>
-                        <input type="text"
-                            value={this.state.title}
-                            onChange={this.create('title')}
-                            className="title-input"
-                            placeholder='Add your title'
-                        />
-                        <span className='title-reminder'>Your first 40 characters are what usually show up in feeds</span>
-                    </div>
+                    
+                        <div className='img-container'>
+                            {this.state.imgUrl ? preview : upload}
+                        </div>
+                        <br />
 
-                    <div className='user-display'>
-                        {/* <h3>{this.props.currentUser.email}</h3> */}
-                    </div>
+                    
+                        <div className='title-container'>
+                            <input type="text"
+                                value={this.state.title}
+                                onChange={this.create('title')}
+                                className="title-input"
+                                placeholder='Add your title'
+                            />
+                            <br />
+                            {/* <span className='title-reminder'>Your first 40 characters are what usually show up in feeds</span> */}
+                            <br/>
+                        </div>
 
-                    <input type="text"
-                        value={this.state.details}
-                        onChange={this.create('details')}
-                        className="details-input"
-                        placeholder='Tell everyone what your pin is about'
-                    />
+                        <div className='user-display'>
+                            {/* <h3>{this.props.currentUser.email}</h3> */}
+                        </div>
 
-                </div>
-            </form>
+                        <div className="details-container">
+                            <input type="text"
+                                value={this.state.details}
+                                onChange={this.create('details')}
+                                className="details-input"
+                                placeholder='Tell everyone what your pin is about'
+                            />
+                        </div>
+            
+                </form>
+                {/* </div> */}
+            </div>
         );
     }
 }

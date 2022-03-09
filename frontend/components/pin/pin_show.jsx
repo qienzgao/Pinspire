@@ -16,6 +16,18 @@ class PinShow extends React.Component {
         window.history.back();
     }
 
+    parseEmail(email) {
+        let username = '';
+        for (let i = 0; i < email.length; i++) {
+            if (email[i] === '@') {
+                return username
+            } else {
+                username += email[i]
+            }
+        }
+        return username
+    }
+
     render() {
         const {pin, user} = this.props; 
         if (!pin || !user) return null; 
@@ -50,7 +62,7 @@ class PinShow extends React.Component {
                     </div>
 
                     <div className="user-show-display">
-                        <h3 className='email-show'>{user[pin.user_id].email}</h3>
+                        <h3 className='email-show'>{this.parseEmail(user[pin.user_id].email)}</h3>
                     </div>
 
                 </div>

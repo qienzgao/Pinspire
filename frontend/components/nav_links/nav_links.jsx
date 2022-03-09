@@ -68,7 +68,9 @@ const NavLinks = ({ currentUser, logout, open}) => {
                     </div>
 
                     <div className='profile'>
-                        <button className='profile-button'>P</button>
+                        <Link to={`/users/${currentUser.id}`}>
+                            <button className='profile-button'>P</button>
+                        </Link>
                     </div>
                     
                     <div className='profile'>

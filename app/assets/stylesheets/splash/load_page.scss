@@ -40,11 +40,37 @@
     width: 270px;
 }
 
-.create-pin-button {
+.create-pin-button-container {
     z-index: 999; 
-    border: solid;
-    position: absolute;
-    width: 100px;
-    height: 100px;
+    border: none;
+    position:fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 55px;
+    height: 55px;
+    background-color: white;
+    border-radius: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.3), -1px -1px 7px rgba(0, 0, 0, 0.3);
+
+    .create-pin-button {
+        border: none;
+        background-color: transparent;
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        font-size: 40px;
+        cursor: pointer;
+
+        &:hover {
+            width: 86%;
+            height: 86%;
+            background-color: rgba(224, 223, 223, 0.459);
+            margin-top: 7%;        
+        }
+    }
 }
+
 

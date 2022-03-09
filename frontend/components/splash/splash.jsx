@@ -107,7 +107,7 @@ class Splash extends React.Component {
                         />)}
                 </div>
                 <div className="create-pin-button-container">
-                    <Link to="/pins/create"><button className="create-pin-button">Create Pin</button></Link>
+                    <Link to="/pins/create"><button className="create-pin-button">+</button></Link>
                 </div>
             </div>
         );

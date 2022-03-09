@@ -10,6 +10,9 @@ class PinIndexItem extends React.Component {
         return (
             <div className={`pin-container ${this.props.size}`}>
                 <Link to={`/pins/${this.props.pin.id}`}>
+                    <div className="hidden-button">
+                        <button className="save-button">Save</button>
+                    </div>
                     <img className="pin-img" src={this.props.pin.imgUrl}/>
                 </Link>
             </div>

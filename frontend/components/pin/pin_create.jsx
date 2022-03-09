@@ -1,5 +1,6 @@
 import React from 'react';
 import ArrowCircleUpRoundedIcon from '@mui/icons-material/ArrowCircleUpRounded';
+import { Link } from "react-router-dom";
 
 
 class PinCreate extends React.Component {
@@ -92,7 +93,7 @@ class PinCreate extends React.Component {
                         </div>
 
                         <div className='user-display'>
-                            {/* <h3>{this.props.currentUser.email}</h3> */}
+                            <h3 className='email-display'>{this.props.user.email}</h3>
                         </div>
 
                         <div className="details-container">
@@ -103,9 +104,10 @@ class PinCreate extends React.Component {
                                 placeholder='Tell everyone what your pin is about'
                             />
                         </div>
-            
                 </form>
-                {/* </div> */}
+                <div className="create-pin-button-container">
+                    <Link to="/pins/create"><button className="create-pin-button">+</button></Link>
+                </div>
             </div>
         );
     }

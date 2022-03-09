@@ -2,9 +2,6 @@ import { connect } from 'react-redux';
 import { createPin } from '../../actions/pin_actions';
 import PinCreate from './pin_create';
 
-
-
-
 const mSTP = state => ({
     user: state.entities.users[state.session.id],
 })

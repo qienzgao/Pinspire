@@ -8,7 +8,7 @@ const NavLinks = ({ currentUser, logout, open}) => {
     const sessionLinks = () => (
         <div className='header'>
             <div className='pinspire-logo'>
-                <img className='pinspire-img'/>
+                <img className='pinspire-img' src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/logo.jpeg"/>
                 <h1 className='pinspire-title'>Pinspire</h1>
             </div>
 
@@ -44,7 +44,7 @@ const NavLinks = ({ currentUser, logout, open}) => {
             <div className='loggedin-header'>
                 <div className='inspiration'>
                     <div className='pinspire-logo'>
-                        <img className='pinspire-img'/>
+                    <img className='pinspire-img' src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/logo.jpeg"/>
                     </div>
                     <div className='home'>
                     <Link to="/" ><button className='home-button'>Home</button></Link>

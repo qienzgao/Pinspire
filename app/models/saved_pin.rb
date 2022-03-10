@@ -1,5 +1,5 @@
 class SavedPin < ApplicationRecord
-    validates :pin_id, :board_id, presence: true
+    validates :pin_id, presence: true
 
     belongs_to :pin, 
         primary_key: :id, 

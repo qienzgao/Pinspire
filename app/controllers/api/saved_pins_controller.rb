@@ -1,4 +1,8 @@
 class Api::SavedPinsController < ApplicationController
+    def index
+        @saved_pins = SavedPin.all
+        render :index
+    end
 
     def create
         @saved_pin = SavedPin.new(saved_pin_params)

@@ -7,7 +7,7 @@ class SignupForm extends React.Component {
         this.state = {
             email: '',
             password: '', 
-            age: '' 
+            age: '', 
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderError = this.renderError.bind(this); 

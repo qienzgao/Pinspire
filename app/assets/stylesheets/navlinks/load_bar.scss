@@ -176,8 +176,22 @@
     cursor: pointer;
     border: none; 
     background-color: transparent;
+    align-items: center;
+    justify-content: center;
+
     &:hover{
         background-color: rgb(236, 235, 235);
+    }
+
+    img {
+        object-fit: cover;
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+    }
+
+    .default-icon {
+        margin-right: 5px;
     }
 }
 

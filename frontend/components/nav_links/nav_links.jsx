@@ -37,6 +37,9 @@ const NavLinks = ({ currentUser, logout, open}) => {
             </nav>
         </div>
     );
+
+   
+
     const loaded = () => (
             <div className='loggedin-header'>
                 <div className='inspiration'>
@@ -69,7 +72,9 @@ const NavLinks = ({ currentUser, logout, open}) => {
 
                     <div className='profile'>
                         <Link to={`/users/${currentUser.id}`}>
-                            <button className='profile-button'>P</button>
+                            <button className='profile-button'>
+                            {currentUser.imgUrl ? <img src={currentUser.imgUrl} /> : <img className="default-icon" src={"https://pinspire-seeds.s3.us-east-1.amazonaws.com/defaultavatar.png"} />}
+                            </button>
                         </Link>
                     </div>
                     

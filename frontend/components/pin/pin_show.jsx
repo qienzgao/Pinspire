@@ -29,8 +29,11 @@ class PinShow extends React.Component {
     }
 
     render() {
-        const {pin, user} = this.props; 
-        if (!pin || !user) return null; 
+        const {pin, users} = this.props; 
+        if (!pin || !users) return null; 
+        const user = users[pin.user_id]
+        const defaultAvatar = "https://pinspire-seeds.s3.us-east-1.amazonaws.com/defaultavatar.png";
+        const avatar = user.imgUrl ? <img className='avatar' src={user.imgUrl} /> : <img className='avatar-default' src={defaultAvatar} />
 
         return (
             <div className="background-show">
@@ -62,7 +65,8 @@ class PinShow extends React.Component {
                     </div>
 
                     <div className="user-show-display">
-                        <h3 className='email-show'>{this.parseEmail(user[pin.user_id].email)}</h3>
+                        {user? avatar: null}
+                        <h3 className='email-show'>{user? this.parseEmail(user.email): null}</h3>
                     </div>
 
                 </div>

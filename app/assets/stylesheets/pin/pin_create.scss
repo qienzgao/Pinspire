@@ -131,8 +131,8 @@ input::-webkit-file-upload-button {
         margin: 0;
         border-bottom: 1px solid rgb(192, 190, 190); 
         &:focus {
-            border: none;
-            border-bottom: 1px solid rgb(88, 129, 219);
+            outline: none;
+            border-bottom: 2px solid rgb(88, 129, 219);
         }
     }
 }
@@ -165,6 +165,9 @@ input::-webkit-file-upload-button {
     margin-left: 400px;
     margin-top: 80px;
     margin-bottom: 30px;
+    ::placeholder{
+        color: rgb(134, 134, 134);
+    }
 
     .details-input {
         width: 100%;
@@ -172,9 +175,17 @@ input::-webkit-file-upload-button {
         font-size: 17px;
         font-weight: 500;
         padding-left: 10px;
-        color: rgb(94, 92, 92);
         border: none;
         border-bottom: 1px solid rgb(192, 190, 190); 
+        
+        &:focus {
+            outline: none;
+            border-bottom: 2px solid rgb(88, 129, 219);
+        }
+
+         &:focus::placeholder {
+            color: rgba(192, 191, 191, 0.836);
+        }
     }
 }
 

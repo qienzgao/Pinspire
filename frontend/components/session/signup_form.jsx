@@ -105,7 +105,7 @@ class SignupForm extends React.Component {
                     <h3>OR</h3>
                     <button className='login-button' id='demo' onClick={e => this.handleDemoUser(e)}>Continue with DemoLogin</button>
                     <button className='login-button' id='demotea' onClick={e => this.handleDemoUser(e)}>Continue as OolongTea</button>
-                    <div className='text'>
+                    <div className='text-msg'>
                         <span>By continuing, you agree to accept Pinspire's
                             <br />
                             best wish of you being happy, healthy, lucky, lovely,

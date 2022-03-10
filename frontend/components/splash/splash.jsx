@@ -1,8 +1,7 @@
 import React from "react";
 import PinIndexItem from "../pin/pin_index_item";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";  
-import { useEffect } from 'react';
+
 
 class Splash extends React.Component {
     constructor(props){
@@ -11,10 +10,6 @@ class Splash extends React.Component {
 
     componentDidMount() {
         this.props.fetchPins();
-        const script = document.createElement("script");
-        script.src = 'script.js';
-        script.async = true;
-        document.body.appendChild(script);
     }
     
     render(){
@@ -24,16 +19,15 @@ class Splash extends React.Component {
 
         const mainPage = () => {
             return (
-            <div id="mainpage" ref={el => (this.instance = el)}>
-                
+            <div id="mainpage">
                 <section className="main-text">
                     <h2 className="stable">Get your next</h2>
 
                     <div className="categories">
                         <div className="changing">
-                            <h2 className="text before">weeknight dinner idea</h2>
+                            <h2 id="friends" className="text before">joy with little friends</h2>
                         </div>
-                        <div className="changing">
+                        {/* <div className="changing">
                             <h2 className="text before">home decor idea</h2>
                         </div> 
                         <div className="changing">
@@ -41,7 +35,7 @@ class Splash extends React.Component {
                         </div>
                         <div className="changing">
                             <h2 className="text before">green thumb idea</h2>
-                        </div>
+                        </div> */}
                     </div>
                 </section>
                 <section className="second-text">
@@ -51,6 +45,58 @@ class Splash extends React.Component {
                     <div className="grid">
 
                         <div className="column">
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/donkey.jpeg" /></div>
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/flamingo.jpeg" /></div>
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/bitetail.jpeg" /></div>
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/parot.jpeg" /></div>
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/peacock.jpeg" /></div>
+                        </div>
+                        <div className="column">
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/hairpin.jpeg" /></div>
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/giraffe.jpeg" /></div>
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/catdog.jpeg" /></div>
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/yesmaster.jpeg" /></div>
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/pumadog.jpeg" /></div>
+                        </div>
+                        <div className="column">
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/yesmaster.jpeg" /></div>
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/wronged.jpeg" /></div>
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/bunny.jpeg" /></div>
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/chinchilla.jpeg" /></div>
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/deer.jpeg" /></div>
+                        </div>
+                        <div className="column">
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/panda1.jpeg" /></div>
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/watching.jpeg" /></div>
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/duck.jpeg" /></div>
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/elephant.jpeg" /></div>
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/foxes.jpeg" /></div>
+                        </div>
+                        <div className="column">
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/goodsleep.jpeg" /></div>
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/lamb.jpeg" /></div>
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/owl.jpeg" /></div>
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/panda.jpeg" /></div>
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/penguins.jpeg" /></div>
+                        </div>
+                        <div className="column">
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/whatamidoing.jpeg" /></div>
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/piglet.jpeg" /></div>
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/polarbear.jpeg" /></div>
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/puppyonhand.jpeg" /></div>
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/seal.jpeg" /></div>
+                        </div>
+                        <div className="column">
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/skunk1.jpeg" /></div>
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/sleepingfox.jpeg" /></div>
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/tapir.jpeg" /></div>
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/dikdik.jpeg" /></div>
+                            <div className="pic before"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/skunk.jpeg" /></div>
+                        </div>
+                    </div>
+
+                    {/* <div className="grid">
+                        <div className="column">
                             <div className="pic before"></div>
                             <div className="pic before"></div>
                             <div className="pic before"></div>
@@ -202,61 +248,13 @@ class Splash extends React.Component {
                             <div className="pic before"></div>
                             <div className="pic before"></div>
                             <div className="pic before"></div>
-                        </div>
-                    </div>
-
-                    <div className="grid">
-                        <div className="column">
-                            <div className="pic before"></div>
-                            <div className="pic before"></div>
-                            <div className="pic before"></div>
-                            <div className="pic before"></div>
-                            <div className="pic before"></div>
-                        </div>
-                        <div className="column">
-                            <div className="pic before"></div>
-                            <div className="pic before"></div>
-                            <div className="pic before"></div>
-                            <div className="pic before"></div>
-                            <div className="pic before"></div>
-                        </div>
-                        <div className="column">
-                            <div className="pic before"></div>
-                            <div className="pic before"></div>
-                            <div className="pic before"></div>
-                            <div className="pic before"></div>
-                            <div className="pic before"></div>
-                        </div>
-                        <div className="column">
-                            <div className="pic before"></div>
-                            <div className="pic before"></div>
-                            <div className="pic before"></div>
-                            <div className="pic before"></div>
-                            <div className="pic before"></div>
-                        </div>
-                        <div className="column">
-                            <div className="pic before"></div>
-                            <div className="pic before"></div>
-                            <div className="pic before"></div>
-                            <div className="pic before"></div>
-                            <div className="pic before"></div>
-                        </div>
-                        <div className="column">
-                            <div className="pic before"></div>
-                            <div className="pic before"></div>
-                            <div className="pic before"></div>
-                            <div className="pic before"></div>
-                            <div className="pic before"></div>
-                        </div>
-                        <div className="column">
-                            <div className="pic before"></div>
-                            <div className="pic before"></div>
-                            <div className="pic before"></div>
-                            <div className="pic before"></div>
-                            <div className="pic before"></div>
-                        </div>
-                    </div>
+                        </div> */}
+                    {/* </div> */}
                 </div>
+                    {/* <script>{Script.setupAnimationCycle = () => ({
+                        timePerScreen: 2000,
+                        exitDelay: 200 * 7
+                    })}</script> */}
             </div>
         )}; 
 

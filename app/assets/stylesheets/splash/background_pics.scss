@@ -55,8 +55,15 @@
 .pic {
     width: 240px;
     height: 350px;
-    background-color: silver;
+    background-color: transparent;
     border-radius: 10px;
+
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+    }
 }
 
 .pic:not(first-child) {

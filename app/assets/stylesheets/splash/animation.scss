@@ -1,11 +1,11 @@
-// .before {
-//   transform: translateY(40px);
-//   opacity: 0;
-//   pointer-events: none;
-// }
+.animate-before {
+  transform: translateY(40px);
+  opacity: 0;
+  pointer-events: none;
+}
 
-// .after {
-//   transform: translateY(-40px);
-//   opacity: 0;
-//   pointer-events: none;
-// }
+.animate-after {
+  transform: translateY(-40px);
+  opacity: 0;
+  pointer-events: none;
+}

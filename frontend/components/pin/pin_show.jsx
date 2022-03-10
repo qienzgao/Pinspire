@@ -6,8 +6,12 @@ class PinShow extends React.Component {
     componentDidMount() {
         this.props.fetchPin(this.props.match.params.pinId)
             .then(() => {
-                this.props.fetchUser(this.props.pin.user_id)
+                this.props.fetchUser(this.props.pin.user_id)  
             })
+                .then(() => {
+                    this.props.fetchPins()
+                })
+                
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -33,7 +37,7 @@ class PinShow extends React.Component {
         if (!pin || !users) return null; 
         const user = users[pin.user_id]
         const defaultAvatar = "https://pinspire-seeds.s3.us-east-1.amazonaws.com/defaultavatar.png";
-        const avatar = user.imgUrl ? <img className='avatar' src={user.imgUrl} /> : <img className='avatar-default' src={defaultAvatar} />
+        const avatar = user ? <img className='avatar' src={user.imgUrl} /> : <img className='avatar-default' src={defaultAvatar} />
 
         return (
             <div className="background-show">

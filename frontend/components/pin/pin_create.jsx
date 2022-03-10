@@ -23,6 +23,18 @@ class PinCreate extends React.Component {
         })); 
     }
 
+    parseEmail(email) {
+        let username = '';
+        for (let i = 0; i < email.length; i++) {
+            if (email[i] === '@') {
+                return username
+            } else {
+                username += email[i]
+            }
+        }
+        return username
+    }
+
     handleSubmit(e){
         e.preventDefault(); 
         const formData = new FormData();
@@ -53,6 +65,10 @@ class PinCreate extends React.Component {
     }
 
     render() {
+        const user = this.props.user
+        const defaultAvatar = "https://pinspire-seeds.s3.us-east-1.amazonaws.com/defaultavatar.png";
+        const avatar = user.imgUrl ? <img className='avatar' src={user.imgUrl} /> : <img className='avatar-default' src={defaultAvatar} />
+
         const preview = <div className="preview-container">
             <img className="preview" src={this.state.imgUrl} />
         </div>
@@ -93,7 +109,8 @@ class PinCreate extends React.Component {
                         </div>
 
                         <div className='user-display'>
-                            <h3 className='email-display'>{this.props.user.email}</h3>
+                            {avatar}
+                            <h3 className='email-display'>{this.parseEmail(user.email)}</h3>
                         </div>
 
                         <div className="details-container">

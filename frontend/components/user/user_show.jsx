@@ -1,6 +1,7 @@
 import { EmailSharp } from '@mui/icons-material';
 import React from 'react';
 import PinIndexItem from '../pin/pin_index_item';
+import { Link } from "react-router-dom";
 
 class UserShow extends React.Component {
 
@@ -27,7 +28,6 @@ class UserShow extends React.Component {
         const avatar = user.imgUrl ? <img className='avatar' src={user.imgUrl} /> : <img className='avatar-default' src={defaultAvatar}/>
         const defaultCover = 'https://pinspire-seeds.s3.us-east-1.amazonaws.com/glassflower.jpeg';
         const cover = user.coverUrl ? <img className='cover-img' src={user.coverUrl} /> : <img className='cover-img' src={defaultCover} />
-
 
         if (!users || !user) return null;
 
@@ -63,6 +63,9 @@ class UserShow extends React.Component {
                         </div>
                     </div>
                 </section> */}
+                <div className="create-pin-button-container">
+                    <Link to="/pins/create"><button className="create-pin-button">+</button></Link>
+                </div>
 
             </div>
         )

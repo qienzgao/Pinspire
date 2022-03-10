@@ -15,7 +15,8 @@ class User < ApplicationRecord
     validates :password, length: { minimum: 6, allow_nil: true } 
     validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, on: :create
 
-    has_one_attached :img        
+    has_one_attached :img
+    has_one_attached :cover        
 
     has_many :pins, 
         primary_key: :id, 

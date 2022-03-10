@@ -23,7 +23,11 @@ class UserShow extends React.Component {
 
     render() {
         const { user, users } = this.props;
-        const avatar = user.imgUrl? <img className='avatar' src={user.imgUrl}/> : <img className='avatar' src=""/>
+        const defaultAvatar = "https://pinspire-seeds.s3.us-east-1.amazonaws.com/defaultavatar.png";
+        const avatar = user.imgUrl ? <img className='avatar' src={user.imgUrl} /> : <img className='avatar-default' src={defaultAvatar}/>
+        const defaultCover = 'https://pinspire-seeds.s3.us-east-1.amazonaws.com/glassflower.jpeg';
+        const cover = user.coverUrl ? <img className='cover-img' src={user.coverUrl} /> : <img className='cover-img' src={defaultCover} />
+
 
         if (!users || !user) return null;
 
@@ -31,7 +35,7 @@ class UserShow extends React.Component {
             <div >                
                 <section className='profile-background'>
                     <div className="profile-cover">
-                        <img className="" src="" />
+                        {cover}
                     </div>
 
                     <div className="avatar-container">

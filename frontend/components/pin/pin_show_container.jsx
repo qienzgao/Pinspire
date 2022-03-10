@@ -5,7 +5,7 @@ import PinShow from './pin_show';
 
 const mSTP = (state, ownProps) => ({
     pin: state.entities.pins[ownProps.match.params.pinId],
-    user: state.entities.users
+    users: state.entities.users
 })
 
 const mDTP = dispatch => ({

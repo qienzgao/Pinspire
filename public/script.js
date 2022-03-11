@@ -1,46 +1,47 @@
 const grids = document.querySelectorAll('.grid')
 const headings = document.querySelectorAll('.welcome-inspiration .wrapper .text')
 
-function enterScreen(index) {
-    const grid = grids[index]
-    const heading = headings[index]
+const onScreen = (idx) => {
+    const grid = grids[idx]
+    const heading = headings[idx]
     const gridColumns = grid.querySelectorAll('.column')
 
     grid.classList.add('active')
 
-    gridColumns.forEach(element => {
-        element.classList.remove('animate-before', 'animate-after')
+    gridColumns.forEach(ele => {
+        ele.classList.remove('animate-before', 'animate-after')
     })
+
 
     heading.classList.remove('animate-before', 'animate-after')
 }
 
-function exitScreen(index, exitDelay) {
-    const grid = grids[index]
-    const heading = headings[index]
+const offScreen = (idx, delay) => {
+    const grid = grids[idx]
+    const heading = headings[idx]
     const gridColumns = grid.querySelectorAll('.column')
 
-    gridColumns.forEach(element => {
-        element.classList.add('animate-after')
+    gridColumns.forEach(ele => {
+        ele.classList.add('animate-after')
     })
 
     heading.classList.add('animate-after')
 
     setTimeout(() => {
         grid.classList.remove('active')
-    }, exitDelay)
+    }, delay)
 }
 
-function setupAnimationCycle({ timePerScreen, exitDelay }) {
-    const cycleTime = timePerScreen + exitDelay
+const animate = ({ timePerScreen, delay }) => {
+    const cycleTime = timePerScreen + delay
     let nextIndex = 0
 
-    function nextCycle() {
+    let nextCycle = () => {
         const currentIndex = nextIndex
 
-        enterScreen(currentIndex)
+        onScreen(currentIndex)
 
-        setTimeout(() => exitScreen(currentIndex, exitDelay), timePerScreen)
+        setTimeout(() => offScreen(currentIndex, delay), timePerScreen)
 
         nextIndex = nextIndex >= grids.length - 1 ? 0 : nextIndex + 1
     }
@@ -50,9 +51,9 @@ function setupAnimationCycle({ timePerScreen, exitDelay }) {
     setInterval(nextCycle, cycleTime)
 }
 
-setupAnimationCycle({
+animate({
     timePerScreen: 5000,
-    exitDelay: 1400 
+    delay: 1400 
 })
 
 

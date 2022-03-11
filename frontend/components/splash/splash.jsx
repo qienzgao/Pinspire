@@ -31,11 +31,14 @@ class Splash extends React.Component {
                                 <h2 id="friends" className="text animate-before">joy with litte friends</h2>
                             </div>
                             <div className="changing">
-                                <h2 id="decor" className="text animate-before">home decor inspiration</h2>
+                                <h2 id="decor" className="text animate-before">decoration inspiration</h2>
                             </div>
                             <div className="changing">
                                 <h2 id="food" className="text animate-before">feast inspiration</h2>
                             </div>
+                            {/* <div className="changing">
+                                <h2 id="outdoor" className="text animate-before">experience of wildness</h2>
+                            </div> */}
                         </div>
                     </section>
 
@@ -99,55 +102,106 @@ class Splash extends React.Component {
                             <div className="grid">
                                 <div className="column animate-before">
                                     <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/wooden.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/yard.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/plant3.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/bebrilliant.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/bike.jpeg" /></div>
                                     <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/welcome2.jpeg" /></div>
                                     <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/plants.jpeg" /></div>
                                 </div>
                                 <div className="column animate-before">
                                     <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/whitepainting.jpeg" /></div>
                                     <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/welcome.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/warmlight.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/candle.jpeg" /></div>
                                     <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/shelf.jpeg" /></div>
                                     <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/paintings.jpeg" /></div>
                                 </div>
                                 <div className="column animate-before">
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/radio.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/yard2.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/plant2.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/painting4.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/chairs.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/coffeebar.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/office3.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/painting.jpeg" /></div>
                                     <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/office2.jpeg" /></div>
                                 </div>
                                 <div className="column animate-before">
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/photoonshelf.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/painting2.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/pottery.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/pottery2.jpeg" /></div>
                                     <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/organized.jpeg" /></div>
                                     <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/office.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/night.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/quaileggs.jpeg" /></div>
                                 </div>
                                 <div className="column animate-before">
                                     <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/mirror.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/bed5.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/lights.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/flower2.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/bed4.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/shelf2.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/simple.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/vase.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/welcome.jpeg" /></div>
                                 </div>
                                 <div className="column animate-before">
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/green.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/xmastree.jpeg" /></div>
                                     <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/bed2.jpeg" /></div>
                                     <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/kitchen.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/flower.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/xmastree2.jpeg" /></div>
                                     <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/dontbeaprick.jpeg" /></div>
                                 </div>
                                 <div className="column animate-before">
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/basket.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/closet.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/paintings2.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/whitepainting2.jpeg" /></div>
                                     <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/bed.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/baywindow.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/deerdecor.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/painting.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/office.jpeg" /></div>
                                 </div>
                             </div>
                             <div className="grid">
+                                <div className="column animate-before">
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/bento.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/bacon.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/avocadotoast.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/bread.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/breakfast.jpeg" /></div>
+                                </div>
+                                <div className="column animate-before">
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/acai.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/bao.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/macron.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/cheesebowl.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/fish.jpeg" /></div>
+                                </div>
+                                <div className="column animate-before">
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/bun.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/chococake.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/coffee.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/crawfish.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/donuts.jpeg" /></div>
+                                </div>
+                                <div className="column animate-before">
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/pasta.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/pancake.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/pizza.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/precooked.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/noodles.jpeg" /></div>
+                                </div>
+                                <div className="column animate-before">
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/salad.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/bbq.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/oil.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/pasta2.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/sandwich.jpeg" /></div>
+                                </div>
+                                <div className="column animate-before">
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/share.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/shortrib.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/shrimps.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/snails.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/pie.jpeg" /></div>
+                                </div>
+                                <div className="column animate-before">
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/sushi.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/tacos.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/tacos2.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/vegs.jpeg" /></div>
+                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/whitechoco.jpeg" /></div>
+                                </div>
+                            </div>
+                            {/* <div className="grid">
                                 <div className="column animate-before">
                                     <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/bento.jpeg" /></div>
                                     <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/bacon.jpeg" /></div>
@@ -197,7 +251,7 @@ class Splash extends React.Component {
                                     <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/vegs.jpeg" /></div>
                                     <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/whitechoco.jpeg" /></div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

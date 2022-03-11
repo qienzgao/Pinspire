@@ -16,6 +16,22 @@ user1.img.attach(io: avatar1, filename: 'avatar.jpg')
 cover1 = open('https://pinspire-seeds.s3.us-east-1.amazonaws.com/ramen.png')
 user1.cover.attach(io: cover1, filename: 'ramen.png')
 
+user2 = User.create!(email: "SugarCookie@email.com", age: 18, password: "lovetea")
+avatar2 = open('https://pinspire-seeds.s3.us-east-1.amazonaws.com/cookie.png')
+user2.img.attach(io: avatar2, filename: 'cookie.png')
+cover2 = open('https://pinspire-seeds.s3.us-east-1.amazonaws.com/random/tea.jpeg')
+user2.cover.attach(io: cover2, filename: 'tea.png')
+
+user3 = User.create!(email: "apple@email.com", age: 31, password: "password")
+user4 = User.create!(email: "banana@email.com", age: 25, password: "password")
+user5 = User.create!(email: "candy@email.com", age: 45, password: "password")
+user6 = User.create!(email: "durian@email.com", age: 21, password: "password")
+user7 = User.create!(email: "eggplant@email.com", age: 39, password: "password")
+user8 = User.create!(email: "fig@email.com", age: 33, password: "password")
+user9 = User.create!(email: "grape@email.com", age: 22, password: "password")
+user10 = User.create!(email: "honeydew@email.com", age: 31, password: "password")
+
+
 pin1 = Pin.create!(title: "Awwww don't look at me like that", details: "Yes master!", user_id: user1.id)
 img1 = open("https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/yesmaster.jpeg")
 pin1.img.attach(io: img1, filename: 'yesmaster.jpeg')
@@ -98,11 +114,7 @@ pin20.img.attach(io: img20, filename: 'shrimps.jpeg')
 
 
 
-user2 = User.create!(email: "SugarCookie@email.com", age: 18, password: "lovetea")
-avatar2 = open('https://pinspire-seeds.s3.us-east-1.amazonaws.com/cookie.png')
-user2.img.attach(io: avatar2, filename: 'cookie.png')
-cover2 = open('https://pinspire-seeds.s3.us-east-1.amazonaws.com/random/tea.jpeg')
-user2.cover.attach(io: cover2, filename: 'tea.png')
+
 
 pin21 = Pin.create!(title: "CRAWFISH IS SOOOOO GOOD!", details: "Too good to describe!!!", user_id: user2.id)
 img21 = open("https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/crawfish.jpeg")
@@ -157,8 +169,8 @@ img33 = open("https://pinspire-seeds.s3.us-east-1.amazonaws.com/random/nycnight.
 pin33.img.attach(io: img33, filename: 'nycnight.jpeg')
 
 pin34 = Pin.create!(title: "Pinky Pinky", details: "I love his outfit!", user_id: user2.id)
-img34 = open("https://pinspire-seeds.s3.us-east-1.amazonaws.com/random/pinky.jpeg")
-pin34.img.attach(io: img34, filename: 'pinky.jpeg')
+img34 = open("https://pinspire-seeds.s3.us-east-1.amazonaws.com/random/pinkoutfit.jpeg")
+pin34.img.attach(io: img34, filename: 'pinkoutfit.jpeg')
 
 pin35 = Pin.create!(title: "GURLS!", details: "SOOOOO PRETTY!", user_id: user2.id)
 img35 = open("https://pinspire-seeds.s3.us-east-1.amazonaws.com/random/pretty.jpeg")
@@ -184,9 +196,6 @@ pin40 = Pin.create!(title: "Awwww I need a cat like this!", details: "Cats alway
 img40 = open("https://pinspire-seeds.s3.us-east-1.amazonaws.com/friends/catdog.jpeg")
 pin40.img.attach(io: img40, filename: 'catdog.jpeg')
 
-
-user3 = User.create!(email: "apple@email.com", age: 31, password: "password")
-
 pin41 = Pin.create!(title: "Fire", details: "What's in your mind?", user_id: user3.id)
 img41 = open("https://pinspire-seeds.s3.us-east-1.amazonaws.com/random/fire.jpeg")
 pin41.img.attach(io: img41, filename: 'fire.jpeg')
@@ -208,7 +217,7 @@ img45 = open("https://pinspire-seeds.s3.us-east-1.amazonaws.com/random/nyc.jpeg"
 pin45.img.attach(io: img45, filename: 'nyc.jpeg')
 
 
-user4 = User.create!(email: "banana@email.com", age: 25, password: "password")
+
 
 pin46 = Pin.create!(title: "Beautiful Design", details: "What's in your mind?", user_id: user4.id)
 img46 = open("https://pinspire-seeds.s3.us-east-1.amazonaws.com/random/scaleshape.jpeg")
@@ -230,10 +239,5 @@ pin50 = Pin.create!(title: "Home", details: "What's in your mind?", user_id: use
 img50 = open("https://pinspire-seeds.s3.us-east-1.amazonaws.com/decor/wooden.jpeg")
 pin50.img.attach(io: img50, filename: 'wooden.jpeg')
 
-user5 = User.create!(email: "candy@email.com", age: 45, password: "password")
-user6 = User.create!(email: "durian@email.com", age: 21, password: "password")
-user7 = User.create!(email: "eggplant@email.com", age: 39, password: "password")
-user8 = User.create!(email: "fig@email.com", age: 33, password: "password")
-user9 = User.create!(email: "grape@email.com", age: 22, password: "password")
-user10 = User.create!(email: "honeydew@email.com", age: 31, password: "password")
+
 

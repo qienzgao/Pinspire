@@ -3,6 +3,7 @@ import PinIndexItem from "../pin/pin_index_item";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import SignupFormContainer from "../session/signup_form_container";
 
 class Splash extends React.Component {
     constructor(props){
@@ -48,8 +49,13 @@ class Splash extends React.Component {
                         </div>
                     </section>
 
-                    <section className="second-text">
-                        <h2 className="signup-text">Sign up to get your ideas</h2>
+                    <section className="second-page">
+                        <div className="second-text-container">
+                            <h2 className="signup-text">Sign up to get your ideas</h2>
+                        </div>
+                        <div className="landing-signup-container">
+                            <SignupFormContainer/>
+                        </div>
                     </section>
 
                     <div className="background-pics">

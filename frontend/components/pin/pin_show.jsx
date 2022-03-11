@@ -3,19 +3,18 @@ import { Link } from "react-router-dom";
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 
 class PinShow extends React.Component {
-    componentDidMount() {
-        this.props.fetchPin(this.props.match.params.pinId)
-            .then(() => {
-                this.props.fetchUser(this.props.pin.user_id)  
-            })
-                .then(() => {
-                    this.props.fetchPins()
-                })
-                    .then(() => {
-                        this.props.fetchUsers()
-                    })
-                
+    
+    constructor(props){
+        super(props)
         this.handleSubmit = this.handleSubmit.bind(this);
+        
+    }
+    componentDidMount() {
+        this.props.fetchPins(); 
+        this.props.fetchUsers();
+        this.props.fetchPin(this.props.match.params.pinId);
+        this.props.fetchUser(this.props.pin.user_id); 
+
     }
 
     handleSubmit(e) {

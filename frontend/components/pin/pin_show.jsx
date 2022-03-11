@@ -11,6 +11,9 @@ class PinShow extends React.Component {
                 .then(() => {
                     this.props.fetchPins()
                 })
+                    .then(() => {
+                        this.props.fetchUsers()
+                    })
                 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -25,6 +28,8 @@ class PinShow extends React.Component {
         for (let i = 0; i < email.length; i++) {
             if (email[i] === '@') {
                 return username
+            } else if (i === 0) {
+                username += email[i].toUpperCase()
             } else {
                 username += email[i]
             }
@@ -67,9 +72,10 @@ class PinShow extends React.Component {
                     <div className="details-display-container">
                         <h3 className='details-display'>{pin.details}</h3>
                     </div>
-
                     <div className="user-show-display">
-                        {user? avatar: null}
+                        <Link to={`/users/${user.id}`}>
+                            {avatar}
+                        </Link>
                         <h3 className='email-show'>{user? this.parseEmail(user.email): null}</h3>
                     </div>
 

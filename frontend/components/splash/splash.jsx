@@ -2,6 +2,7 @@ import React from "react";
 import PinIndexItem from "../pin/pin_index_item";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 class Splash extends React.Component {
     constructor(props){
@@ -39,6 +40,11 @@ class Splash extends React.Component {
                             {/* <div className="changing">
                                 <h2 id="outdoor" className="text animate-before">experience of wildness</h2>
                             </div> */}
+                        </div>
+                        <div className='arrow-down'>
+                            <button>
+                                <KeyboardArrowDownIcon fontSize="large" />
+                            </button>
                         </div>
                     </section>
 

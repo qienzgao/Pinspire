@@ -11,7 +11,7 @@ const mSTP = (state, ownProps) => ({
 const mDTP = dispatch => ({
     fetchPins: () => dispatch(fetchPins()),
     fetchPin: pinId => dispatch(fetchPin(pinId)),
-    fetchUsers: () => dispatch(fetchUser()),
+    fetchUsers: () => dispatch(fetchUsers()),
     fetchUser: userId => dispatch(fetchUser(userId)),
 })
 

@@ -67,7 +67,7 @@ class UserShow extends React.Component {
                     </div>
 
                     <div className='about-me'>
-                        <span>Hey there! You finally come! There are a lot I want to share about myself, scroll down and see what I've got!</span>
+                        <span>Hey you finally come! There are a lot I want to share with you, scroll down and see what I've got! Life is all about seeking inspirations!</span>
                     </div>
                     
                     <div className='arrow-down'>

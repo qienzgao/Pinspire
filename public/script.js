@@ -1,5 +1,5 @@
-const grids = document.querySelectorAll('.grid')
-const headings = document.querySelectorAll('.welcome-inspiration .wrapper .text')
+const grids = grids? grids : document.querySelectorAll('.grid')
+const headings = headings? headings : document.querySelectorAll('.welcome-inspiration .wrapper .text')
 
 const onScreen = (idx) => {
     const grid = grids[idx]

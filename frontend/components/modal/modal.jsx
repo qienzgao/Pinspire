@@ -3,9 +3,13 @@ import LoginForm from '../session/login_form_container';
 import SignupForm from '../session/signup_form_container';
 import SavedModal from '../pin/pin_saved_modal';
 
+
 const Modal = ({ modal }) => {
     if (!modal) {
-        return null;
+        document.body.style.overflow = 'scroll';
+        return null
+    } else {
+        document.body.style.overflow = 'hidden'
     }
     let component;
     switch (modal) {

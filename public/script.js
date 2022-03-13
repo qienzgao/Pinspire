@@ -1,7 +1,7 @@
-const grids = grids? grids : document.querySelectorAll('.grid')
-const headings = headings? headings : document.querySelectorAll('.welcome-inspiration .wrapper .text')
+var grids = document.querySelectorAll('.grid')
+var headings = document.querySelectorAll('.welcome-inspiration .wrapper .text')
 
-const onScreen = (idx) => {
+var onScreen = (idx) => {
     const grid = grids[idx]
     const heading = headings[idx]
     const gridColumns = grid.querySelectorAll('.column')
@@ -16,7 +16,7 @@ const onScreen = (idx) => {
     heading.classList.remove('animate-before', 'animate-after')
 }
 
-const offScreen = (idx, delay) => {
+var offScreen = (idx, delay) => {
     const grid = grids[idx]
     const heading = headings[idx]
     const gridColumns = grid.querySelectorAll('.column')
@@ -32,7 +32,7 @@ const offScreen = (idx, delay) => {
     }, delay)
 }
 
-const animate = ({ timePerScreen, delay }) => {
+var animate = ({ timePerScreen, delay }) => {
     const cycleTime = timePerScreen + delay
     let nextIndex = 0
 

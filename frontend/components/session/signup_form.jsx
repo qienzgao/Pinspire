@@ -35,11 +35,21 @@ class SignupForm extends React.Component {
     handleDemoUser(e) {
         e.preventDefault();
         const demo = {
-            email: "OolongTea@email.com", 
-            password: "oolongtea", 
+            email: "SugarCookie@email.com", 
+            password: "lovetea", 
         }
         this.setState(demo);
         this.props.loginDemo(demo).then(this.props.close);
+    }
+
+    handleOolongTea(e) {
+        e.preventDefault();
+        const demo = {
+            email: "OolongTea@email.com",
+            password: "oolongtea",
+        }
+        this.setState(demo);
+        this.props.submit(demo).then(this.props.close);
     }
 
     renderError() {
@@ -105,7 +115,7 @@ class SignupForm extends React.Component {
                     <button className="signup-button" type="submit">Continue</button>
                     <h3>OR</h3>
                     <button className='login-button' id='demo' onClick={e => this.handleDemoUser(e)}>Continue with DemoLogin</button>
-                    <button className='login-button' id='demotea' onClick={e => this.handleDemoUser(e)}>Continue as OolongTea</button>
+                    <button className='login-button' id='demotea' onClick={e => this.handleOolongTea(e)}>Continue as OolongTea</button>
                     <div className='text-msg'>
                         <span>By continuing, you agree to accept Pinspire's
                             <br />

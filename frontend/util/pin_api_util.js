@@ -5,7 +5,6 @@ export const fetchPin = pinId => (
 );
 
 export const fetchPins = () => {
-    console.log("test")
     return(
     $.ajax({
         url: '/api/pins',

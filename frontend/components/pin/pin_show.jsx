@@ -6,15 +6,21 @@ class PinShow extends React.Component {
     
     constructor(props){
         super(props)
-        this.handleSubmit = this.handleSubmit.bind(this);
         
     }
-    componentDidMount() {
-        this.props.fetchPins(); 
-        this.props.fetchUsers();
-        this.props.fetchPin(this.props.match.params.pinId);
-        this.props.fetchUser(this.props.pin.user_id); 
 
+    componentDidMount() {
+        this.props.fetchPin(this.props.match.params.pinId)
+            .then(() => {
+                // this.props.fetchUsers()
+                // .then(() => {
+                    this.props.fetchUser(this.props.pin.user_id)
+                    .then(() => {
+                        this.props.fetchPins()
+                    })
+                // })
+            })
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(e) {
@@ -72,7 +78,7 @@ class PinShow extends React.Component {
                         <h3 className='details-display'>{pin.details}</h3>
                     </div>
                     <div className="user-show-display">
-                        <Link to={`/users/${user.id}`}>
+                        <Link to={`/users/${pin.user_id}`}>
                             {avatar}
                         </Link>
                         <h3 className='email-show'>{user? this.parseEmail(user.email): null}</h3>

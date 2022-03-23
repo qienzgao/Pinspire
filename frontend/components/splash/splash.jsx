@@ -21,6 +21,7 @@ class Splash extends React.Component {
 
         const mainPage = () => {
             return (
+                // <div className="mainpage-wrapper">
                 <div id="mainpage" ref={el => (this.div = el)}>
                     <Helmet>
                         <script src="script.js"></script>
@@ -57,6 +58,8 @@ class Splash extends React.Component {
                             <SignupFormContainer/>
                         </div>
                     </section>
+                    
+                    
 
                     <div className="background-pics">
                         <div className="grid-container">
@@ -264,9 +267,10 @@ class Splash extends React.Component {
                                     <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/whitechoco.jpeg" /></div>
                                 </div>
                             </div> */}
+                            </div>
                         </div>
                     </div>
-                </div>
+                // </div>
         )}; 
 
 

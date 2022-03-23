@@ -2,6 +2,7 @@ import React from 'react';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import { Link } from 'react-router-dom';
 
 const NavLinks = ({ currentUser, logout, open}) => {
@@ -15,15 +16,15 @@ const NavLinks = ({ currentUser, logout, open}) => {
             <nav className="navlinks">
                 <div className="about-links">
                     <div className="about-button" >
-                        <a href="">About</a>
+                        <a href="http://qiengao.com" target="_blank">Portfolio</a>
                     </div>
 
                     <div className="linkedin-button" >
-                        <a href="https://www.linkedin.com/in/qien-gao-1390071a7/">Linkedin</a> 
+                        <a href="https://www.linkedin.com/in/qien-gao-1390071a7/" target="_blank">Linkedin</a> 
                     </div>
 
                     <div className="git-button">
-                        <a href="https://github.com/qienzgao">Github</a> 
+                        <a href="https://github.com/qienzgao" target="_blank">Github</a> 
                     </div>
                 </div>
 
@@ -58,14 +59,21 @@ const NavLinks = ({ currentUser, logout, open}) => {
                     </div>
 
                 <div className="personal">
+
+                    <div className="icons">
+                        <a href="https://qiengao.com" target="_blank">
+                            <AccountBoxIcon className="icon" color="action" fontSize="large" />
+                        </a>
+                    </div>
+
                     <div className="icons" >
-                        <a href="https://www.linkedin.com/in/qien-gao-1390071a7/">
+                    <a href="https://www.linkedin.com/in/qien-gao-1390071a7/" target="_blank">
                             <LinkedInIcon className="icon" color="action" fontSize='large'/>
                         </a>
                     </div>
 
                     <div className="icons">
-                        <a href="https://github.com/qienzgao">
+                    <a href="https://github.com/qienzgao" target="_blank">
                             <GitHubIcon className="icon" color="action" fontSize="large"/>
                         </a>
                     </div>

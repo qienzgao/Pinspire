@@ -5,9 +5,12 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-  </head>
+
+    <meta property="og:description" content="Pinspire, a clone project of Pinterest"/>
+    <meta property="og:image" content="s3://pinspire-seeds/Screen Shot 2022-03-22 at 1.26.58 AM.png" />
+    <link rel="icon" type="image/x-icon" href="https://pinspire-seeds.s3.us-east-1.amazonaws.com/p_favicon.png">
 
   <body>
     <%= yield %>

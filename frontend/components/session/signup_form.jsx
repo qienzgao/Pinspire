@@ -80,7 +80,7 @@ class SignupForm extends React.Component {
                     <span>&times;</span>
                 </button>
                 <div className='pinspire-sign'>
-                    <img className="pinspire-img" src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/logo.jpeg"/>
+                    <img className="pinspire-img" src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/p_favicon.png"/>
                 </div>
                 <br />
                 <div className='form-title'>

@@ -4,7 +4,7 @@ import { fetchPins } from '../../actions/pin_actions';
 import SavedPinsIndex from './saved_pins_index';
 
 const mSTP = (state) => ({
-    saved_pins: Object.values(state.entities.saved_pins),
+    savedPins: Object.values(state.entities.savedPins),
     pins: state.entities.pins
 })
 

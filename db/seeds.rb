@@ -9,9 +9,10 @@ require "open-uri"
 
 User.destroy_all
 Pin.destroy_all
+Board.destroy_all
 
 user1 = User.create!(email: "OolongTea@email.com", age: 18, password: "oolongtea")
-avatar1 = open('https://pinspire-seeds.s3.us-east-1.amazonaws.com/avatar.jpeg')
+avatar1 = open('https://pinspire-seeds.s3.us-east-1.amazonaws.com/avartar.jpeg')
 user1.img.attach(io: avatar1, filename: 'avatar.jpg')
 cover1 = open('https://pinspire-seeds.s3.us-east-1.amazonaws.com/ramen.png')
 user1.cover.attach(io: cover1, filename: 'ramen.png')
@@ -30,6 +31,18 @@ user7 = User.create!(email: "eggplant@email.com", age: 39, password: "password")
 user8 = User.create!(email: "fig@email.com", age: 33, password: "password")
 user9 = User.create!(email: "grape@email.com", age: 22, password: "password")
 user10 = User.create!(email: "honeydew@email.com", age: 31, password: "password")
+
+board1 = Board.create!(name: "Mood", details: "Something in my mind", public: true, user_id: user1.id)
+board2 = Board.create!(name: "Food", details: "I need to eat!", public: true, user_id: user1.id)
+board3 = Board.create!(name: "Good", details: "Share something good in my life", public: true, user_id: user1.id)
+board4 = Board.create!(name: "Cool", details: "Cool things happen", public: true, user_id: user1.id)
+board5 = Board.create!(name: "Secret", details: "Nobody knows...", public: true, user_id: user1.id)
+
+board6 = Board.create!(name: "City", details: "It's been noisy but I still love it", public: true, user_id: user2.id)
+board7 = Board.create!(name: "It's been in in my mind", details: "And I shall never tell", public: true, user_id: user2.id)
+board8 = Board.create!(name: "I like it!", details: "Live to eat", public: true, user_id: user2.id)
+board9 = Board.create!(name: "Why not?", details: "I really want to make it!", public: true, user_id: user2.id)
+board10 = Board.create!(name: "Secret", details: "This is a secret board", public: true, user_id: user2.id)
 
 
 pin1 = Pin.create!(title: "Awwww don't look at me like that", details: "Yes master!", user_id: user1.id)

@@ -7,6 +7,8 @@ import SplashContainer from "./splash/splash_container";
 import PinCreateContainer from "./pin/pin_create_container";
 import PinShowContainer from "./pin/pin_show_container";
 import UserShowContainer from "./user/user_show_container";
+import BoardShowContainer from "./boards/board_show_container";
+import EditBoardFormContainer from './boards/edit_board_form_container';
 
 
 const App = () => (
@@ -21,6 +23,8 @@ const App = () => (
             <AuthRoute path="/pins/create" component={PinCreateContainer} />
             <AuthRoute exact path="/pins/:pinId" component={PinShowContainer} />
             <AuthRoute exact path="/users/:userId" component={UserShowContainer} />
+            <AuthRoute exact path="/boards/:boardId" component={BoardShowContainer} />
+            <AuthRoute path="/boards/:boardId/edit" component={EditBoardFormContainer} />
         </Switch>
     </div>
 );

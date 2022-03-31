@@ -4,6 +4,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import { Link } from 'react-router-dom';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const NavLinks = ({ currentUser, logout, open}) => {
     const sessionLinks = () => (
@@ -89,7 +90,7 @@ const NavLinks = ({ currentUser, logout, open}) => {
                     <div className='profile'>
                         <Link to="/">
                             <button className="logout-button" onClick={() => logout()}>
-                                <KeyboardArrowDownIcon color='action'/>
+                                <LogoutIcon color='action'/>
                             </button>
                         </Link>
                     </div>

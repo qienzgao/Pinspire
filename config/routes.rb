@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :show, :create, :update]
     resource :session, only: [:create, :destroy, :show]
     resources :pins, only: [:index, :create, :destroy, :show, :update]
+    resources :boards, only: [:index, :show, :create, :update, :destroy]
+    resources :saved_pins, only: [:index, :create, :destroy]
   end
 
   root "static_pages#root"

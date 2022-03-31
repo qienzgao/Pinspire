@@ -98,9 +98,9 @@ class LoginForm extends React.Component {
                     <span className='errors'>{this.state.invalidPass}</span>
                     <span className='errors'>{errors}</span>
                     
-                    <div className='forget'>
+                    {/* <div className='forget'>
                         <label>Forgot your password?</label>
-                    </div>
+                    </div> */}
                     <button className="login-button" type="submit">Log in</button>
                     <br />
                     <h3>OR</h3>

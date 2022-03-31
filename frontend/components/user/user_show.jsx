@@ -2,6 +2,7 @@ import React from 'react';
 import PinIndexItem from '../pin/pin_index_item';
 import { Link } from "react-router-dom";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import BoardIndexContainer from '../boards/board_index_container';
 
 class UserShow extends React.Component {
 
@@ -75,6 +76,10 @@ class UserShow extends React.Component {
                             <KeyboardArrowDownIcon fontSize="large"/>
                         </button>
                     </div>
+                </section>
+
+                <section>
+                    <BoardIndexContainer/>
                 </section>
 
                 <section className='ideas'>

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { createBoard } from '../../actions/board_actions';
-import { close } from '../../actions/modal_actions';
+import { closeBoardModal} from '../../actions/board_modal_actions';
 import BoardForm from './board_form';
 
 const mSTP = (state) => ({
@@ -16,7 +16,7 @@ const mSTP = (state) => ({
 
 const mDTP = dispatch => ({
     submitBoard: board => dispatch(createBoard(board)),
-    close: () => dispatch(close()),
+    close: () => dispatch(closeBoardModal()),
 })
 
 export default connect(mSTP, mDTP)(BoardForm);

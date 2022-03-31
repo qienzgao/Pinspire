@@ -10,15 +10,15 @@ class BoardModal extends React.Component {
         let component;
         switch (boardModal) {
             case 'edit':
-                component = <EditBoardForm board={this.props.board} closeBoardModal={this.props.closeBoardModal} />;
+                component = <EditBoardForm board={this.props.board} key={this.props.board.id} closeBoardModal={this.props.closeBoardModal} />;
                 break;
             default:
                 return null;
         }
 
         return (
-            <div className="modal-board-background" onClick={closeBoardModal}>
-                <div className="follow-modal" onClick={e => e.stopPropagation()}>
+            <div className="board-modal-background" onClick={closeBoardModal}>
+                <div className="modal-child" onClick={e => e.stopPropagation()}>
                     {component}
                 </div>
             </div>

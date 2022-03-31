@@ -78,8 +78,8 @@ class UserShow extends React.Component {
                     </div>
                 </section>
 
-                <section>
-                    <BoardIndexContainer/>
+                <section className='board-index'>
+                    <BoardIndexContainer user={user} user_id={user.id}/>
                 </section>
 
                 <section className='ideas'>

@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-// import CreateIcon from '@material-ui/icons/Create';
-// import BoardItemPins from './board_item_pins';
+import BoardItemPins from './board_item_pins';
 import BoardModal from '../modal/board_modal';
 import { openBoardModal } from '../../actions/board_modal_actions';
+import EditIcon from '@mui/icons-material/Edit';
 
 class BoardIndexItem extends React.Component {
     constructor(props) {
@@ -31,17 +31,16 @@ class BoardIndexItem extends React.Component {
                 <BoardModal board={board} />
                 <div className="board-container">
                     <Link to={`/boards/${board.id}`}>
-                        {/* <BoardItemPins board={board} pinstoboards={pinstoboards} pins={pins} /> */}
+                        {/* <BoardItemPins board={board} savedPins={savedPins} pins={pins} /> */}
+                        <img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/random/scaleshape.jpeg"/>
                     </Link>
-                    <div className="board-delete" onClick={() => this.props.openBoardModal('edit')}><CreateIcon style={{ fontSize: 24 }} /></div>
-                    <div className="board-insight">
-                        <div className="board-title">{board.name}</div>
-                        <div className="board-sub-title">
-                            <div className="board-pin-count">{pinCount} pins</div>
-                            <div className="board-date">6w</div>
+                        <div className='hidden-button'>
+                            <button className="board-edit" onClick={() => this.props.openBoardModal('edit')}><EditIcon fontSize='small'/></button>
                         </div>
-                    </div>
-                </div>
+                    
+                    <h2 className="board-title">{board.name}</h2>
+                    <span className="board-count">{pinCount} pins</span>
+                </div>              
             </div>
 
         )

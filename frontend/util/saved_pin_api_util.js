@@ -1,12 +1,13 @@
 export const fetchSavedPins = () => (
     $.ajax({
-        url: '/api/savedpins',
+        url: '/api/saved_pins',
+        method: 'GET'
     })
 );
 
 export const createSavedPin = savedPin => (
     $.ajax({
-        url: '/api/savedpins',
+        url: '/api/saved_pins',
         method: 'POST',
         data: { savedPin }
     })
@@ -14,7 +15,7 @@ export const createSavedPin = savedPin => (
 
 export const deleteSavedPin = savedPinId => (
     $.ajax({
-        url: `/api/savedpins/${savedPinId}`,
+        url: `/api/saved_pins/${savedPinId}`,
         method: 'DELETE'
     })
 );

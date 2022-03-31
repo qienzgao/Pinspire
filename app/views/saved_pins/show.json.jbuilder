@@ -1,1 +1,0 @@
-json.extract! @saved_pin, :id, :pin_id, :board_id

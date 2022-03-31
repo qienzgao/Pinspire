@@ -28,7 +28,7 @@ class BoardModal extends React.Component {
 
 const mSTP = state => {
     return {
-        boardModal: state.ui.boardModal,
+        boardModal: state.boardModal,
     };
 };
 

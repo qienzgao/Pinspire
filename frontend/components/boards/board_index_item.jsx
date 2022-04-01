@@ -25,10 +25,9 @@ class BoardIndexItem extends React.Component {
                 pinCount += 1;
             }
         }
-
         return (
             <div>
-                <BoardModal board={board} />
+                <BoardModal board={board} boardId={board.id}/>
                 <div className="board-container">
                     <Link to={`/boards/${board.id}`}>
                         {/* <BoardItemPins board={board} savedPins={savedPins} pins={pins} /> */}

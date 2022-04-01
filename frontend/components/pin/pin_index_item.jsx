@@ -18,7 +18,6 @@ class PinIndexItem extends React.Component {
             </div>
         )
     }
-
 }; 
 
 

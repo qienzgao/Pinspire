@@ -1,21 +1,31 @@
 import React from 'react';
 import { closeBoardModal } from '../../actions/board_modal_actions';
 import { connect } from 'react-redux';
-import EditBoardForm from '../boards/edit_board_form_container';
+import EditBoardFormContainer from '../boards/edit_board_form_container';
+import {fetchBoard} from '../../actions/board_actions';
+import { withRouter } from 'react-router-dom'; 
 
 class BoardModal extends React.Component {
+    constructor(props){
+        super(props)
+    }
+
+    componentDidMount(){
+        this.props.fetchBoard(this.props.boardId)
+    }
+
     render() {
-        const { boardModal, closeBoardModal } = this.props;
+        console.log(this.props.boardId)
+        const { board, boardModal, closeBoardModal, boardId} = this.props;
 
         let component;
         switch (boardModal) {
             case 'edit':
-                component = <EditBoardForm board={this.props.board} key={this.props.board.id} closeBoardModal={this.props.closeBoardModal} />;
+                component = <EditBoardFormContainer board={board} key={board.id} closeBoardModal={closeBoardModal} boardId={boardId}/>;
                 break;
             default:
                 return null;
         }
-
         return (
             <div className="board-modal-background" onClick={closeBoardModal}>
                 <div className="modal-child" onClick={e => e.stopPropagation()}>
@@ -26,16 +36,18 @@ class BoardModal extends React.Component {
     }
 };
 
-const mSTP = state => {
+const mSTP = (state, ownProps) => {
     return {
+        // boardId: state.entities.boards[ownProps.match.params.boardId],
         boardModal: state.boardModal,
     };
 };
 
 const mDTP = dispatch => {
     return {
+        fetchBoard: boardId => dispatch(fetchBoard(boardId)),
         closeBoardModal: () => dispatch(closeBoardModal())
     };
 };
 
-export default connect(mSTP, mDTP)(BoardModal);
+export default withRouter(connect(mSTP, mDTP)(BoardModal));

@@ -13,3 +13,4 @@ export const closeBoardModal = () => {
         type: CLOSE_BOARD_MODAL,
     };
 };
+

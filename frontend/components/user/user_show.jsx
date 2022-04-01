@@ -7,9 +7,19 @@ import BoardIndexContainer from '../boards/board_index_container';
 class UserShow extends React.Component {
 
     componentDidMount() {
-        this.props.fetchUser(this.props.match.params.userId);
-        this.props.fetchUsers();
-        this.props.fetchPins()
+        this.props.fetchUsers()
+            .then(() => {
+                this.props.fetchUser(this.props.match.params.userId)
+                    .then(() => {
+                        this.props.fetchPins()
+                    })
+            });
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        window.history.back();
     }
 
     parseEmail(email) {
@@ -40,13 +50,12 @@ class UserShow extends React.Component {
 
     render() {
         const { pins, user, users } = this.props;
+        if (!users || !user) return null;
         const defaultAvatar = "https://pinspire-seeds.s3.us-east-1.amazonaws.com/defaultavatar.png";
         const avatar = user.imgUrl ? <img className='avatar' src={user.imgUrl} /> : <img className='avatar-default' src={defaultAvatar}/>
         const defaultCover = 'https://pinspire-seeds.s3.us-east-1.amazonaws.com/random/scaleshape.jpeg';
         const cover = user.coverUrl ? <img className='cover-img' src={user.coverUrl} /> : <img className='cover-img' src={defaultCover} />
         const sizes = ["ex-small", "small", "medium", "large", "ex-large"]
-
-        if (!users || !user) return null;
 
         return (
             <div >                

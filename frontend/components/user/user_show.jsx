@@ -20,6 +20,7 @@ class UserShow extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         window.history.back();
+    }
 
     parseEmail(email) {
         let username = '';
@@ -35,6 +36,7 @@ class UserShow extends React.Component {
         return username
     }
 
+
     parseUsername(email) {
         let username = '@';
         for (let i = 0; i < email.length; i++) {
@@ -46,6 +48,7 @@ class UserShow extends React.Component {
         }
         return username
     }
+
 
     render() {
         const { pins, user, users } = this.props;

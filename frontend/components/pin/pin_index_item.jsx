@@ -18,7 +18,5 @@ class PinIndexItem extends React.Component {
             </div>
         )
     }
-}; 
-
-
+}
 export default PinIndexItem; 

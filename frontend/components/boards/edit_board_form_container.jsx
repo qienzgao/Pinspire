@@ -1,3 +1,4 @@
+
 import { connect } from 'react-redux';
 import { fetchBoards, fetchBoard, updateBoard, deleteBoard } from '../../actions/board_actions';
 import EditBoardForm from './edit_board_form'; 
@@ -11,8 +12,10 @@ const mSTP = (state, ownProps) => ({
 const mDTP = dispatch => ({
     // fetchBoards: () => dispatch(fetchBoards()),
     fetchBoard: boardId => dispatch(fetchBoard(boardId)),
+
     submitBoard: board => dispatch(updateBoard(board)),
     deleteBoard: board => dispatch(deleteBoard(board))
 })
 
 export default withRouter(connect(mSTP, mDTP)(EditBoardForm));
+

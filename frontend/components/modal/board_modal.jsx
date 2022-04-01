@@ -50,4 +50,6 @@ const mDTP = dispatch => {
     };
 };
 
+
 export default withRouter(connect(mSTP, mDTP)(BoardModal));
+

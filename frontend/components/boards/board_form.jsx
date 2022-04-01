@@ -32,6 +32,7 @@ class BoardForm extends React.Component {
 
     render() {
         // const createBoard = () => {
+
             return (
                 <div className="board-create" onClick={e => e.stopPropagation()}>
                     <form onSubmit={this.handleSubmit} >

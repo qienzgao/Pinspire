@@ -4,7 +4,12 @@ import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 
 class PinShow extends React.Component {
     constructor(props){
-        super(props)
+        super(props);
+        this.state = {
+            showMenu: false
+        };
+        this.dropdown = this.dropdown.bind(this);
+        this.closeMenu = this.closeMenu.bind(this);
     }
 
     componentDidMount() {
@@ -41,6 +46,19 @@ class PinShow extends React.Component {
         return username
     }
 
+    dropdown(e) {
+        e.preventDefault();
+        this.setState({
+            showMenu: true
+        })
+    }
+
+    closeMenu() {
+        this.setState({ showMenu: false }, () => {
+            document.removeEventListener('click', this.closeMenu);
+        });
+    }
+
     render() {
         const {pin, users} = this.props; 
         if (!pin || !users) return null; 
@@ -49,8 +67,9 @@ class PinShow extends React.Component {
         const avatar = user ? <img className='avatar' src={user.imgUrl} /> : <img className='avatar-default' src={defaultAvatar} />
 
         return (
-            <div className="background-show">
-                <div className="showpage">
+            <div >
+                <div className="background-show" onClick={this.closeMenu} >
+                <div className="showpage" >
                     <div className="back-wrapper">
                         <Link to="/">
                             <button className="back-button">
@@ -82,11 +101,23 @@ class PinShow extends React.Component {
                         </Link>
                         <h3 className='email-show'>{user? this.parseEmail(user.email): null}</h3>
                     </div>
-
+                </div>
                 </div>
 
-                <div className="create-pin-button-container">
-                    <Link to="/pins/create"><button className="create-pin-button">+</button></Link>
+                <div className='dropdown-container'>
+                    {this.state.showMenu ?
+                        <div className="dropdown-menu"
+                            ref={(element) => {
+                                this.dropdownMenu = element
+                            }}>
+                            <h4>create</h4>
+                            <Link to="/pins/create"><button>Pin</button></Link>
+                            <br />
+                            <button>Board</button>
+                        </div> : null}
+                    <div className="create-pin-button-container">
+                        <button className="create-pin-button" onClick={this.dropdown}>+</button>
+                    </div>
                 </div>
 
             </div>

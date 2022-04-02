@@ -5,7 +5,28 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import BoardIndexContainer from '../boards/board_index_container';
 
 class UserShow extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            showMenu: false
+        }
+        this.dropdown = this.dropdown.bind(this)
+        this.closeMenu = this.closeMenu.bind(this)
+    }
 
+    dropdown(e) {
+        e.preventDefault();
+        this.setState({
+            showMenu: true
+        })
+    }
+
+    closeMenu() {
+        this.setState({ showMenu: false }, () => {
+            document.removeEventListener('click', this.closeMenu);
+        });
+    }
+    
     componentDidMount() {
         this.props.fetchUsers()
             .then(() => {
@@ -63,7 +84,7 @@ class UserShow extends React.Component {
 
         return (
             <div >                
-                <section className='profile-background'>
+                <section className='profile-background' onClick={this.closeMenu}>
                     <div className="profile-cover">
                         {cover}
                     </div>
@@ -91,11 +112,11 @@ class UserShow extends React.Component {
                     </div>
                 </section>
 
-                <section className='board-index'>
+                <section className='board-index' onClick={this.closeMenu}>
                     <BoardIndexContainer user={user} user_id={user.id}/>
                 </section>
 
-                <section className='ideas'>
+                <section className='ideas' onClick={this.closeMenu}>
                     <div className="user-ideas">
                         <div className="ideas-container">
                             {pins.map(pin =>(
@@ -110,8 +131,17 @@ class UserShow extends React.Component {
                     </div>
                 </section>
 
-                <div className="create-pin-button-container">
-                    <Link to="/pins/create"><button className="create-pin-button">+</button></Link>
+                <div className='dropdown-container'>
+                    {this.state.showMenu ?
+                        <div className="dropdown-menu">
+                            <h4>create</h4>
+                            <Link to="/pins/create"><button>Pin</button></Link>
+                            <br />
+                            <button>Board</button>
+                        </div> : null}
+                    <div className="create-pin-button-container">
+                        <button className="create-pin-button" onClick={this.dropdown}>+</button>
+                    </div>
                 </div>
 
             </div>

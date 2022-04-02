@@ -8,10 +8,28 @@ import SignupFormContainer from "../session/signup_form_container";
 class Splash extends React.Component {
     constructor(props){
         super(props)
+        this.state = {
+            showMenu: false
+        }
+        this.dropdown = this.dropdown.bind(this)
+        this.closeMenu = this.closeMenu.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchPins();
+    }
+
+    dropdown(e) {
+        e.preventDefault(); 
+        this.setState({
+            showMenu: true
+        })
+    }
+
+    closeMenu() {
+        this.setState({ showMenu: false }, () => {
+            document.removeEventListener('click', this.closeMenu);
+        });
     }
 
     render(){
@@ -273,20 +291,30 @@ class Splash extends React.Component {
                 // </div>
         )}; 
 
-
         const homePage = () => (
-            <div className="load-page">
-                <div className="pins-container">
-                    {pinsArray.map(pin => 
-                        <PinIndexItem
-                            size={sizes[Math.floor(Math.random() * sizes.length)]}
-                            key={pin.id}
-                            currentUser={currentUser}
-                            pin={pin}
-                        />)}
+            <div>
+                <div className="load-page" onClick={this.closeMenu}>
+                    <div className="pins-container" >
+                        {pinsArray.map(pin => 
+                            <PinIndexItem
+                                size={sizes[Math.floor(Math.random() * sizes.length)]}
+                                key={pin.id}
+                                currentUser={currentUser}
+                                pin={pin}
+                            />)}
+                    </div>
                 </div>
-                <div className="create-pin-button-container">
-                    <Link to="/pins/create"><button className="create-pin-button">+</button></Link>
+                <div className='dropdown-container'>
+                    {this.state.showMenu ? 
+                    <div className="dropdown-menu">
+                        <h4>create</h4>
+                        <Link to="/pins/create"><button>Pin</button></Link>
+                        <br />
+                        <button>Board</button>
+                    </div> : null}
+                    <div className="create-pin-button-container">  
+                        <button className="create-pin-button" onClick={this.dropdown}>+</button>
+                    </div>
                 </div>
             </div>
         );

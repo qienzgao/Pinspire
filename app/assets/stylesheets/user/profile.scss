@@ -169,4 +169,27 @@
     grid-auto-rows: 10px;
 }
 
+.tabs {
+    text-align: center;
+    padding: 1em;
+    margin: 1em;
+
+    & button {
+        border: solid 3px transparent;
+        border-radius: 3px;
+        background: none;
+        font-size: 1em;
+        font-weight: 550;
+        padding: 0.4em 0.2em 0.4em 0.2em;
+        margin: 0 0.7em 0 0.7em; 
+        cursor: pointer;
+    }
+
+    & button:hover {
+        background-color: rgba(201, 201, 201, 0.3);
+    }
+}
+
+
+
 

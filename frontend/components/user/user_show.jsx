@@ -3,15 +3,38 @@ import PinIndexItem from '../pin/pin_index_item';
 import { Link } from "react-router-dom";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import BoardIndexContainer from '../boards/board_index_container';
+import { borderBottom } from '@mui/system';
 
 class UserShow extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            showMenu: false
+            showMenu: false, 
+            created: true, 
+            saved: false
         }
-        this.dropdown = this.dropdown.bind(this)
-        this.closeMenu = this.closeMenu.bind(this)
+        this.dropdown = this.dropdown.bind(this);
+        this.closeMenu = this.closeMenu.bind(this);
+        this.createdTab = this.createdTab.bind(this);
+        this.savedTab = this.savedTab.bind(this)
+    }
+
+    createdTab(e) {
+        e.preventDefault(); 
+        this.setState({
+            created: true, 
+            saved: false
+        })
+        // let cTab = document.getElementsByClassName('createdTab'); 
+        // cTab.style = {borderBottom: 'solid 2px black'}
+    }
+
+    savedTab(e) {
+        e.preventDefault();
+        this.setState({
+            saved: true, 
+            created: false
+        })
     }
 
     dropdown(e) {
@@ -80,7 +103,9 @@ class UserShow extends React.Component {
         const avatar = user.imgUrl ? <img className='avatar' src={user.imgUrl} /> : <img className='avatar-default' src={defaultAvatar}/>
         const defaultCover = 'https://pinspire-seeds.s3.us-east-1.amazonaws.com/random/scaleshape.jpeg';
         const cover = user.coverUrl ? <img className='cover-img' src={user.coverUrl} /> : <img className='cover-img' src={defaultCover} />
-        const sizes = ["ex-small", "small", "medium", "large", "ex-large"]
+        const sizes = ["ex-small", "small", "medium", "large", "ex-large"];
+        let cStyle = this.state.created ? "solid 3px black" : "none";
+        let sStyle = this.state.saved ? "solid 3px black" : "none"; 
 
         return (
             <div >                
@@ -112,23 +137,35 @@ class UserShow extends React.Component {
                     </div>
                 </section>
 
+
+                
                 <section className='board-index' onClick={this.closeMenu}>
                     <BoardIndexContainer user={user} user_id={user.id}/>
                 </section>
 
+                <div className='tabs'>
+                    <button className='created-tab' onClick={this.createdTab} style={{ borderBottom: cStyle }}>Created</button>
+                    <button className='saved-tab' onClick={this.savedTab} style={{ borderBottom: sStyle }}>Saved</button>
+                </div>
+
                 <section className='ideas' onClick={this.closeMenu}>
-                    <div className="user-ideas">
-                        <div className="ideas-container">
-                            {pins.map(pin =>(
-                                pin.user_id === user.id ?
-                                <PinIndexItem
-                                    size={sizes[Math.floor(Math.random() * sizes.length)]}
-                                    key={pin.id}
-                                    user_id={user.id}
-                                    pin={pin} /> : null  
-                             ))}
-                        </div>
-                    </div>
+                    {this.state.created ? 
+                        <div className="user-ideas">
+                            <div className="ideas-container">
+                                {pins.map(pin => (
+                                    pin.user_id === user.id ?
+                                        <PinIndexItem
+                                            size={sizes[Math.floor(Math.random() * sizes.length)]}
+                                            key={pin.id}
+                                            user_id={user.id}
+                                            pin={pin} /> : null
+                                ))}
+                            </div>
+                        </div> : null}
+                    {this.state.saved ? <div>
+                        <h1>hello</h1>
+                    </div> : null}
+                    
                 </section>
 
                 <div className='dropdown-container'>

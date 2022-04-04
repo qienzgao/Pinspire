@@ -34,7 +34,7 @@ class BoardIndexItem extends React.Component {
                         <img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/random/scaleshape.jpeg"/>
                     </Link>
                         <div className='hidden-button'>
-                            <button className="board-edit" onClick={() => this.props.openBoardModal('edit')}><EditIcon fontSize='small'/></button>
+                            <button className="board-edit" onClick={() => this.props.openBoardModal('edit')}><EditIcon fontSize='small' /></button>
                         </div>
                     
                     <h2 className="board-title">{board.name}</h2>

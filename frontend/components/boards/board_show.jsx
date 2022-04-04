@@ -22,7 +22,7 @@ class BoardShow extends React.Component {
                         <div className="show-dot">·</div>
                         <div className="show-board-desc">{board.details}</div>
                     </div>
-                    <SavedPinsIndex board={board} />
+                    {/* <SavedPinsIndex board={board} /> */}
                 </div>
             </div>
         )

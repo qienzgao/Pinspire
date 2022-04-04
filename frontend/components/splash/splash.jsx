@@ -33,7 +33,7 @@ class Splash extends React.Component {
     }
 
     render(){
-        const { pins, currentUser } = this.props;
+        const { pins, currentUser, board } = this.props;
         const pinsArray = Object.values(pins)
         const sizes = ["ex-small", "small", "medium", "large", "ex-large"]
 
@@ -301,6 +301,7 @@ class Splash extends React.Component {
                                 key={pin.id}
                                 currentUser={currentUser}
                                 pin={pin}
+                                
                             />)}
                     </div>
                 </div>

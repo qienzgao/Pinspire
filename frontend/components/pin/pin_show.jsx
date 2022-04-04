@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
+import SaveMenuContainer from '../saved_pins/save_menu_container';
 
 class PinShow extends React.Component {
     constructor(props){
@@ -79,7 +80,7 @@ class PinShow extends React.Component {
                     </div>
 
                     <div className="show-button">
-                        <button className="save-button">Save</button>
+                        <SaveMenuContainer pin={this.props.pin} board={this.props.board} />
                     </div>
 
                     <div className="show-img-wrapper">

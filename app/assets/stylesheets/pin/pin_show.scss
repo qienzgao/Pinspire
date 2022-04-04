@@ -51,21 +51,10 @@
     position: absolute;
     margin: 20px;
     margin-top: 30px;
-    margin-left: 90%;
+    right: 20px; 
+    width: 15%;
 }
 
-.save-button {
-    float: right;
-    border: none;
-    color: white; 
-    background-color: #e60023;
-    width: 70px;
-    height: 50px ;
-    cursor: pointer;
-    border-radius: 30px;
-    font-size: 17px;
-    font-weight: 540;
-}
 
 .title-display-container {
     width: 375px;

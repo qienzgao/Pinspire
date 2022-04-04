@@ -41,12 +41,23 @@
 .hidden-button {
     position: absolute;
     opacity: 0;
-    margin: 12px;
-    margin-left: 150px;
+    // width: 100%;
+    // margin-left: 150px;
+    width: 200px;
+    padding: 15px;
+}
+
+.save-menu-container {
+    width: auto;
+    // padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .save-button {
-    float: right;
+    // float: right;
     border: none;
     color: white; 
     background-color: #e60023;

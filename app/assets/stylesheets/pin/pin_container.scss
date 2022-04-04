@@ -23,6 +23,27 @@
         z-index: -1;
         filter: brightness(70%)
     }
+
+    &:nth-child(n+2) {
+        grid-row-end: span 20;
+    }
+
+    &:nth-child(2n) {
+        grid-row-end: span 25;
+    }
+
+    &:nth-child(3n+1) {
+        grid-row-end: span 33;
+    }
+
+    &:nth-child(3n+3) {
+        grid-row-end: span 38;
+    }
+
+    &:nth-child(4n) {
+        grid-row-end: span 42;
+    }
+
 }
 
 .pin-img {

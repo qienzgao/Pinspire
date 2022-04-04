@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchPin, fetchPins } from '../../actions/pin_actions';
 import {fetchUser, fetchUsers } from '../../actions/user_actions'; 
+import { fetchBoards } from '../../actions/board_actions';
 import PinShow from './pin_show';
 
 
@@ -16,6 +17,7 @@ const mDTP = dispatch => ({
     fetchPin: pinId => dispatch(fetchPin(pinId)),
     fetchUsers: () => dispatch(fetchUsers()),
     fetchUser: userId => dispatch(fetchUser(userId)),
+    fetchBoards: () => dispatch(fetchBoards())
 })
 
 export default connect(mSTP, mDTP)(PinShow)

@@ -33,16 +33,18 @@ class SaveMenu extends React.Component {
             let pinBoards = savedPins.filter(pinBoard => pin.id === pinBoard.pin_id)
             let savedArr = Object.values(savedPins);
 
+            console.log(this.props)
+
             const saveStatus = (board) => {
                 for (let i = 0; i < pinBoards.length; i++) {
                     let pinBoard = pinBoards[i];
 
                     if (pinBoard.board_id === board.id) {
                         return (
-                            <div key={board.id} className="pin-item-save" onClick={() => deletePinstoboard(pinBoard.id)}>
+                            <div key={board.id} className="pin-item-save" onClick={() => deleteSavedPin(pinBoard.id)}>
                                 <div className="pin-test123">{board.name}</div>
                                 <div className="nav-fil"></div>
-                                <button className="pin-inner-unsave">Unsave</button>
+                                <button className="pin-inner-unsave">Saved</button>
                             </div>
                         )
                     }
@@ -53,7 +55,7 @@ class SaveMenu extends React.Component {
                     if (savedArr[i].board_id === board.id) {
                         pinItem = savedArr[i];
                         return (
-                            <div key={board.id} className="pin-item-save" onClick={() => createPinstoboard({ pin_id: pin.id, board_id: board.id })}>
+                            <div key={board.id} className="pin-item-save" onClick={() => createSavedPin({ pin_id: pin.id, board_id: board.id })}>
                                 <div>{board.name}</div>
                                 <div className="nav-fil"></div>
                                 <button className="pin-inner-button">Save</button>
@@ -63,7 +65,7 @@ class SaveMenu extends React.Component {
                 }
 
                 return (
-                    <div key={board.id} className="pin-item-save" onClick={() => createPinstoboard({ pin_id: pin.id, board_id: board.id })}>
+                    <div key={board.id} className="pin-item-save" onClick={() => createSavedPin({ pin_id: pin.id, board_id: board.id })}>
                         <div className="pin-avatar"></div>
                         <div>{board.name}</div>
                         <div className="nav-fil"></div>
@@ -105,7 +107,7 @@ class SaveMenu extends React.Component {
 
                 {savedArr[savedItem(pin.id, currentUser.id)] ?
                 <button className="save-button" onClick={() => deleteSavedPin(savedArr[savedItem(pin.id, currentUser.id)].id)}>Saved</button> :
-                <button className="save-button" onClick={() => createSavedPin({ pin_id: pin.id })}>Save</button>}
+                <button className="save-button" onClick={() => createSavedPin({ pin_id: pin.id, board_id: null })}>Save</button>}
                 
             </div>
         )

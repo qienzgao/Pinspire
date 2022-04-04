@@ -19,9 +19,9 @@ class PinShow extends React.Component {
                 // this.props.fetchUsers()
                 // .then(() => {
                     this.props.fetchUser(this.props.pin.user_id)
-                    // .then(() => {
-                    //     this.props.fetchPins()
-                    // })
+                        .then(() => {
+                            this.props.fetchBoards()
+                        })
 
                 // })
             })

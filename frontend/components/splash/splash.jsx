@@ -35,7 +35,8 @@ class Splash extends React.Component {
     render(){
         const { pins, currentUser, board } = this.props;
         const pinsArray = Object.values(pins)
-        const sizes = ["ex-small", "small", "medium", "large", "ex-large"]
+        // const sizes = ["ex-small", "small", "medium", "large", "ex-large"]
+        const sizes = []
 
         const mainPage = () => {
             return (

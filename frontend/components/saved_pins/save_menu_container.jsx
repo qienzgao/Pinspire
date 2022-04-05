@@ -14,7 +14,6 @@ const mSTP = state => {
 
 const mDTP = dispatch => ({
     fetchBoards: () => dispatch(fetchBoards()),
-    fetchSavedPins: () => dispatch(fetchSavedPins()),
     deleteSavedPin: savedPinId => dispatch(deleteSavedPin(savedPinId)),
     createSavedPin: savedPin => dispatch(createSavedPin(savedPin)),
 });

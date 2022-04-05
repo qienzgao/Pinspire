@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import SignupFormContainer from "../session/signup_form_container";
+import { openBoardModal } from "../../actions/board_modal_actions"
+
 
 class Splash extends React.Component {
     constructor(props){
@@ -312,7 +314,7 @@ class Splash extends React.Component {
                         <h4>create</h4>
                         <Link to="/pins/create"><button>Pin</button></Link>
                         <br />
-                        <button>Board</button>
+                            <button onClick={() => openBoardModal('createBoard')}>Board</button>
                     </div> : null}
                     <div className="create-pin-button-container">  
                         <button className="create-pin-button" onClick={this.dropdown}>+</button>

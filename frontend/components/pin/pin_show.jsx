@@ -80,7 +80,7 @@ class PinShow extends React.Component {
                     </div>
 
                     <div className="show-button">
-                        <SaveMenuContainer pin={this.props.pin} board={this.props.board} />
+                        <SaveMenuContainer pin={this.props.pin}/>
                     </div>
 
                     <div className="show-img-wrapper">

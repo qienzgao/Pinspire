@@ -12,7 +12,7 @@ class BoardIndexItem extends React.Component {
     }
 
     render() {
-        const { board, deleteBoard, savedPins, pins } = this.props;
+        const { board, deleteBoard, savedPins, pins, currentUser } = this.props;
         if (!board) return null;
         if (!pins) return null;
         if (!savedPins) return null;
@@ -33,10 +33,11 @@ class BoardIndexItem extends React.Component {
                         {/* <BoardItemPins board={board} savedPins={savedPins} pins={pins} /> */}
                         <img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/random/scaleshape.jpeg"/>
                     </Link>
-                        <div className='hidden-button'>
-                            <button className="board-edit" onClick={() => this.props.openBoardModal('edit')}><EditIcon fontSize='small' /></button>
-                        </div>
-                    
+
+                    {board.user_id === currentUser.id ? <div className='hidden-button'>
+                        <button className="board-edit" onClick={() => this.props.openBoardModal('edit')}><EditIcon fontSize='small' /></button>
+                    </div> : null}
+                        
                     <h2 className="board-title">{board.name}</h2>
                     <span className="board-count">{pinCount} pins</span>
                 </div>              
@@ -46,8 +47,12 @@ class BoardIndexItem extends React.Component {
     }
 }
 
+const mSTP = state => ({
+    currentUser: state.entities.users[state.session.id],
+})
+
 const mDTP = dispatch => ({
     openBoardModal: boardModal => dispatch(openBoardModal(boardModal))
 });
 
-export default connect(null, mDTP)(BoardIndexItem);
+export default connect(mSTP, mDTP)(BoardIndexItem);

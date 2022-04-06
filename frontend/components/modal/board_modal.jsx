@@ -25,7 +25,7 @@ class BoardModal extends React.Component {
                 component = <EditBoardFormContainer board={board} key={board.id} closeBoardModal={closeBoardModal} boardId={boardId}/>;
                 break;
             case 'create':
-                component = <CreateBoardFormContainer />
+                component = <CreateBoardFormContainer closeBoardModal={closeBoardModal}/>
                 break;
             default:
                 return null;

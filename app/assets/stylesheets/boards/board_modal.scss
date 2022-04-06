@@ -90,4 +90,76 @@
     }
 }
 
+.board-form-container {
+    padding: 0.5em;
+
+    .board-form-title {
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: 1em;
+    }
+
+    .board-input {
+        width: 90%;
+        height: 22px;
+        border-radius: 15px;
+        border-color: rgb(216, 215, 215);
+        border-style: solid;
+        padding: 12px;
+        font-size: 16px;
+        margin-bottom: 1em;
+    }
+    
+    .board-input:hover {
+        border-color: rgb(179, 176, 176);
+    }
+    
+    .board-input:focus {
+        outline: 4px solid rgb(174, 206, 255);
+    }
+
+    & .public-check {
+        width: auto;
+        float: left; 
+        margin: 0.7em;
+    }
+
+    & label {
+        float: left; 
+        font-size: 13px;
+        color: gray;
+        margin: 0.7em;
+    }
+    
+    .input-filled {
+        border: none;
+        color: white;
+        background-color: #e60023;
+        width: 90px;
+        height: 45px;
+        cursor: pointer;
+        border-radius: 30px;
+        font-size: 17px;
+        font-weight: 550;
+        float: right;
+        margin: 0.7em;
+        padding: 0.2em 0.5em 0.2em 0.5em;
+    }
+
+    .input-empty {
+        background-color: rgba(213, 213, 213, 0.3);
+        border: none;
+        color: rgb(113, 113, 113);
+        width: 90px;
+        height: 45px;
+        border-radius: 30px;
+        font-size: 17px;
+        font-weight: 550;
+        cursor: default;
+        float: right;
+        margin: 0.7em;
+        padding: 0.2em 0.5em 0.2em 0.5em;
+    }
+}
+
 

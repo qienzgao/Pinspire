@@ -40,28 +40,38 @@ class SaveMenu extends React.Component {
 
                     if (pinBoard.board_id === board.id) {
                         return (
-                            <div key={board.id} className="pin-item-save" >
+                            <div key={board.id} className="board-save-item-container" onClick={() => deleteSavedPin(pinBoard.id)}>
                                 <h3>{board.name}</h3>
-                                <button className="pin-inner-unsave" onClick={() => deleteSavedPin(pinBoard.id)}>Saved</button>
+                                <button className="board-save-item-button" >Saved</button>
                             </div>
                         )
                     }
                 }
 
                 return (
-                    <div key={board.id} className="pin-item-save" >
+                    <div key={board.id} className="board-save-item-container" >
                         <h3>{board.name}</h3>
-                        <button onClick={() => createSavedPin({ pin_id: pin.id, board_id: board.id })} className="pin-inner-button">Save</button>
+                        <button onClick={() => createSavedPin({ pin_id: pin.id, board_id: board.id })} className="board-save-item-button">Save</button>
                     </div>
                 )
             }
 
             return (
-                <div key={pin.id} className="pin-drop-menu">
-                    <div className="pin-menu-body">
-                        <div className="pin-menu-items">
-                            {usersBoards.map((board, i) => saveStatus(board, i))}
+                <div key={pin.id} className="board-dropmenu-container">
+                    <h3 className='board-save-title'>Save</h3>
+                    <div className="board-save-items">
+                        <span>Quick save and organize later</span>
+                        <br/>
+                        <div className="board-save-item-container">
+                            <h3>Profile</h3>
+                            {savedArr[savedItem(pin.id, currentUser.id)] ?
+                                <button onClick={() => deleteSavedPin(savedArr[savedItem(pin.id, currentUser.id)].id)}>Saved</button> :
+                                <button onClick={() => createSavedPin({ pin_id: pin.id })}>Save</button>
+                            }
                         </div>
+                        <span>Save to board</span>
+                        <br/>
+                        {usersBoards.map((board, i) => saveStatus(board, i))}
                     </div>
                 </div>
             )
@@ -83,12 +93,11 @@ class SaveMenu extends React.Component {
                     </div>
                     <ExpandMoreIcon onClick={this.showMenu}/>
                 </div>
-                {this.state.showMenu ? dropMenu() : null}
-
                 {savedArr[savedItem(pin.id, currentUser.id)] ?
                 <button className="save-button" onClick={() => deleteSavedPin(savedArr[savedItem(pin.id, currentUser.id)].id)}>Saved</button> :
                 <button className="save-button" onClick={() => createSavedPin({ pin_id: pin.id})}>Save</button>}
-                
+
+                {this.state.showMenu ? dropMenu() : null}
             </div>
         )
     }

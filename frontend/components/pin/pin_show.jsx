@@ -26,6 +26,7 @@ class PinShow extends React.Component {
 
                 // })
             })
+        this.props.fetchSavedPins();
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -116,7 +117,7 @@ class PinShow extends React.Component {
                             }}>
                             <Link to="/pins/create"><button>Create a Pin</button></Link>
                             <br />
-                            <button onClick={() => this.props.openBoardModal('create')}>Create a Board</button>
+                            <button onClick={() => this.props.openBoardModal('create').then(this.setState({ showMenu: false }))}>Create a Board</button>
                         </div> : null}
                     <div className="create-pin-button-container">
                         <button className="create-pin-button" onClick={this.dropdown}>+</button>

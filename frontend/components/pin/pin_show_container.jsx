@@ -3,7 +3,8 @@ import { fetchPin, fetchPins } from '../../actions/pin_actions';
 import {fetchUser, fetchUsers } from '../../actions/user_actions'; 
 import { fetchBoards } from '../../actions/board_actions';
 import PinShow from './pin_show';
-import { openBoardModal } from "../../actions/board_modal_actions"
+import { openBoardModal } from "../../actions/board_modal_actions";
+import { fetchSavedPins } from '../../actions/saved_pin_actions';
 
 
 const mSTP = (state, ownProps) => {
@@ -19,7 +20,8 @@ const mDTP = dispatch => ({
     fetchUsers: () => dispatch(fetchUsers()),
     fetchUser: userId => dispatch(fetchUser(userId)),
     fetchBoards: () => dispatch(fetchBoards()),
-    openBoardModal: boardModal => dispatch(openBoardModal(boardModal))
+    openBoardModal: boardModal => dispatch(openBoardModal(boardModal)),
+    fetchSavedPins: () => dispatch(fetchSavedPins())
 })
 
 export default connect(mSTP, mDTP)(PinShow)

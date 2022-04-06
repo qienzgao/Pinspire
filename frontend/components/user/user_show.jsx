@@ -27,8 +27,6 @@ class UserShow extends React.Component {
             created: true, 
             saved: false
         })
-        // let cTab = document.getElementsByClassName('createdTab'); 
-        // cTab.style = {borderBottom: 'solid 2px black'}
     }
 
     savedTab(e) {
@@ -184,7 +182,7 @@ class UserShow extends React.Component {
                             {/* <h4>create</h4> */}
                             <Link to="/pins/create"><button>Create a Pin</button></Link>
                             <br />
-                            <button onClick={() => this.props.openBoardModal('create')}>Create a Board</button>
+                            <button onClick={() => this.props.openBoardModal('create').then(this.setState({showMenu:false}))}>Create a Board</button>
                         </div> : null}
                     <div className="create-pin-button-container">
                         <button className="create-pin-button" onClick={this.dropdown}>+</button>

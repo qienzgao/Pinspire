@@ -69,7 +69,7 @@ class SaveMenu extends React.Component {
                                 <button onClick={() => createSavedPin({ pin_id: pin.id })}>Save</button>
                             }
                         </div>
-                        <span>Save to board</span>
+                        <span>All boards</span>
                         <br/>
                         {usersBoards.map((board, i) => saveStatus(board, i))}
                     </div>
@@ -94,7 +94,7 @@ class SaveMenu extends React.Component {
                     <ExpandMoreIcon className="expand-icon" onClick={this.showMenu}/>
                 </div>
                 {savedArr[savedItem(pin.id, currentUser.id)] ?
-                <button className="save-button" onClick={() => deleteSavedPin(savedArr[savedItem(pin.id, currentUser.id)].id)}>Saved</button> :
+                    <button className="board-saved-button" onClick={() => deleteSavedPin(savedArr[savedItem(pin.id, currentUser.id)].id)}>Saved</button> :
                 <button className="save-button" onClick={() => createSavedPin({ pin_id: pin.id})}>Save</button>}
 
                 {this.state.showMenu ? dropMenu() : null}

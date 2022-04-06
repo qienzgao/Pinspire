@@ -20,7 +20,7 @@
     box-shadow: 1px 1px 7px rgba(119, 118, 118, 0.2), -1px -1px 7px rgba(119, 118, 118, 0.2);
     color: black; 
     top: 0; 
-    transform: translate(0%, 13%); 
+    transform: translate(0%, 15%); 
     padding: 1em;
     width: 20em;
     max-height: 25em;
@@ -77,7 +77,7 @@
         padding: none;
     }
 
-    & .board-saved-button {
+    .board-saved-button {
         background-color: black;
     }
 

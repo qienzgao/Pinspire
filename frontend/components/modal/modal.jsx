@@ -22,6 +22,12 @@ const Modal = ({ modal }) => {
         case 'saved':
             component = <SavedModal/>;
             break;
+        case 'follower':
+            component; 
+            break; 
+        case 'following':
+            component; 
+            break;
         default:
             return null;
     }

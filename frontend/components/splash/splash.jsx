@@ -262,10 +262,9 @@ class Splash extends React.Component {
                 <div className='dropdown-container'>
                     {this.state.showMenu ? 
                     <div className="dropdown-menu">
-                        <h4>create</h4>
-                        <Link to="/pins/create"><button>Pin</button></Link>
+                        <Link to="/pins/create"><button>Create a Pin</button></Link>
                         <br />
-                            <button onClick={() => this.props.openBoardModal('create')}>Board</button>
+                            <button onClick={() => this.props.openBoardModal('create')}>Create a Board</button>
                     </div> : null}
                     <div className="create-pin-button-container">  
                         <button className="create-pin-button" onClick={this.dropdown}>+</button>

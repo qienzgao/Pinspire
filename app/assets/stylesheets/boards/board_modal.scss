@@ -77,6 +77,10 @@
         padding: none;
     }
 
+    & .board-saved-button {
+        background-color: black;
+    }
+
     &:hover {
         background-color: rgba(220, 220, 220, 0.5);
 

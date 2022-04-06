@@ -42,7 +42,7 @@ class SaveMenu extends React.Component {
                         return (
                             <div key={board.id} className="board-save-item-container" onClick={() => deleteSavedPin(pinBoard.id)}>
                                 <h3>{board.name}</h3>
-                                <button className="board-save-item-button" >Saved</button>
+                                <button className="board-saved-button" >Saved</button>
                             </div>
                         )
                     }
@@ -65,7 +65,7 @@ class SaveMenu extends React.Component {
                         <div className="board-save-item-container">
                             <h3>Profile</h3>
                             {savedArr[savedItem(pin.id, currentUser.id)] ?
-                                <button onClick={() => deleteSavedPin(savedArr[savedItem(pin.id, currentUser.id)].id)}>Saved</button> :
+                                <button onClick={() => deleteSavedPin(savedArr[savedItem(pin.id, currentUser.id)].id)} className="board-saved-button" >Saved</button> :
                                 <button onClick={() => createSavedPin({ pin_id: pin.id })}>Save</button>
                             }
                         </div>

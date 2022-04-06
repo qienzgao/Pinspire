@@ -118,6 +118,29 @@
         outline: 4px solid rgb(174, 206, 255);
     }
 
+    .delete-button {
+        width: 100%;
+        border: none;
+        background-color: transparent;
+        text-align: left;
+        cursor: pointer;
+        padding: 0;
+        margin-left: 0.7em;
+
+        & h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 0.3em;
+        }
+
+        & span {
+            font-size: 16px;
+            color: rgb(153, 153, 153);
+            font-weight: normal;
+            line-height: 140%;
+        }
+    }
+
     & .public-check {
         width: auto;
         float: left; 

@@ -36,7 +36,7 @@ class BoardForm extends React.Component {
                         </input>
                         <br/>
 
-                        <label className="board-label">Details</label>
+                        <label className="board-label">Description</label>
                         <input className="board-input"
                             type="text"
                             placeholder="Describe your board"

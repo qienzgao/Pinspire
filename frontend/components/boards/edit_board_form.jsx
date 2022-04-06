@@ -28,56 +28,56 @@ class EditBoardForm extends React.Component {
         if (!board) return null;
     
         return (
-            <div className="login-form-container" onClick={e => e.stopPropagation()}>
-                <form onSubmit={this.handleSubmit} >
-                    <button onClick={this.props.closeBoardModal} className="close-button">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <div>
-                        <h1 className="form-title">Edit your board</h1>
-                        <div className="login-form">
-                            <br />
-                            <label className="edit-name">Name</label>
-                            <input className="edit-name-input"
-                                type="text"
-                                value={this.state.name}
-                                onChange={this.update('name')}>
-                            </input>
-                        </div>
-                        <br />
-                        <label className="edit-description">Description</label>
-                        <input className="edit-description-input"
-                            type="text"
-                            value={this.state.details}
-                            onChange={this.update('details')}>
-                        </input>
-                        <br />
-                        <label className="edit-settings">Settings</label>
-                        <input className="edit-setting-checkbox"
-                            type="checkbox"
-                            value={false}
-                            onChange={this.update('public')}>
-                        </input>
-                        <br />
-                        <h3 className="edit-setting-desc1">Keep this board secret</h3>
-                        <span className="edit-desc2-sub1">
-                            So only you and collaborators can see it.
-                        </span>
-                        <br />
-                        <label className="edit-action">Action</label>
-                        <button className="edit-action-delete" onClick={() => this.props.deleteBoard(this.props.board).then(this.props.closeBoardModal)}>
-                            <h3>Delete Board</h3>
-                            <h4>Delete this board and all its Pins forever.</h4>
-                            <br />
-                            <h4>You can't undo this!</h4>
-                        </button>
-
-                        <div className="edit-submit-container">
-                            <button className="edit-submit-button" type="submit" value={this.props.formType}>Done</button>
-                        </div>
+            <form className="login-form-container" onSubmit={this.handleSubmit} onClick={e => e.stopPropagation()}>
+                <button onClick={this.props.closeBoardModal} className="close-button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div className='board-form-container'>
+                    <div className="board-form-title">
+                        <h2>Edit your board</h2>
                     </div>
-                </form>
-            </div>
+                    <div className="board-form-body">
+                        <label className="board-label">Name</label>
+                        <input className="board-input"
+                            type="text"
+                            value={this.state.name}
+                            onChange={this.update('name')}>
+                        </input>
+                    </div>
+
+                    <label className="board-label">Description</label>
+                    <input className="board-input"
+                        type="text"
+                        value={this.state.details}
+                        onChange={this.update('details')}>
+                    </input>
+
+                    {/* <label className="edit-settings">Settings</label>
+                    <input className="edit-setting-checkbox"
+                        type="checkbox"
+                        value={false}
+                        onChange={this.update('public')}>
+                    </input>
+                    <br />
+                    <h3 className="edit-setting-desc1">Keep this board secret</h3>
+                    <span className="edit-desc2-sub1">
+                        So only you and collaborators can see it.
+                    </span>
+                    <br /> */}
+
+                    <label className="board-label">Action</label>
+                    <button className="delete-button" onClick={() => this.props.deleteBoard(this.props.board).then(this.props.closeBoardModal)}>
+                        <h3>Delete Board</h3>
+                        <span>Delete this board and all its Pins forever.</span>
+                        <br/>
+                        <span>You can't undo this!</span>
+                    </button>
+
+                    <div className="create-button-contnainer">
+                        <button className="input-filled" type="submit" value={this.props.formType}>Done</button>
+                    </div>
+                </div>
+            </form>
         );
     }
 }

@@ -1,11 +1,17 @@
 import React from 'react'; 
 import { Link } from 'react-router-dom';
 import SaveMenuContainer from '../saved_pins/save_menu_container';
+import {connect} from 'react-redux'
+import {fetchBoards} from '../../actions/board_actions'
 
 class PinIndexItem extends React.Component {
     constructor(props){
         super(props)
     }
+
+    // componentDidMount(){
+    //     this.props.fetchBoards()
+    // }
 
     render() {
         return (
@@ -21,6 +27,9 @@ class PinIndexItem extends React.Component {
     }
 }
 
+const mDTP = dispatch => ({
+    fetchBoards: () => dispatch(fetchBoards()),
+})
 
 
-export default PinIndexItem; 
+export default connect(null, mDTP)(PinIndexItem); 

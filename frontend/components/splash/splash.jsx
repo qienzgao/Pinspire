@@ -21,6 +21,7 @@ class Splash extends React.Component {
 
     componentDidMount() {
         this.props.fetchPins();
+        this.props.fetchBoards()
     }
 
     dropdown(e) {
@@ -252,7 +253,7 @@ class Splash extends React.Component {
                                 key={pin.id}
                                 currentUser={currentUser}
                                 pin={pin}
-                                
+                                board={board}
                             />)}
                     </div>
                 </div>

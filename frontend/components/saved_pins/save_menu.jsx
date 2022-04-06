@@ -1,7 +1,7 @@
 import { SaveAlt } from '@mui/icons-material';
 import React from 'react';
 import { createSavedPin, deleteSavedPin } from '../../util/saved_pin_api_util';
-// import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 class SaveMenu extends React.Component {
     constructor(props) {
@@ -48,20 +48,6 @@ class SaveMenu extends React.Component {
                     }
                 }
 
-                // let savedItem;
-                // for (let i = 0; i < savedArr.length; i++) {
-                //     savedItem = savedArr[i];
-                //     if (savedItem.board_id === board.id) {
-                //         debugger
-                //         return (
-                //             <div key={board.id} className="pin-item-save" >
-                //                 <h3>{board.name}</h3>
-                //                 <button onClick={() => createSavedPin({ pin_id: pin.id, board_id: board.id })} className="pin-inner-button">Save</button>
-                //             </div>
-                //         )
-                //     }
-                // }
-                // debugger
                 return (
                     <div key={board.id} className="pin-item-save" >
                         <h3>{board.name}</h3>
@@ -91,11 +77,12 @@ class SaveMenu extends React.Component {
 
         return (
             <div key={pin.id} className="save-menu-container">
-                <div className="pin-drop-sub" onClick={this.showMenu}>
-                    <div className="pin-sub-title">Profile</div>
-                    <div className="pin-drop-header">expand</div>
+                <div className='save-board-wrapper'>
+                    <div className="save-board-container" >
+                        <button onClick={this.showMenu} className="save-board">Profile</button>
+                    </div>
+                    <ExpandMoreIcon onClick={this.showMenu}/>
                 </div>
-
                 {this.state.showMenu ? dropMenu() : null}
 
                 {savedArr[savedItem(pin.id, currentUser.id)] ?

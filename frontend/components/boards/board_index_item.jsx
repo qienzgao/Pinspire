@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import BoardItemPins from './board_item_pins';
+// import BoardItemPins from './board_item_pins';
 import BoardModal from '../modal/board_modal';
 import { openBoardModal } from '../../actions/board_modal_actions';
 import EditIcon from '@mui/icons-material/Edit';

@@ -3,10 +3,11 @@ import { fetchFollows, deleteFollow, createFollow } from '../../actions/follow_a
 import { close } from '../../actions/modal_actions';
 import FollowerIndex from './follower_index';
 
-const mSTP = (state) => ({
-    follows: Object.values(state.entities.follows),
-    users: state.entities.users
-})
+const mSTP = (state) => {
+    return({
+        follows: Object.values(state.follows)
+    })
+}
 
 const mDTP = dispatch => ({
     fetchFollows: () => dispatch(fetchFollows()),

@@ -4,6 +4,7 @@ import ErrorsReducer from './errors_reducer';
 import ModalReducer from './modal_reducer'
 import { combineReducers } from 'redux';
 import boardModalsReducer from './board_modal_reducer';
+import followsReducer from './follows_reducer';
 
 
 const RootReducer = combineReducers({
@@ -11,7 +12,8 @@ const RootReducer = combineReducers({
   entities: EntitiesReducer, 
   errors: ErrorsReducer,
   modal: ModalReducer, 
-  boardModal: boardModalsReducer
+  boardModal: boardModalsReducer, 
+  follows: followsReducer
 });
 
 export default RootReducer;

@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import BoardIndexContainer from '../boards/board_index_container';
 import { borderBottom } from '@mui/system';
+// import FollowingIndexContainer from '../follows/following_index_container';
+// import FollowerIndexContainer from '../follows/follower_index_container';
 
 class UserShow extends React.Component {
     constructor(props){
@@ -139,6 +141,16 @@ class UserShow extends React.Component {
 
                 <section className='board-index' onClick={this.closeMenu}>
                     <BoardIndexContainer user={user} user_id={user.id}/>
+                    <div >
+                        <button onClick={() => this.props.openFollowModal('follower')}>Follower</button>
+                    </div>
+
+                    <div>
+                        <button onClick={() => this.props.openFollowModal('following')}>Following</button>
+                    </div>
+{/* 
+                    <FollowerIndexContainer/>
+                    <FollowingIndexContainer/> */}
                 </section>
 
                 <div className='tabs'>

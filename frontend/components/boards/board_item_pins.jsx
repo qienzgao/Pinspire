@@ -36,21 +36,7 @@ class BoardItemPins extends React.Component {
                 <div className="board-container-img">
                     <img className="board-img-left" src={avatarArr[0] === undefined ? null : avatarArr[0].imgUrl} />
                 </div>)
-        // } else if (avatarArr.length === 2) {
-        //     return (
-        //         <div className="board-container-img">
-        //             <img className="board-img-left" src={avatarArr[0] === undefined ? null : avatarArr[0].photoUrl} />
-        //             <img className="board-img-middle" src={avatarArr[1].photoUrl} />
-        //         </div>
-        //     )
-        // } else if (avatarArr.length === 3) {
-        //     return (
-        //         <div className="board-container-img">
-        //             <img className="board-img-left" src={avatarArr[0].photoUrl} />
-        //             <img className="board-img-middle" src={avatarArr[1].photoUrl} />
-        //             <img className="board-img-right" src={avatarArr[2].photoUrl} />
-        //         </div>
-        //     )
+
         } else {
             return (
                 <div className="board-container-img"></div>

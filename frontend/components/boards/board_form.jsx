@@ -18,37 +18,35 @@ class BoardForm extends React.Component {
         }
     }
 
-    renderErrors() {
-        return (
-            <ul>
-                {this.props.error.map((error, i) => {
-                    return (<li className="error-message-board" key={`error-${i}`}>
-                        {error}
-                    </li>)
-                })}
-            </ul>
-        );
-    }
 
     render() {
         // const createBoard = () => {
 
             return (
-                <div className="board-create" onClick={e => e.stopPropagation()}>
+                <div className="login-form-container" onClick={e => e.stopPropagation()}>
                     <form onSubmit={this.handleSubmit} >
                         <div>
                             <div className="board-title-container">
                                 <div className="board-create-title">Create board</div>
                             </div>
                             <div className="board-body-inputs">
-                                <div className="board-label-name">Name:</div>
+                                <label className="board-label-name">Name:</label>
                                 <input className="board-input-name"
                                     type="text"
                                     placeholder={"Like \"Places to Go\" or \"Recipes to Make\""}
                                     value={this.state.name}
                                     onChange={this.update('name')}>
                                 </input>
-                                {this.renderErrors()}
+                                <br/>
+
+                                <label className="board-label-name">Details:</label>
+                                <input className="board-input-name"
+                                    type="text"
+                                    placeholder={"Like \"Places to Go\" or \"Recipes to Make\""}
+                                    value={this.state.details}
+                                    onChange={this.update('details')}>
+                                </input>
+
                                 <div className="nav-fil"></div>
                                 <div className="board-public-container">
                                     <input className="board-public-check"
@@ -73,18 +71,6 @@ class BoardForm extends React.Component {
                     </form>
                 </div>
             )
-
-        // }
-
-        // const editBoard = () => {
-        //     console.log(this.state)
-        //     return (
-               
-        //     )
-
-        // }
-
-        // return this.props.formType === 'Create Board' ? createBoard() : editBoard();
     }
 }
 

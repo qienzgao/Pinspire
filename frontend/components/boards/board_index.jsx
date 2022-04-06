@@ -14,7 +14,6 @@ class BoardIndex extends React.Component {
         let profileBoardsArr = boardsArr.filter(board => board.user_id === user_id);
 
         return (
-            
             <div className='board-wrapper'>
                 {profileBoardsArr.map(board => <BoardIndexItem
                     pins={pins}

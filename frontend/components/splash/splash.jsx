@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import SignupFormContainer from "../session/signup_form_container";
-import { openBoardModal } from "../../actions/board_modal_actions"
+import { openBoardModal } from "../../actions/board_modal_actions"; 
+import BoardIndexContainer from "../boards/board_index_container"; 
+import BoardModal from "../modal/board_modal"
 
 
 class Splash extends React.Component {
@@ -60,9 +62,6 @@ class Splash extends React.Component {
                             <div className="changing">
                                 <h2 id="food" className="text animate-before">feast inspiration</h2>
                             </div>
-                            {/* <div className="changing">
-                                <h2 id="outdoor" className="text animate-before">experience of wildness</h2>
-                            </div> */}
                         </div>
                         <div className='arrow-down'>
                             <button>
@@ -237,57 +236,6 @@ class Splash extends React.Component {
                                     <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/whitechoco.jpeg" /></div>
                                 </div>
                             </div>
-                            {/* <div className="grid">
-                                <div className="column animate-before">
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/bento.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/bacon.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/avacadotoast.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/bread.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/breakfast.jpeg" /></div>
-                                </div>
-                                <div className="column animate-before">
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/bun.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/chococake.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/coffee.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/crawfish.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/donuts.jpeg" /></div>
-                                </div>
-                                <div className="column animate-before">
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/friedchicken.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/lamb.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/macron.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/mocha.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/orange.jpeg" /></div>
-                                </div>
-                                <div className="column animate-before">
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/pancake.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/pasta.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/pizza.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/precooked.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/pizza3.jpeg" /></div>
-                                </div>
-                                <div className="column animate-before">
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/pumkinpie.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/bbq.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/salad.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/pasta2.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/sandwich.jpeg" /></div>
-                                </div>
-                                <div className="column animate-before">
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/share.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/shortrib.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/shrimps.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/snails.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/strawberryicecream.jpeg" /></div>
-                                </div>
-                                <div className="column animate-before">
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/sushi.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/tacos.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/tacos2.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/vegs.jpeg" /></div>
-                                    <div className="pic"><img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/foods/whitechoco.jpeg" /></div>
-                                </div>
-                            </div> */}
                             </div>
                         </div>
                     </div>
@@ -308,13 +256,16 @@ class Splash extends React.Component {
                             />)}
                     </div>
                 </div>
+
+                <BoardModal user={currentUser} user_id={currentUser.id}/>
+
                 <div className='dropdown-container'>
                     {this.state.showMenu ? 
                     <div className="dropdown-menu">
                         <h4>create</h4>
                         <Link to="/pins/create"><button>Pin</button></Link>
                         <br />
-                            <button onClick={() => openBoardModal('createBoard')}>Board</button>
+                            <button onClick={() => this.props.openBoardModal('create')}>Board</button>
                     </div> : null}
                     <div className="create-pin-button-container">  
                         <button className="create-pin-button" onClick={this.dropdown}>+</button>

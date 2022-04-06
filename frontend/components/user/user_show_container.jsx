@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { fetchUser, fetchUsers } from '../../actions/user_actions';
 import { fetchPins, fetchPin } from '../../actions/pin_actions';
 import UserShow from './user_show';
+import { openBoardModal } from "../../actions/board_modal_actions"
 
 const mSTP = (state, ownProps) => ({
     user: state.entities.users[ownProps.match.params.userId],
@@ -13,7 +14,8 @@ const mDTP = dispatch => ({
     fetchUser: userId => dispatch(fetchUser(userId)),
     fetchUsers: () => dispatch(fetchUsers()),
     fetchPins: () => dispatch(fetchPins()),
-    fetchPin: pinId => dispatch(fetchPin(pinId))
+    fetchPin: pinId => dispatch(fetchPin(pinId)),
+    openBoardModal: boardModal => dispatch(openBoardModal(boardModal))
 })
 
 export default connect(mSTP, mDTP)(UserShow); 

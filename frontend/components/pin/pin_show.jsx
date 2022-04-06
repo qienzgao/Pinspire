@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import SaveMenuContainer from '../saved_pins/save_menu_container';
+import BoardModal from "../modal/board_modal"
 
 class PinShow extends React.Component {
     constructor(props){
@@ -105,6 +106,8 @@ class PinShow extends React.Component {
                 </div>
                 </div>
 
+                <BoardModal/>
+
                 <div className='dropdown-container'>
                     {this.state.showMenu ?
                         <div className="dropdown-menu"
@@ -114,7 +117,7 @@ class PinShow extends React.Component {
                             <h4>create</h4>
                             <Link to="/pins/create"><button>Pin</button></Link>
                             <br />
-                            <button>Board</button>
+                            <button onClick={() => this.props.openBoardModal('create')}>Board</button>
                         </div> : null}
                     <div className="create-pin-button-container">
                         <button className="create-pin-button" onClick={this.dropdown}>+</button>

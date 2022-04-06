@@ -10,7 +10,6 @@ const mSTP = (state) => ({
         public: "true",
         user_id: state.session.id
     },
-    formType: 'Create Board',
     error: state.errors.board
 });
 

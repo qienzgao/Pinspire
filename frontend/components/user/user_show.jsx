@@ -137,8 +137,6 @@ class UserShow extends React.Component {
                     </div>
                 </section>
 
-
-                
                 <section className='board-index' onClick={this.closeMenu}>
                     <BoardIndexContainer user={user} user_id={user.id}/>
                 </section>
@@ -174,7 +172,7 @@ class UserShow extends React.Component {
                             <h4>create</h4>
                             <Link to="/pins/create"><button>Pin</button></Link>
                             <br />
-                            <button>Board</button>
+                            <button onClick={() => this.props.openBoardModal('create')}>Board</button>
                         </div> : null}
                     <div className="create-pin-button-container">
                         <button className="create-pin-button" onClick={this.dropdown}>+</button>

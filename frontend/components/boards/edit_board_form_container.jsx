@@ -5,7 +5,6 @@ import EditBoardForm from './edit_board_form';
 import { withRouter } from 'react-router-dom'; 
 
 const mSTP = (state, ownProps) => ({
-    formType: 'Update Board',
     boardId: state.entities.boards[ownProps.match.params.boardId]
 })
 

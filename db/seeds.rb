@@ -10,6 +10,7 @@ require "open-uri"
 User.destroy_all
 Pin.destroy_all
 Board.destroy_all
+Follow.destroy_all
 
 user1 = User.create!(email: "OolongTea@email.com", age: 18, password: "oolongtea")
 avatar1 = open('https://pinspire-seeds.s3.us-east-1.amazonaws.com/avartar.jpeg')

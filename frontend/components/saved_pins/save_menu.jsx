@@ -91,7 +91,7 @@ class SaveMenu extends React.Component {
                     <div className="save-board-container" >
                         <button onClick={this.showMenu} className="save-board">Profile</button>
                     </div>
-                    <ExpandMoreIcon onClick={this.showMenu}/>
+                    <ExpandMoreIcon className="expand-icon" onClick={this.showMenu}/>
                 </div>
                 {savedArr[savedItem(pin.id, currentUser.id)] ?
                 <button className="save-button" onClick={() => deleteSavedPin(savedArr[savedItem(pin.id, currentUser.id)].id)}>Saved</button> :

@@ -80,6 +80,10 @@
     .save-board-wrapper {
         display: flex;
         flex-direction: row;
+        
+        .expand-icon {
+            cursor: pointer;
+        }
     }
 
     .save-board {

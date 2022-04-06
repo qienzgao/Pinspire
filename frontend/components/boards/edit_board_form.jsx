@@ -4,8 +4,6 @@ class EditBoardForm extends React.Component {
     constructor(props){
         super(props); 
         this.state = this.props.board
-        console.log(this.props)
-        console.log("durian")
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 

@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import Modal from '../modal/modal'; 
 
 const mSTP = state => {
+    // console.log(state.user)
+    // console.log("user")
     return({
         modal: state.modal,
         users: state.entities.users,

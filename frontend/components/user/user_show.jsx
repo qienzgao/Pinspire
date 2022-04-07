@@ -14,12 +14,40 @@ class UserShow extends React.Component {
         this.state = {
             showMenu: false, 
             created: false, 
-            saved: true
+            saved: true, 
+            follower: false, 
+            following: false
         }
         this.dropdown = this.dropdown.bind(this);
         this.closeMenu = this.closeMenu.bind(this);
         this.createdTab = this.createdTab.bind(this);
-        this.savedTab = this.savedTab.bind(this)
+        this.savedTab = this.savedTab.bind(this); 
+        this.openFollowerModal = this.openFollowerModal.bind(this); 
+        this.openFollowingModal = this.openFollowingModal.bind(this); 
+        this.closeModal = this.closeModal.bind(this)
+    }
+
+    openFollowerModal(e) {
+        e.preventDefault(); 
+        this.setState({
+            follower: true, 
+            following: false
+        })
+    }
+
+    openFollowingModal(e) {
+        e.preventDefault();
+        this.setState({
+            follower: false,
+            following: true
+        })
+    }
+
+    closeModal() {
+        this.setState({
+            follower: false, 
+            following: false
+        })
     }
 
     createdTab(e) {
@@ -46,7 +74,7 @@ class UserShow extends React.Component {
     }
 
     closeMenu() {
-        this.setState({ showMenu: false }, () => {
+        this.setState({ showMenu: false}, () => {
             document.removeEventListener('click', this.closeMenu);
         });
     }
@@ -58,9 +86,17 @@ class UserShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchUsers()
-        this.props.fetchUser(this.props.match.params.userId)
+            .then(()=> {
+                this.props.fetchUser(this.props.match.params.userId)
+                    .then(() => {
+                        this.props.fetchFollows();
+                    })
+            })
+
         this.props.fetchPins()
         this.props.fetchBoards();
+       
+
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -98,9 +134,29 @@ class UserShow extends React.Component {
 
 
     render() {
-        const { pins, user, users, openBoardModal } = this.props;
+        const { pins, user, users, openBoardModal, follows } = this.props;
 
         if (!users || !user) return null;
+
+        const followers = Object.values(follows).filter(follow => follow.following_id === user.id)
+        const followings = Object.values(follows).filter(follow => follow.follower_id === user.id)
+
+        const followerList = followers.map(follower => {
+            return (
+                <div key={follower.follower_id}>
+                    {this.parseEmail(users[follower.follower_id].email)}
+                </div>
+            )
+        })
+
+        const followingList = followings.map(following => {
+            return (
+                <div key={following.following_id}>
+                    {this.parseEmail(users[following.following_id].email)}
+                </div>
+            )
+        })
+
 
         const defaultAvatar = "https://pinspire-seeds.s3.us-east-1.amazonaws.com/defaultavatar.png";
         const avatar = user.imgUrl ? <img className='avatar' src={user.imgUrl} /> : <img className='avatar-default' src={defaultAvatar}/>
@@ -134,10 +190,36 @@ class UserShow extends React.Component {
                     </div>
 
                     <div className='follow-display-container'>
-                        <button onClick={() => this.props.openFollowModal('follower')}>Follower</button>
-                        <button onClick={() => this.props.openFollowModal('following')}>Following</button>
+                        <button onClick={this.openFollowerModal}>Follower</button>
+                        <button onClick={this.openFollowingModal}>Following</button>
                     </div>
 
+                </section>
+
+                <section >
+                    <div >
+                        {this.state.follower ? 
+                        <div className='modal-background' >
+                            <div className='modal-child'>
+                                <div className='follow-modal'>
+                                    <button onClick={this.closeModal}>close</button>
+                                    {followerList}
+                                </div>
+                            </div>
+                        </div>  : null }
+                    </div>
+
+                    <div>
+                        {this.state.following ?
+                            <div className='modal-background' >
+                                <div className='modal-child'>
+                                    <div className='follow-modal'>
+                                        <button onClick={this.closeModal}>close</button>
+                                        {followingList}
+                                    </div>
+                                </div>
+                            </div> : null}
+                    </div>
                 </section>
 
                 <div className='tabs'>
@@ -167,7 +249,7 @@ class UserShow extends React.Component {
                     
                 </section>
                 
-                    <BoardModal />
+                    {/* <BoardModal followers={followers} followings={followings} user={user}/> */}
 
                 <div className='dropdown-container'>
                     {this.state.showMenu ?

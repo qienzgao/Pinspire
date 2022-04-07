@@ -10,11 +10,23 @@ class FollowerIndex extends React.Component {
         this.props.fetchFollows();
     }
 
+    parseEmail(email) {
+        let username = '';
+        for (let i = 0; i < email.length; i++) {
+            if (email[i] === '@') {
+                return username
+            } else if (i === 0) {
+                username += email[i].toUpperCase()
+            } else {
+                username += email[i]
+            }
+        }
+        return username
+    }
+
     render() {
         const { users, follows, session, deleteFollow, submitFollow, user} = this.props;
-        
-        console.log(user)
-        console.log("hello")
+
         let followsArr = Object.values(follows);
 
         const followList = (follow) => {
@@ -39,7 +51,7 @@ class FollowerIndex extends React.Component {
                     <Link to={`/users/${follow.follower_id}`}>
                         <div className='follow-info'>
                             <img className="follow-avatar" src={users[follow.follower_id].imgUrl} />
-                            <span>{users[follow.follower_id].email}</span>
+                            <span>{this.parseEmail(users[follow.follower_id].email)}</span>
                         </div>
                     </Link>
                     {followStatus()}

@@ -5,12 +5,14 @@ import UserShow from './user_show';
 import { openBoardModal } from "../../actions/board_modal_actions"; 
 import { open } from '../../actions/modal_actions';
 import { fetchBoards } from '../../actions/board_actions';
+import { fetchFollows } from '../../actions/follow_actions';
 
 const mSTP = (state, ownProps) => ({
     user: state.entities.users[ownProps.match.params.userId],
     users: state.entities.users,
     pins: Object.values(state.entities.pins),
-    boards: state.entities.board
+    boards: state.entities.board, 
+    follows: state.entities.follows
 })
 
 const mDTP = dispatch => ({
@@ -20,7 +22,8 @@ const mDTP = dispatch => ({
     fetchPin: pinId => dispatch(fetchPin(pinId)),
     fetchBoards: () => dispatch(fetchBoards()),
     openBoardModal: boardModal => dispatch(openBoardModal(boardModal)),
-    openFollowModal: modal => dispatch(open(modal))
+    openFollowModal: modal => dispatch(open(modal)), 
+    fetchFollows: () => dispatch(fetchFollows())
 })
 
 export default connect(mSTP, mDTP)(UserShow); 

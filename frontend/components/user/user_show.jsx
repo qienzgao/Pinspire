@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import BoardIndexContainer from '../boards/board_index_container';
 import { borderBottom } from '@mui/system';
+import BoardModal from "../modal/board_modal"
 // import FollowingIndexContainer from '../follows/following_index_container';
 // import FollowerIndexContainer from '../follows/follower_index_container';
 
@@ -94,6 +95,7 @@ class UserShow extends React.Component {
     render() {
         const { pins, user, users } = this.props;
 
+
         if (!users || !user) return null;
 
         const defaultAvatar = "https://pinspire-seeds.s3.us-east-1.amazonaws.com/defaultavatar.png";
@@ -126,21 +128,13 @@ class UserShow extends React.Component {
                     <div className='about-me'>
                         <span>Hey you finally come! There are a lot I want to share with you, scroll down and see what I've got! Life is all about seeking inspirations!</span>
                     </div>
-                    
-                    <div className='arrow-down'>
-                        <button>
-                            <KeyboardArrowDownIcon fontSize="large"/>
-                        </button>
-                    </div>
-                </section>
 
-                    <div >
+                    <div className='follow-display-container'>
                         <button onClick={() => this.props.openFollowModal('follower')}>Follower</button>
-                    </div>
-
-                    <div>
                         <button onClick={() => this.props.openFollowModal('following')}>Following</button>
                     </div>
+
+                </section>
 
                 <div className='tabs'>
                     <button className='created-tab' onClick={this.createdTab} style={{ borderBottom: cStyle }}>Created</button>
@@ -162,11 +156,14 @@ class UserShow extends React.Component {
                             </div>
                         </div> : null}
                     {this.state.saved ? 
-                        <section className='board-index' onClick={this.closeMenu}>
+        
+                        <div className='board-index' onClick={this.closeMenu}>
                             <BoardIndexContainer user={user} user_id={user.id} />
-                        </section> : null}
+                        </div> : null}
                     
                 </section>
+
+                <BoardModal />
 
                 <div className='dropdown-container'>
                     {this.state.showMenu ?
@@ -174,7 +171,7 @@ class UserShow extends React.Component {
                             {/* <h4>create</h4> */}
                             <Link to="/pins/create"><button>Create a Pin</button></Link>
                             <br />
-                            <button onClick={() => this.props.openBoardModal('create').then(this.setState({showMenu:false}))}>Create a Board</button>
+                            <button onClick={() => this.props.openBoardModal('create').then(this.setState({ showMenu: false }))}>Create a Board</button>
                         </div> : null}
                     <div className="create-pin-button-container">
                         <button className="create-pin-button" onClick={this.dropdown}>+</button>

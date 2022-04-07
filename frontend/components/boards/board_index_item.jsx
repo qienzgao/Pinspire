@@ -25,6 +25,7 @@ class BoardIndexItem extends React.Component {
                 pinCount += 1;
             }
         }
+
         return (
             <div>
                 <BoardModal board={board} boardId={board.id}/>
@@ -34,7 +35,7 @@ class BoardIndexItem extends React.Component {
                     </Link>
 
                     {board.user_id === currentUser.id ? <div className='hidden-button'>
-                        <button className="board-edit" onClick={() => this.props.openBoardModal('edit')}><EditIcon fontSize='small' /></button>
+                        <Link to={`/boards/${board.id}/edit`}><button className="board-edit" ><EditIcon fontSize='small' /></button></Link>
                     </div> : null}
                         
                     <h2 className="board-title">{board.name}</h2>

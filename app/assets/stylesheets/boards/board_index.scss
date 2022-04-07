@@ -1,12 +1,13 @@
+
 .board-index{
     position: relative;
     // display: flex;
-    justify-content: center;
-    width: 100%;
+    // justify-content: center;
+    width: 99.5%;
     height: auto;
     margin-top: 20px;
-    padding-top: 65px;
-    padding-left: 10px;
+    padding: 65px 0 0 1.5%; 
+    text-align: left;
 }
 
 .board-wrapper {

@@ -101,41 +101,6 @@
     line-height: 130%;
 }
 
-@keyframes floating {
-    0% {transform: translateY(0px)}
-    25% {transform: translateY(10px)}
-    75% {transform: translateY(-10px)}
-    100% {transform: translateY(0px)}
-}
-
-@keyframes color-change {
-    0% {background-color: rgb(241, 126, 145);}
-    33% {background-color: rgb(31, 185, 185)}
-    66% {background-color: rgb(226, 170, 47);}
-    100% {background-color: rgb(241, 126, 145);}
-}
-
-.arrow-down {
-    position: absolute;
-    padding: 0;
-    bottom: 4%;
-    display: block;
-    animation: floating linear 2s infinite ;
-    
-    
-    button {
-        width: 50px;
-        height: 50px;
-        border-radius: 100%;
-        border: none;
-        animation: color-change steps(1)  19.2s infinite;
-        color: white; 
-        padding-top: 7px;
-    }
-
-    
-}
-
 .ideas {
     position: relative; 
     display: flex;

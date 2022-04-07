@@ -1,6 +1,7 @@
 import React from 'react';
 import SavedPinsIndex from '../saved_pins/saved_pins_index';
 import PinIndexItem from '../pin/pin_index_item';
+import {Link} from 'react-router-dom'
 
 class BoardShow extends React.Component {
     componentDidMount() {
@@ -9,6 +10,20 @@ class BoardShow extends React.Component {
         this.props.fetchUsers();
         this.props.fetchSavedPins(); 
         this.props.fetchPins()
+    }
+
+    parseEmail(email) {
+        let username = '';
+        for (let i = 0; i < email.length; i++) {
+            if (email[i] === '@') {
+                return username
+            } else if (i === 0) {
+                username += email[i].toUpperCase()
+            } else {
+                username += email[i]
+            }
+        }
+        return username
     }
 
     render() {
@@ -29,23 +44,43 @@ class BoardShow extends React.Component {
             }
         }
 
+        const defaultAvatar = "https://pinspire-seeds.s3.us-east-1.amazonaws.com/defaultavatar.png";
+        const avatar = users[board.user_id].imgUrl ? <img className='avatar' src={users[board.user_id].imgUrl} /> : <img className='avatar-default' src={defaultAvatar} />
+
         return (
-            <div className="show-board">
-                <div className="show-board-head">
-                    <div className="show-board-title">{board.name}</div>
-                    <div className="show-board-avatar"><img src={users[board.user_id].imgUrl} /></div>
-                    <div className="show-board-info">
-                        <div className="show-board-user">{users[board.user_id].email}</div>
-                        <div className="show-dot">·</div>
-                        <div className="show-board-desc">{board.details}</div>
+            <div >
+                <section className='board-info-container'>
+                    <div>
+                        <h3>{board.name}</h3>
                     </div>
-                    {filteredPins.map(pin => 
-                        <PinIndexItem
-                            pin={pin}
-                            key={pin.id}
-                        />
-                    )}
-                </div>
+
+                    <div>
+                        <span>{board.details}</span>
+                    </div>
+
+                    <div className='board-avatar-container'>
+                        <Link to={`/users/${board.user_id}`}>{avatar}</Link>
+                    </div>
+
+                    <div >
+                        <span>{this.parseEmail(users[board.user_id].email)}</span>
+                    </div>
+
+                </section>
+
+                    <section className='ideas'>
+                        <div className="user-ideas">
+                            <div className="ideas-container">
+                                {filteredPins.map(pin => 
+                                    <PinIndexItem
+                                        pin={pin}
+                                        key={pin.id}
+                                    />
+                                )}
+                            </div>
+                        </div>
+                    </section>
+               
             </div>
         )
     }

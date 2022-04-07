@@ -5,7 +5,7 @@ import UserShow from './user_show';
 import { openBoardModal } from "../../actions/board_modal_actions"; 
 import { open } from '../../actions/modal_actions';
 import { fetchBoards } from '../../actions/board_actions';
-import { fetchFollows } from '../../actions/follow_actions';
+import { fetchFollows, deleteFollow, createFollow } from '../../actions/follow_actions';
 
 const mSTP = (state, ownProps) => ({
     user: state.entities.users[ownProps.match.params.userId],

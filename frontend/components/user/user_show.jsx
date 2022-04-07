@@ -134,7 +134,7 @@ class UserShow extends React.Component {
 
 
     render() {
-        const { pins, user, users, openBoardModal, follows, session } = this.props;
+        const { pins, user, users, openBoardModal, follows, session, submitFollow, deleteFollow } = this.props;
         if (!users || !user) return null;
 
         const defaultAvatar = "https://pinspire-seeds.s3.us-east-1.amazonaws.com/defaultavatar.png";
@@ -165,7 +165,8 @@ class UserShow extends React.Component {
                         <button className="follow-btn" onClick={() => submitFollow({ follower_id: session, following_id: follower.follower_id })} >
                             Follow
                         </button> :
-                        <button className="unfollow-btn" onClick={() => deleteFollow(follower)} >
+                        <button className="unfollow-btn" 
+                            onClick={() => deleteFollow(currentFollowings.filter(currentFollowing => currentFollowing.following_id === follower.follower_id)[0])} >
                             Unfollow
                         </button>}
                 </div>
@@ -183,7 +184,10 @@ class UserShow extends React.Component {
                     </div>
                     {currentFollowings.filter(currentFollowing => currentFollowing.following_id === following.following_id).length === 0 ?
                         <button className="follow-btn">Follow</button> :
-                        <button className="unfollow-btn">Unfollow</button>}
+                        <button className="unfollow-btn" 
+                            onClick={() => deleteFollow(currentFollowings.filter(currentFollowing => currentFollowing.following_id === following.following_id)[0])} >
+                            Unfollow
+                        </button>}
                 </div>
             )
         })

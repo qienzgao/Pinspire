@@ -51,6 +51,11 @@ class UserShow extends React.Component {
         });
     }
     
+    handleClick() {
+        this.props.openBoardModal('create')
+        this.closeMenu()
+    }
+
     componentDidMount() {
         this.props.fetchUsers()
         this.props.fetchUser(this.props.match.params.userId)
@@ -171,7 +176,7 @@ class UserShow extends React.Component {
                             {/* <h4>create</h4> */}
                             <Link to="/pins/create"><button>Create a Pin</button></Link>
                             <br />
-                            <button onClick={() => openBoardModal('create').then(this.closeMenu())}>Create a Board</button>
+                            <button onClick={() => this.handleClick()}>Create a Board</button>
                         </div> : null}
                     <div className="create-pin-button-container">
                         <button className="create-pin-button" onClick={this.dropdown}>+</button>

@@ -1,6 +1,6 @@
 class Pin < ApplicationRecord
     validates :title, :user_id, presence: true
-    # validate :ensure_img
+    validate :ensure_img
 
     belongs_to :user, 
         primary_key: :id, 

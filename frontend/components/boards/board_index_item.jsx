@@ -25,6 +25,7 @@ class BoardIndexItem extends React.Component {
                 pinCount += 1;
             }
         }
+        
         return (
             <div>
                 <BoardModal board={board} boardId={board.id}/>

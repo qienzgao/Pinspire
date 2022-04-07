@@ -1,16 +1,33 @@
 import React from 'react';
-import SavedPinsIndex from '../saved_pins/saved_pins_index_container';
+import SavedPinsIndex from '../saved_pins/saved_pins_index';
+import PinIndexItem from '../pin/pin_index_item';
 
 class BoardShow extends React.Component {
     componentDidMount() {
+        this.props.fetchBoards()
         this.props.fetchBoard(this.props.match.params.boardId);
         this.props.fetchUsers();
+        this.props.fetchSavedPins(); 
+        this.props.fetchPins()
     }
 
     render() {
-        const { board, users} = this.props;
+        const { board, users, savedPins, pins} = this.props;
         if (!users) return null;
         if (!board) return null;
+
+        let savedArr = Object.values(savedPins)
+        let pinArr = Object.values(pins)
+        let filteredArr = savedArr.filter(savedPin => savedPin.board_id === board.id);
+        let filteredPins = []
+
+        for (let i = 0; i < filteredArr.length; i++ ) {
+            for (let j = 0; j < pinArr.length; j++) {
+                if (pinArr[j].id === filteredArr[i].pin_id) {
+                    filteredPins.push(pinArr[j])
+                }
+            }
+        }
 
         return (
             <div className="show-board">
@@ -22,7 +39,12 @@ class BoardShow extends React.Component {
                         <div className="show-dot">·</div>
                         <div className="show-board-desc">{board.details}</div>
                     </div>
-                    {/* <SavedPinsIndex board={board} /> */}
+                    {filteredPins.map(pin => 
+                        <PinIndexItem
+                            pin={pin}
+                            key={pin.id}
+                        />
+                    )}
                 </div>
             </div>
         )

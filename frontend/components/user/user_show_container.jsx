@@ -22,7 +22,7 @@ const mDTP = dispatch => ({
     fetchPin: pinId => dispatch(fetchPin(pinId)),
     fetchBoards: () => dispatch(fetchBoards()),
     openBoardModal: boardModal => dispatch(openBoardModal(boardModal)),
-    openFollowModal: modal => dispatch(open(modal)), 
+    // openFollowModal: modal => dispatch(open(modal)), 
     fetchFollows: () => dispatch(fetchFollows())
 })
 

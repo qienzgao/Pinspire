@@ -135,36 +135,46 @@ class UserShow extends React.Component {
 
     render() {
         const { pins, user, users, openBoardModal, follows } = this.props;
-
         if (!users || !user) return null;
+
+        const defaultAvatar = "https://pinspire-seeds.s3.us-east-1.amazonaws.com/defaultavatar.png";
+        const avatar = user.imgUrl ? <img className='avatar' src={user.imgUrl} /> : <img className='avatar-default' src={defaultAvatar} />
+        const defaultCover = 'https://pinspire-seeds.s3.us-east-1.amazonaws.com/random/scaleshape.jpeg';
+        const cover = user.coverUrl ? <img className='cover-img' src={user.coverUrl} /> : <img className='cover-img' src={defaultCover} />
+        const sizes = ["ex-small", "small", "medium", "large", "ex-large"];
+        let cStyle = this.state.created ? "solid 3px black" : "none";
+        let sStyle = this.state.saved ? "solid 3px black" : "none"; 
+
 
         const followers = Object.values(follows).filter(follow => follow.following_id === user.id)
         const followings = Object.values(follows).filter(follow => follow.follower_id === user.id)
-
+        const followerCount = followers.length
+        const followingCount = followings.length
         const followerList = followers.map(follower => {
             return (
-                <div key={follower.follower_id}>
-                    {this.parseEmail(users[follower.follower_id].email)}
+                <div key={follower.follower_id} className="follow-item">
+                    <div className="follow-info">
+                        <Link to={`/users/${follower.follower_id}`}>
+                            <img src={users[follower.follower_id].imgUrl ||= defaultAvatar}></img>
+                        </Link>
+                            <span>{this.parseEmail(users[follower.follower_id].email)}</span>
+                    </div>
                 </div>
             )
         })
 
         const followingList = followings.map(following => {
             return (
-                <div key={following.following_id}>
-                    {this.parseEmail(users[following.following_id].email)}
+                <div key={following.following_id} className="follow-item">
+                    <div className="follow-info">
+                        <Link to={`/users/${following.following_id}`}>
+                            <img src={users[following.following_id].imgUrl ||= defaultAvatar}></img>
+                        </Link>
+                            <span>{this.parseEmail(users[following.following_id].email)}</span>
+                    </div>
                 </div>
             )
         })
-
-
-        const defaultAvatar = "https://pinspire-seeds.s3.us-east-1.amazonaws.com/defaultavatar.png";
-        const avatar = user.imgUrl ? <img className='avatar' src={user.imgUrl} /> : <img className='avatar-default' src={defaultAvatar}/>
-        const defaultCover = 'https://pinspire-seeds.s3.us-east-1.amazonaws.com/random/scaleshape.jpeg';
-        const cover = user.coverUrl ? <img className='cover-img' src={user.coverUrl} /> : <img className='cover-img' src={defaultCover} />
-        const sizes = ["ex-small", "small", "medium", "large", "ex-large"];
-        let cStyle = this.state.created ? "solid 3px black" : "none";
-        let sStyle = this.state.saved ? "solid 3px black" : "none"; 
 
         return (
             <div >                
@@ -190,8 +200,8 @@ class UserShow extends React.Component {
                     </div>
 
                     <div className='follow-display-container'>
-                        <button onClick={this.openFollowerModal}>Follower</button>
-                        <button onClick={this.openFollowingModal}>Following</button>
+                        <button onClick={this.openFollowerModal}>{followerCount} followers</button>
+                        <button onClick={this.openFollowingModal}>{followingCount} following</button>
                     </div>
 
                 </section>
@@ -199,22 +209,32 @@ class UserShow extends React.Component {
                 <section >
                     <div >
                         {this.state.follower ? 
-                        <div className='modal-background' >
+                        <div className='modal-background' onClick={this.closeModal}>
                             <div className='modal-child'>
                                 <div className='follow-modal'>
-                                    <button onClick={this.closeModal}>close</button>
+                                    <div className='follow-title'>
+                                        <h3>{followerCount} Followers</h3>
+                                    </div>
+                                    <button onClick={this.closeModal} className="close-button">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
                                     {followerList}
                                 </div>
                             </div>
-                        </div>  : null }
+                        </div> : null }
                     </div>
 
                     <div>
                         {this.state.following ?
-                            <div className='modal-background' >
+                            <div className='modal-background' onClick={this.closeModal}>
                                 <div className='modal-child'>
                                     <div className='follow-modal'>
-                                        <button onClick={this.closeModal}>close</button>
+                                        <div className='follow-title'>
+                                            <h3>Following</h3>
+                                        </div>
+                                        <button onClick={this.closeModal} className="close-button">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
                                         {followingList}
                                     </div>
                                 </div>

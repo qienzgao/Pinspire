@@ -17,14 +17,10 @@ class PinShow extends React.Component {
     componentDidMount() {
         this.props.fetchPin(this.props.match.params.pinId)
             .then(() => {
-                // this.props.fetchUsers()
-                // .then(() => {
-                    this.props.fetchUser(this.props.pin.user_id)
-                        .then(() => {
-                            this.props.fetchBoards()
-                        })
-
-                // })
+                this.props.fetchUser(this.props.pin.user_id)
+                    .then(() => {
+                        this.props.fetchBoards()
+                    })
             })
         this.props.fetchSavedPins();
         this.handleSubmit = this.handleSubmit.bind(this);

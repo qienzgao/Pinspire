@@ -4,7 +4,6 @@ import { login } from './actions/session_actions';
 import Root from './components/root';
 import configureStore from './store/store';
 
-
 document.addEventListener('DOMContentLoaded', () => {
     window.receiveCurrentUser = login
 

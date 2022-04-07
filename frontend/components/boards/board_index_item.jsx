@@ -25,13 +25,11 @@ class BoardIndexItem extends React.Component {
                 pinCount += 1;
             }
         }
-        
         return (
             <div>
                 <BoardModal board={board} boardId={board.id}/>
                 <div className="board-container">
                     <Link to={`/boards/${board.id}`}>
-                        {/* <BoardItemPins board={board} savedPins={savedPins} pins={pins} /> */}
                         <img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/random/scaleshape.jpeg"/>
                     </Link>
 

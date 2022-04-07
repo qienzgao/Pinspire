@@ -52,12 +52,9 @@ class UserShow extends React.Component {
     
     componentDidMount() {
         this.props.fetchUsers()
-            .then(() => {
-                this.props.fetchUser(this.props.match.params.userId)
-                    .then(() => {
-                        this.props.fetchPins()
-                    })
-            });
+        this.props.fetchUser(this.props.match.params.userId)
+        this.props.fetchPins()
+        this.props.fetchBoards();
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 

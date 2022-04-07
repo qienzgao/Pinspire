@@ -4,12 +4,20 @@ import PinIndexItem from '../pin/pin_index_item';
 import {Link} from 'react-router-dom'
 
 class BoardShow extends React.Component {
+    constructor(props){
+        super(props)
+    }
+
     componentDidMount() {
-        this.props.fetchBoards()
-        this.props.fetchBoard(this.props.match.params.boardId);
-        this.props.fetchUsers();
+        this.props.fetchBoard(this.props.match.params.boardId)
+            .then(() => {
+                this.props.fetchUser(this.props.board.user_id)
+            })
+        
+        // this.props.fetchBoards()
+        // this.props.fetchUsers();
         this.props.fetchSavedPins(); 
-        this.props.fetchPins()
+        this.props.fetchPins();
     }
 
     parseEmail(email) {
@@ -28,8 +36,7 @@ class BoardShow extends React.Component {
 
     render() {
         const { board, users, savedPins, pins} = this.props;
-        if (!users) return null;
-        if (!board) return null;
+        if (!users || !board) return null;
 
         let savedArr = Object.values(savedPins)
         let pinArr = Object.values(pins)
@@ -44,8 +51,9 @@ class BoardShow extends React.Component {
             }
         }
 
+        const user = users[board.user_id]
         const defaultAvatar = "https://pinspire-seeds.s3.us-east-1.amazonaws.com/defaultavatar.png";
-        const avatar = users[board.user_id].imgUrl ? <img className='avatar' src={users[board.user_id].imgUrl} /> : <img className='avatar-default' src={defaultAvatar} />
+        const avatar = user ? <img className='avatar' src={user.imgUrl} /> : <img className='avatar-default' src={defaultAvatar} />
 
         return (
             <div >
@@ -63,7 +71,7 @@ class BoardShow extends React.Component {
                     </div>
 
                     <div >
-                        <span>{this.parseEmail(users[board.user_id].email)}</span>
+                        <span>{user? this.parseEmail(user.email): null}</span>
                     </div>
 
                 </section>

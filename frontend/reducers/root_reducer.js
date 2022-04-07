@@ -5,7 +5,7 @@ import ModalReducer from './modal_reducer'
 import { combineReducers } from 'redux';
 import boardModalsReducer from './board_modal_reducer';
 import followsReducer from './follows_reducer';
-
+import UsersReducer from './usersReducer'
 
 const RootReducer = combineReducers({
   session: SessionReducer, 
@@ -13,7 +13,7 @@ const RootReducer = combineReducers({
   errors: ErrorsReducer,
   modal: ModalReducer, 
   boardModal: boardModalsReducer, 
-  follows: followsReducer
+  follows: followsReducer, 
 });
 
 export default RootReducer;

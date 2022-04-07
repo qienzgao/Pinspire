@@ -71,7 +71,12 @@ class SaveMenu extends React.Component {
                         </div>
                         <span>All boards</span>
                         <br/>
-                        {usersBoards.map((board, i) => saveStatus(board, i))}
+                        {usersBoards.length === 0 ?
+                            <div className="board-save-item-container" >
+                                <h3>Your don't have any board</h3>
+                            </div> : 
+                            usersBoards.map((board, i) => saveStatus(board, i))
+                        }
                     </div>
                 </div>
             )

@@ -43,8 +43,7 @@ class FollowingIndex extends React.Component {
                 </div>
             )
         }
-        console.log(this.props)
-        console.log("test")
+
         return (
             <div key={session.id} className="follow-modal">
                 <div className="follow-title">Following</div>

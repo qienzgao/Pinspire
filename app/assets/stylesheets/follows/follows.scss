@@ -11,3 +11,21 @@
         cursor: pointer;
     }
 }
+
+.follow-modal {
+    background-color: white;
+}
+
+.follow-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .follow-info {
+        
+        & img {
+            width: 30px;
+            height: 30px;
+        }
+    }
+}

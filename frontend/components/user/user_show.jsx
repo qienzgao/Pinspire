@@ -100,7 +100,6 @@ class UserShow extends React.Component {
     render() {
         const { pins, user, users, openBoardModal } = this.props;
 
-
         if (!users || !user) return null;
 
         const defaultAvatar = "https://pinspire-seeds.s3.us-east-1.amazonaws.com/defaultavatar.png";

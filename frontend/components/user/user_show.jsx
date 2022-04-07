@@ -134,8 +134,6 @@ class UserShow extends React.Component {
                     </div>
                 </section>
 
-                <section className='board-index' onClick={this.closeMenu}>
-                    <BoardIndexContainer user={user} user_id={user.id}/>
                     <div >
                         <button onClick={() => this.props.openFollowModal('follower')}>Follower</button>
                     </div>
@@ -143,10 +141,6 @@ class UserShow extends React.Component {
                     <div>
                         <button onClick={() => this.props.openFollowModal('following')}>Following</button>
                     </div>
-{/* 
-                    <FollowerIndexContainer/>
-                    <FollowingIndexContainer/> */}
-                </section>
 
                 <div className='tabs'>
                     <button className='created-tab' onClick={this.createdTab} style={{ borderBottom: cStyle }}>Created</button>
@@ -167,9 +161,10 @@ class UserShow extends React.Component {
                                 ))}
                             </div>
                         </div> : null}
-                    {this.state.saved ? <div>
-                        <h1>Not Yet Done</h1>
-                    </div> : null}
+                    {this.state.saved ? 
+                        <section className='board-index' onClick={this.closeMenu}>
+                            <BoardIndexContainer user={user} user_id={user.id} />
+                        </section> : null}
                     
                 </section>
 

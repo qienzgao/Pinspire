@@ -2,7 +2,7 @@
     position: relative;
     // display: flex;
     justify-content: center;
-    max-width: 100%;
+    width: 100%;
     height: auto;
     margin-top: 20px;
     padding-top: 65px;
@@ -19,7 +19,7 @@
     // grid-auto-rows: 40px;
     margin-bottom: 1em;
     padding-bottom: 2em;
-    border-bottom: 0.7px solid rgba(192, 192, 192, 0.692);
+    // border-bottom: 0.7px solid rgba(192, 192, 192, 0.692);
 }
 
 .board-container {

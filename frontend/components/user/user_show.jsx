@@ -13,8 +13,8 @@ class UserShow extends React.Component {
         super(props)
         this.state = {
             showMenu: false, 
-            created: true, 
-            saved: false
+            created: false, 
+            saved: true
         }
         this.dropdown = this.dropdown.bind(this);
         this.closeMenu = this.closeMenu.bind(this);

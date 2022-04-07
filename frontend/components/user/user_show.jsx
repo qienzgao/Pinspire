@@ -162,7 +162,7 @@ class UserShow extends React.Component {
                             <span>{this.parseEmail(users[follower.follower_id].email)}</span>
                     </div>
                     {currentFollowings.filter(currentFollowing => currentFollowing.following_id === follower.follower_id).length === 0 ?
-                        <button className="follow-btn" onClick={() => submitFollow({ follower_id: session, following_id: follower.follower_id })} >
+                        <button className="follow-btn" onClick={() => submitFollow({ follower_id: session.id, following_id: follower.follower_id })} >
                             Follow
                         </button> :
                         <button className="unfollow-btn" 

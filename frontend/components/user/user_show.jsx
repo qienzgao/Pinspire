@@ -134,7 +134,7 @@ class UserShow extends React.Component {
 
 
     render() {
-        const { pins, user, users, openBoardModal, follows } = this.props;
+        const { pins, user, users, openBoardModal, follows, session } = this.props;
         if (!users || !user) return null;
 
         const defaultAvatar = "https://pinspire-seeds.s3.us-east-1.amazonaws.com/defaultavatar.png";
@@ -146,10 +146,12 @@ class UserShow extends React.Component {
         let sStyle = this.state.saved ? "solid 3px black" : "none"; 
 
 
-        const followers = Object.values(follows).filter(follow => follow.following_id === user.id)
-        const followings = Object.values(follows).filter(follow => follow.follower_id === user.id)
-        const followerCount = followers.length
-        const followingCount = followings.length
+        const followers = Object.values(follows).filter(follow => follow.following_id === user.id);
+        const followings = Object.values(follows).filter(follow => follow.follower_id === user.id);
+        const followerCount = followers.length; 
+        const followingCount = followings.length; 
+        const currentFollowings = Object.values(follows).filter(follow => follow.follower_id === session.id);
+
         const followerList = followers.map(follower => {
             return (
                 <div key={follower.follower_id} className="follow-item">
@@ -159,6 +161,13 @@ class UserShow extends React.Component {
                         </Link>
                             <span>{this.parseEmail(users[follower.follower_id].email)}</span>
                     </div>
+                    {currentFollowings.filter(currentFollowing => currentFollowing.following_id === follower.follower_id).length === 0 ?
+                        <button className="follow-btn" onClick={() => submitFollow({ follower_id: session, following_id: follower.follower_id })} >
+                            Follow
+                        </button> :
+                        <button className="unfollow-btn" onClick={() => deleteFollow(follower)} >
+                            Unfollow
+                        </button>}
                 </div>
             )
         })
@@ -172,6 +181,9 @@ class UserShow extends React.Component {
                         </Link>
                             <span>{this.parseEmail(users[following.following_id].email)}</span>
                     </div>
+                    {currentFollowings.filter(currentFollowing => currentFollowing.following_id === following.following_id).length === 0 ?
+                        <button className="follow-btn">Follow</button> :
+                        <button className="unfollow-btn">Unfollow</button>}
                 </div>
             )
         })

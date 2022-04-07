@@ -12,7 +12,8 @@ const mSTP = (state, ownProps) => ({
     users: state.entities.users,
     pins: Object.values(state.entities.pins),
     boards: state.entities.board, 
-    follows: state.entities.follows
+    follows: state.entities.follows,
+    session: state.session
 })
 
 const mDTP = dispatch => ({
@@ -22,7 +23,8 @@ const mDTP = dispatch => ({
     fetchPin: pinId => dispatch(fetchPin(pinId)),
     fetchBoards: () => dispatch(fetchBoards()),
     openBoardModal: boardModal => dispatch(openBoardModal(boardModal)),
-    // openFollowModal: modal => dispatch(open(modal)), 
+    deleteFollow: follow => dispatch(deleteFollow(follow)),
+    submitFollow: follow => dispatch(createFollow(follow)),
     fetchFollows: () => dispatch(fetchFollows())
 })
 

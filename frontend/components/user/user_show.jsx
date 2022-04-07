@@ -93,7 +93,7 @@ class UserShow extends React.Component {
 
 
     render() {
-        const { pins, user, users } = this.props;
+        const { pins, user, users, openBoardModal } = this.props;
 
 
         if (!users || !user) return null;
@@ -162,8 +162,8 @@ class UserShow extends React.Component {
                         </div> : null}
                     
                 </section>
-
-                <BoardModal />
+                
+                    <BoardModal />
 
                 <div className='dropdown-container'>
                     {this.state.showMenu ?
@@ -171,7 +171,7 @@ class UserShow extends React.Component {
                             {/* <h4>create</h4> */}
                             <Link to="/pins/create"><button>Create a Pin</button></Link>
                             <br />
-                            <button onClick={() => this.props.openBoardModal('create').then(this.setState({ showMenu: false }))}>Create a Board</button>
+                            <button onClick={() => openBoardModal('create').then(this.closeMenu())}>Create a Board</button>
                         </div> : null}
                     <div className="create-pin-button-container">
                         <button className="create-pin-button" onClick={this.dropdown}>+</button>

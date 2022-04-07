@@ -20,9 +20,9 @@ class BoardModal extends React.Component {
         const { board, boardModal, closeBoardModal, boardId} = this.props;
         let component;
         switch (boardModal) {
-            case 'edit':
-                component = <EditBoardFormContainer board={board} closeBoardModal={closeBoardModal}/>;
-                break;
+            // case 'edit':
+            //     component = <EditBoardFormContainer board={board} closeBoardModal={closeBoardModal}/>;
+            //     break;
             case 'create':
                 component = <CreateBoardFormContainer closeBoardModal={closeBoardModal}/>
                 break;

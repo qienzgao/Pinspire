@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "react-router-dom"
 
 class EditBoardForm extends React.Component {
     constructor(props){
@@ -27,8 +26,7 @@ class EditBoardForm extends React.Component {
     render() {
         const {board, deleteBoard} = this.props;
         if (!board) return null;
-        // console.log(this.props.board)
-        // console.log("props")
+
         return (
             <div className="edit-board-background">
                 <form className="login-form-container" >
@@ -43,7 +41,7 @@ class EditBoardForm extends React.Component {
                             <label className="board-label">Name</label>
                             <input className="board-input"
                                 type="text"
-                                defaultValue={this.state.name}
+                                defaultValue={board.name}
                                 onChange={this.update('name')}>
                             </input>
                         </div>
@@ -51,12 +49,12 @@ class EditBoardForm extends React.Component {
                         <label className="board-label">Description</label>
                         <input className="board-input"
                             type="text"
-                            defaultValue={this.state.details}
+                            defaultValue={board.details}
                             onChange={this.update('details')}>
                         </input>
 
                         <label className="board-label">Action</label>
-                        <button className="delete-button" onClick={() => deleteBoard(board)}>
+                        <button className="delete-button" onClick={() => deleteBoard(board.id).then(this.props.history.push(`/users/${this.props.board.user_id}`))}>
                             <h3>Delete Board</h3>
                             <span>Delete this board and all its Pins forever.</span>
                             <br/>

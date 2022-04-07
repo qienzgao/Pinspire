@@ -22,6 +22,9 @@ class BoardForm extends React.Component {
     render() {
         return (
             <form className="login-form-container" onSubmit={this.handleSubmit} onClick={e => e.stopPropagation()}>
+                <button onClick={this.props.closeBoardModal} className="close-button">
+                        <span aria-hidden="true">&times;</span>
+                </button>
                 <div className='board-form-container'>
                     <div className="board-form-title">
                         <h2>Create board</h2>
@@ -36,7 +39,7 @@ class BoardForm extends React.Component {
                         </input>
                         <br/>
 
-                        <label className="board-label">Description</label>
+                        <label className="board-label">Details</label>
                         <input className="board-input"
                             type="text"
                             placeholder="Describe your board"

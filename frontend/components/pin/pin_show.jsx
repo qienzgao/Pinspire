@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import SaveMenuContainer from '../saved_pins/save_menu_container';
-import BoardModal from "../modal/board_modal"
+import BoardModal from "../modal/board_modal"; 
+import EditIcon from '@mui/icons-material/Edit';
 
 class PinShow extends React.Component {
     constructor(props){
@@ -82,78 +83,81 @@ class PinShow extends React.Component {
         return (
             <div >
                 <div className="background-show" onClick={this.closeMenu} >
-                <div className="showpage" >
-                    <div className="back-wrapper">
-                        <Link to="/">
-                            <button className="back-button">
-                                <KeyboardBackspaceIcon/>
-                            </button>
-                        </Link>
-                    </div>
+                    <div className="showpage" >
+                        <div className="back-wrapper">
+                            <Link to="/">
+                                <button className="back-button">
+                                    <KeyboardBackspaceIcon/>
+                                </button>
+                            </Link>
+                        </div>
 
-                    <div className="show-button">
-                        <SaveMenuContainer pin={this.props.pin}/>
-                    </div>
+                        <div className="show-button">
+                            <SaveMenuContainer pin={this.props.pin}/>
+                        </div>
 
-                    <div className="show-img-wrapper">
-                        <div className="show-img-container">
-                            <img className='show-img' src={pin.imgUrl} alt=""/>
+                        <div className="show-img-wrapper">
+                            <div className="show-img-container">
+                                <img className='show-img' src={pin.imgUrl} alt=""/>
+                            </div>
+                        </div>
+
+                        <div className='title-display-container'>
+                            <h2 className='title-display'>{pin.title}</h2>
+                        </div>
+
+                        <div className="details-display-container">
+                            <h3 className='details-display'>{pin.details}</h3>
+                        </div>
+                        <div className="user-show-display">
+                            <Link to={`/users/${pin.user_id}`}>
+                                {avatar}
+                            </Link>
+                        
+                            <h3 className='email-show'>{user? this.parseEmail(user.email): null}
+                                <br/>
+                                <span>{followerCount} followers</span>
+                            </h3>
+                                
+                            {pin.user_id === session.id ? null :
+                                <div className='follow-btns'>
+                                    {followStatus.length === 0 ?
+                                        <button className="follow-btn" onClick={() => submitFollow({ follower_id: session.id, following_id: pin.user_id })} >
+                                            Follow
+                                        </button> :
+                                        <button className="unfollow-btn"
+                                            onClick={() => deleteFollow(followStatus[0])} >
+                                            Unfollow
+                                        </button>}
+                                </div>
+                            }   
+
+                        </div>
+
+                        {pin.user_id === session.id ? <div>
+                            <Link to={`/pins/${pin.id}/edit`}><button className="pin-show-edit" ><EditIcon fontSize='large' /></button></Link>
+                        </div> : null}
+                        <div>
+                            
                         </div>
                     </div>
-
-                    <div className='title-display-container'>
-                        <h2 className='title-display'>{pin.title}</h2>
-                    </div>
-
-                    <div className="details-display-container">
-                        <h3 className='details-display'>{pin.details}</h3>
-                    </div>
-                    <div className="user-show-display">
-                        <Link to={`/users/${pin.user_id}`}>
-                            {avatar}
-                        </Link>
-                    
-                        <h3 className='email-show'>{user? this.parseEmail(user.email): null}
-                            <br/>
-                            <span>{followerCount} followers</span>
-                        </h3>
-                            
-                        {pin.user_id === session.id ? null :
-                            <div className='follow-btns'>
-                                {followStatus.length === 0 ?
-                                    <button className="follow-btn" onClick={() => submitFollow({ follower_id: session.id, following_id: pin.user_id })} >
-                                        Follow
-                                    </button> :
-                                    <button className="unfollow-btn"
-                                        onClick={() => deleteFollow(followStatus[0])} >
-                                        Unfollow
-                                    </button>}
-                            </div>
-                        }   
-                    </div>
-
-                    <div>
-                        
-                    </div>
-                   
-                </div>
                 </div>
 
-                <BoardModal/>
+                    <BoardModal/>
 
-                <div className='dropdown-container'>
-                    {this.state.showMenu ?
-                        <div className="dropdown-menu"
-                            ref={(element) => {
-                                this.dropdownMenu = element
-                            }}>
-                            <Link to="/pins/create"><button>Create a Pin</button></Link>
-                            <br />
-                            <button onClick={() => this.handleClick()}>Create a Board</button>
-                        </div> : null}
-                    <div className="create-pin-button-container">
-                        <button className="create-pin-button" onClick={this.dropdown}>+</button>
-                    </div>
+                    <div className='dropdown-container'>
+                        {this.state.showMenu ?
+                            <div className="dropdown-menu"
+                                ref={(element) => {
+                                    this.dropdownMenu = element
+                                }}>
+                                <Link to="/pins/create"><button>Create a Pin</button></Link>
+                                <br />
+                                <button onClick={() => this.handleClick()}>Create a Board</button>
+                            </div> : null}
+                        <div className="create-pin-button-container">
+                            <button className="create-pin-button" onClick={this.dropdown}>+</button>
+                        </div>
                 </div>
 
             </div>

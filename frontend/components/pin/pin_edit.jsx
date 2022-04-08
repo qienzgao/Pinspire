@@ -7,10 +7,12 @@ class PinEdit extends React.Component {
         super(props);
         this.state = this.props.pin; 
         this.handleSubmit = this.handleSubmit.bind(this);
+        // this.delete = this.delete.bind(this)
     }
 
     componentDidMount() {
-        this.props.fetchPin(this.props.match.params.pinId); 
+        this.props.fetchPin(this.props.match.params.pinId);
+        this.props.fetchSavedPins();
     }
 
     handleSubmit(e) {
@@ -23,6 +25,14 @@ class PinEdit extends React.Component {
         return e => {
             this.setState({[field]: e.currentTarget.value });
         }
+    }
+
+    delete(savedArr) {
+        for (let i = 0; i < savedArr.length; i++) {
+            this.props.deleteSavedPin(savedArr[i].id)
+        }
+        this.props.deletePin(this.props.pin.id)
+            .then(this.props.history.push(`/users/${this.props.user.id}`))
     }
 
     parseEmail(email) {
@@ -39,11 +49,9 @@ class PinEdit extends React.Component {
 
 
     render() {
-        const {user, pin, pins, updatePin, deletePin} = this.props; 
+        const {user, pin, pins, updatePin, deletePin, savedPins} = this.props; 
         if (!pin || ! pins ) return null;
-        console.log(this.props)
-        console.log(this.state)
-
+        const savedArr = Object.values(savedPins).filter(savedPin => savedPin.pin_id === pin.id)
         const defaultAvatar = "https://pinspire-seeds.s3.us-east-1.amazonaws.com/defaultavatar.png";
         const avatar = user.imgUrl ? <img className='avatar' src={user.imgUrl} /> : <img className='avatar-default' src={defaultAvatar} />
 
@@ -91,9 +99,9 @@ class PinEdit extends React.Component {
                             // placeholder='Tell everyone what your pin is about'
                         />
                     </div>
-                    {/* <div className='submit-create'>
-                        <button className="create-button" onClick={() => deletePin(pin.id).then(this.props.history.push(`/users/${this.props.user.id}`))}>Delete</button>
-                    </div> */}
+                    <div className='submit-create'>
+                        <button className="create-button" onClick={() => this.delete(savedArr)}>Delete</button>
+                    </div>
                 </form>
 
             </div>

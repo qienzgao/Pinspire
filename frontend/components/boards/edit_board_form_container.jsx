@@ -4,8 +4,6 @@ import EditBoardForm from './edit_board_form';
 // import { withRouter } from 'react-router-dom'; 
 
 const mSTP = (state, ownProps) => {
-    // console.log(state)
-    // console.log("state")
     return ({
         board: state.entities.boards[ownProps.match.params.boardId], 
         boards: state.entities.boards

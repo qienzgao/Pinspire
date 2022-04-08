@@ -24,7 +24,7 @@ class BoardIndexItem extends React.Component {
         let savedArr = Object.values(savedPins).filter(savedPin => savedPin.board_id === board.id)
 
         let pinCount = savedArr.length;
-        // console.log(pins[savedArr[1].pin_id].imgUrl)
+
         let src1, src2, src3
 
         if (savedArr.length < 1) {

@@ -16,7 +16,7 @@ class BoardModal extends React.Component {
     // }
 
     render() {
-        // console.log(this.props.boardId)
+
         const { board, boardModal, closeBoardModal, boardId} = this.props;
         let component;
         switch (boardModal) {

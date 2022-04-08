@@ -41,6 +41,29 @@
         font-size: 17px;
         font-weight: 540;
     }
+
+    .create-button:hover {
+        background-color: #ba001c;
+    }
+
+    .delete-button {
+        border: none;
+        color: black;
+        background-color: #e4e4e4;
+        width: 80px;
+        height: 100%;
+        cursor: pointer;
+        border-radius: 10px;
+        font-size: 17px;
+        font-weight: 550;
+        float: left;
+    }
+    
+    .delete-button:hover {
+        background-color: #cecdcd;
+    }
+
+   
 }
 
 

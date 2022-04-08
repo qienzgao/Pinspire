@@ -100,7 +100,7 @@ class PinEdit extends React.Component {
                         />
                     </div>
                     <div className='submit-create'>
-                        <button className="create-button" onClick={() => this.delete(savedArr)}>Delete</button>
+                        <button className="delete-button" onClick={() => this.delete(savedArr)}>Delete</button>
                     </div>
                 </form>
 

@@ -23,6 +23,74 @@ Pinspire consists mainly of "pins" and "boards". A pin is an image uploaded alon
 <code><img height="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg" alt="postgresql"></code>
 <code><img height="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original.svg" alt="aws s3"></code>
 <code><img height="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/heroku/heroku-original.svg" alt="heroku"></code>
+<br/>
+- Pinspire uses Ruby on Rails as its backend application framework
+```ruby
+class Api::FollowsController < ApplicationController
+     def index
+        @follows = Follow.all
+        render :index
+    end
+
+    def create
+        @follow = Follow.new(follow_params)
+        if @follow.save
+            render :show
+        else
+            render json: @follow.errors.full_messages, status: 422
+        end
+    end
+
+    def destroy
+        @follow = Follow.find_by(id: params[:id])
+        if @follow && @follow.destroy
+            render :index
+        else
+            render json: @board.errors.full_messages, status: 422
+        end
+    end
+
+    private
+
+    def follow_params
+        params.require(:follow).permit(:follower_id, :following_id)
+    end
+end
+
+```
+- React/Redux is used as frontend framework to dynamically execute requests from client end
+
+```javascript
+class PinIndexItem extends React.Component {
+    constructor(props){
+        super(props)
+    }
+
+    render() {
+        const {pin, currentUser} = this.props; 
+        return (
+            <div className={`pin-container ${this.props.size}`}>
+            
+                <div className='hidden-button'>
+                    <SaveMenuContainer pin={this.props.pin} board={this.props.board}/>
+                </div>
+                
+                <Link to={`/pins/${this.props.pin.id}`}>
+                    <img className="pin-img" src={this.props.pin.imgUrl}/>
+                </Link>
+
+                {pin.user_id === currentUser.id ? <div className='hidden-edit'>
+                    <Link to={`/pins/${pin.id}/edit`}>
+                      <button className="pin-edit" ><EditIcon fontSize='small'/></button>
+                    </Link>
+                </div> : null}
+
+           </div>
+        )
+    }
+}
+```
+
 
 ## Preview
 ### Splash Page

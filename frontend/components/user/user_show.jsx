@@ -145,7 +145,13 @@ class UserShow extends React.Component {
     render() {
         const { pins, user, users, openBoardModal, follows, session, submitFollow, deleteFollow } = this.props;
         if (!users || !user  ) return null;
-        if (!pins || pins.length === 0) return null
+        if (!pins || pins.length === 0) return null; 
+        if (this.state.follower || this.state.following) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'scroll'
+        }
+        
 
         const defaultAvatar = "https://pinspire-seeds.s3.us-east-1.amazonaws.com/defaultavatar.png";
         const avatar = user.imgUrl ? <img className='avatar' src={user.imgUrl} /> : <img className='avatar-default' src={defaultAvatar} />
@@ -154,7 +160,6 @@ class UserShow extends React.Component {
         const sizes = ["ex-small", "small", "medium", "large", "ex-large"];
         let cStyle = this.state.created ? "solid 3px black" : "none";
         let sStyle = this.state.saved ? "solid 3px black" : "none"; 
-
 
         const followers = Object.values(follows).filter(follow => follow.following_id === user.id);
         const followings = Object.values(follows).filter(follow => follow.follower_id === user.id);

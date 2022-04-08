@@ -91,9 +91,9 @@ class PinEdit extends React.Component {
                             // placeholder='Tell everyone what your pin is about'
                         />
                     </div>
-                    <div className='submit-create'>
+                    {/* <div className='submit-create'>
                         <button className="create-button" onClick={() => deletePin(pin.id).then(this.props.history.push(`/users/${this.props.user.id}`))}>Delete</button>
-                    </div>
+                    </div> */}
                 </form>
 
             </div>

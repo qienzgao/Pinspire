@@ -26,7 +26,7 @@ class PinIndexItem extends React.Component {
                     <img className="pin-img" src={this.props.pin.imgUrl}/>
                 </Link>
 
-                {pin.user_id === currentUser.id ? <div className='hidden-button'>
+                {pin.user_id === currentUser.id ? <div className='hidden-edit'>
                     <Link to={`/pins/${pin.id}/edit`}><button className="pin-edit" ><EditIcon fontSize='small' /></button></Link>
                 </div> : null}
 

@@ -163,6 +163,16 @@ class UserShow extends React.Component {
         const currentFollowings = Object.values(follows).filter(follow => follow.follower_id === session.id);
 
         const followerList = followers.map(follower => {
+            const followerBtn = 
+                currentFollowings.filter(currentFollowing => currentFollowing.following_id === follower.follower_id).length === 0 ?
+                    <button className="follow-btn" onClick={() => submitFollow({ follower_id: session.id, following_id: follower.follower_id })} >
+                        Follow
+                    </button> :
+                    <button className="unfollow-btn"
+                        onClick={() => deleteFollow(currentFollowings.filter(currentFollowing => currentFollowing.following_id === follower.follower_id)[0])} >
+                        Unfollow
+                    </button>
+
             return (
                 <div key={follower.follower_id} className="follow-item">
                     <div className="follow-info">
@@ -171,19 +181,22 @@ class UserShow extends React.Component {
                         </Link>
                             <span>{this.parseEmail(users[follower.follower_id].email)}</span>
                     </div>
-                    {currentFollowings.filter(currentFollowing => currentFollowing.following_id === follower.follower_id).length === 0 ?
-                        <button className="follow-btn" onClick={() => submitFollow({ follower_id: session.id, following_id: follower.follower_id })} >
-                            Follow
-                        </button> :
-                        <button className="unfollow-btn" 
-                            onClick={() => deleteFollow(currentFollowings.filter(currentFollowing => currentFollowing.following_id === follower.follower_id)[0])} >
-                            Unfollow
-                        </button>}
+                    {follower.follower_id === session.id ? null : followerBtn}
                 </div>
             )
         })
 
         const followingList = followings.map(following => {
+            const followingBtn = 
+                currentFollowings.filter(currentFollowing => currentFollowing.following_id === following.following_id).length === 0 ?
+                    <button className="follow-btn" onClick={() => submitFollow({ follower_id: session.id, following_id: following.following_id })} >
+                        Follow
+                    </button> :
+                    <button className="unfollow-btn"
+                        onClick={() => deleteFollow(currentFollowings.filter(currentFollowing => currentFollowing.following_id === following.following_id)[0])} >
+                        Unfollow
+                    </button>
+            
             return (
                 <div key={following.following_id} className="follow-item">
                     <div className="follow-info">
@@ -192,14 +205,7 @@ class UserShow extends React.Component {
                         </Link>
                             <span>{this.parseEmail(users[following.following_id].email)}</span>
                     </div>
-                    {currentFollowings.filter(currentFollowing => currentFollowing.following_id === following.following_id).length === 0 ?
-                        <button className="follow-btn" onClick={() => submitFollow({ follower_id: session.id, following_id: following.following_id })} >
-                            Follow
-                        </button> :
-                        <button className="unfollow-btn" 
-                            onClick={() => deleteFollow(currentFollowings.filter(currentFollowing => currentFollowing.following_id === following.following_id)[0])} >
-                            Unfollow
-                        </button>}
+                    {following.following_id === session.id ? null : followingBtn}
                 </div>
             )
         })

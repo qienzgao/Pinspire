@@ -5,7 +5,7 @@ import BoardIndexContainer from '../boards/board_index_container';
 
 // import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 // import { borderBottom } from '@mui/system';
-// import BoardModal from "../modal/board_modal"
+import BoardModal from "../modal/board_modal"
 // import FollowingIndexContainer from '../follows/following_index_container';
 // import FollowerIndexContainer from '../follows/follower_index_container';
 
@@ -320,7 +320,7 @@ class UserShow extends React.Component {
 
                 </section>
 
-                {/* <BoardModal followers={followers} followings={followings} user={user}/> */}
+                <BoardModal/>
 
                 <div className='dropdown-container'>
                     {this.state.showMenu ?

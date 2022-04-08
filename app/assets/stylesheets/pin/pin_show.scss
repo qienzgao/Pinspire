@@ -111,13 +111,19 @@
     margin-bottom: 30px;
     padding-left: 30px;
     display: flex;
+    text-align: left;
 
     .email-show {
-      float: left;  
       padding: 10px;
       padding-left: 0;
-      margin-top: 5px;
+      margin-top: 0;
+      line-height: 120%;
+        span {
+            font-weight: 400;
+            font-size: 0.8em;
+        }
     }
+
 
     img {
         width: 50px;
@@ -125,6 +131,11 @@
         border-radius: 100%;
         object-fit: cover;
         margin-right: 15px;
+    }
+
+    .follow-btns {
+        position: absolute;
+        right: 40px
     }
 }
 

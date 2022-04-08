@@ -19,10 +19,14 @@ class PinShow extends React.Component {
             .then(() => {
                 this.props.fetchUser(this.props.pin.user_id)
                     .then(() => {
-                        this.props.fetchBoards()
+                        this.props.fetchFollows()
                     })
+                        .then(() => {
+                            this.props.fetchBoards()
+                        })
             })
         this.props.fetchSavedPins();
+        this.props.fetchUsers();
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -64,11 +68,15 @@ class PinShow extends React.Component {
     }
 
     render() {
-        const {pin, users} = this.props; 
+        const {pin, users, follows, session, submitFollow, deleteFollow} = this.props; 
         if (!pin || !users) return null; 
         const user = users[pin.user_id]
         const defaultAvatar = "https://pinspire-seeds.s3.us-east-1.amazonaws.com/defaultavatar.png";
         const avatar = user ? <img className='avatar' src={user.imgUrl} /> : <img className='avatar-default' src={defaultAvatar} />
+
+        const followers = Object.values(follows).filter(follow => follow.following_id === pin.user_id);
+        const followerCount = followers.length;
+        const followStatus = Object.values(follows).filter(follow => follow.follower_id === session.id && follow.following_id === pin.user_id);
 
         return (
             <div >
@@ -103,8 +111,30 @@ class PinShow extends React.Component {
                         <Link to={`/users/${pin.user_id}`}>
                             {avatar}
                         </Link>
-                        <h3 className='email-show'>{user? this.parseEmail(user.email): null}</h3>
+                    
+                        <h3 className='email-show'>{user? this.parseEmail(user.email): null}
+                            <br/>
+                            <span>{followerCount} followers</span>
+                        </h3>
+                            
+                        {pin.user_id === session.id ? null :
+                            <div className='follow-btns'>
+                                {followStatus.length === 0 ?
+                                    <button className="follow-btn" onClick={() => submitFollow({ follower_id: session.id, following_id: pin.user_id })} >
+                                        Follow
+                                    </button> :
+                                    <button className="unfollow-btn"
+                                        onClick={() => deleteFollow(followStatus[0])} >
+                                        Unfollow
+                                    </button>}
+                            </div>
+                        }   
                     </div>
+
+                    <div>
+                        
+                    </div>
+                   
                 </div>
                 </div>
 

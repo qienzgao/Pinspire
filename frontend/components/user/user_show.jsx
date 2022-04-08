@@ -95,8 +95,6 @@ class UserShow extends React.Component {
 
         this.props.fetchPins()
         this.props.fetchBoards();
-       
-
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -135,7 +133,7 @@ class UserShow extends React.Component {
 
     render() {
         const { pins, user, users, openBoardModal, follows, session, submitFollow, deleteFollow } = this.props;
-        if (!users || !user) return null;
+        if (!users || !user ) return null;
 
         const defaultAvatar = "https://pinspire-seeds.s3.us-east-1.amazonaws.com/defaultavatar.png";
         const avatar = user.imgUrl ? <img className='avatar' src={user.imgUrl} /> : <img className='avatar-default' src={defaultAvatar} />
@@ -222,6 +220,18 @@ class UserShow extends React.Component {
                         <button onClick={this.openFollowingModal}>{followingCount} following</button>
                     </div>
 
+                    {user.id === session.id ? null : 
+                        <div className='profile-follow-btn'>
+                            {currentFollowings.filter(currentFollowing => currentFollowing.following_id === user.id).length === 0 ?
+                                <button className="follow-btn" onClick={() => submitFollow({ follower_id: session.id, following_id: user.id })} >
+                                    Follow
+                                </button> :
+                                <button className="unfollow-btn"
+                                    onClick={() => deleteFollow(currentFollowings.filter(currentFollowing => currentFollowing.following_id === user.id)[0])} >
+                                    Unfollow
+                                </button>}
+                        </div>
+                    }
                 </section>
 
                 <section >

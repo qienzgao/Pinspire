@@ -86,22 +86,25 @@ class UserShow extends React.Component {
     }
 
     componentDidMount() {
+
         this.props.fetchUsers()
             .then(()=> {
                 this.props.fetchUser(this.props.match.params.userId)
                     .then(() => {
-                        this.props.fetchFollows();
+                        this.props.fetchFollows()
+                            .then(()=> {
+                                
+                            })
                     })
             })
-            
-        this.props.fetchPins()
-            .then(() => {
-                this.props.fetchBoards()
-            })
-                .then(() => {
-                    this.props.fetchSavedPins();
-                })
 
+        this.props.fetchBoards()
+            .then(() => {
+                this.props.fetchSavedPins()
+                    .then(() => {
+                        this.props.fetchPins();
+                    })
+        })
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -141,7 +144,8 @@ class UserShow extends React.Component {
 
     render() {
         const { pins, user, users, openBoardModal, follows, session, submitFollow, deleteFollow } = this.props;
-        if (!users || !user ) return null;
+        if (!users || !user  ) return null;
+        if (!pins || pins.length === 0) return null
 
         const defaultAvatar = "https://pinspire-seeds.s3.us-east-1.amazonaws.com/defaultavatar.png";
         const avatar = user.imgUrl ? <img className='avatar' src={user.imgUrl} /> : <img className='avatar-default' src={defaultAvatar} />

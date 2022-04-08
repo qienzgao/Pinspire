@@ -16,10 +16,10 @@ class PinIndexItem extends React.Component {
     render() {
         return (
             <div className={`pin-container ${this.props.size}`}>
+                <div className='hidden-button'>
+                    <SaveMenuContainer pin={this.props.pin} board={this.props.board}/>
+                </div>
                 <Link to={`/pins/${this.props.pin.id}`}>
-                    <div className='hidden-button'>
-                        <SaveMenuContainer pin={this.props.pin} board={this.props.board}/>
-                    </div>
                     <img className="pin-img" src={this.props.pin.imgUrl}/>
                 </Link>
             </div>

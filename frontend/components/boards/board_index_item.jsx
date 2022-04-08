@@ -5,11 +5,16 @@ import { Link } from 'react-router-dom';
 import BoardModal from '../modal/board_modal';
 import { openBoardModal } from '../../actions/board_modal_actions';
 import EditIcon from '@mui/icons-material/Edit';
+import {fetchPins} from '../../actions/pin_actions'; 
 
 class BoardIndexItem extends React.Component {
     constructor(props) {
         super(props);
     }
+
+    // componentDidMount(){
+    //     this.props.fetchPins()
+    // }
 
     render() {
         const { board, deleteBoard, savedPins, pins, currentUser } = this.props;
@@ -20,16 +25,37 @@ class BoardIndexItem extends React.Component {
 
         let pinCount = savedArr.length;
         // console.log(pins[savedArr[1].pin_id].imgUrl)
+        let src1, src2, src3
+
+        if (savedArr.length < 1) {
+            src1 = null
+        } else {
+            src1 = pins[savedArr[0].pin_id].imgUrl
+        }
+
+        if (savedArr.length < 2) {
+            src2 = null
+        } else {
+            src2 = pins[savedArr[1].pin_id].imgUrl
+        }
+
+        if (savedArr.length < 3) {
+            src3 = null
+        } else {
+            src3 = pins[savedArr[2].pin_id].imgUrl
+        }
+       
+
         return (
             <div>
                 <BoardModal board={board} boardId={board.id}/>
                 <div className="board-container">
                     <Link to={`/boards/${board.id}`}>
                         <div className='board-cover-container'>
-                            <img className="cover1" src={pins[savedArr[0].pin_id] ? pins[savedArr[0].pin_id].imgUrl : null}/>
+                            <img className="cover1" src={src1}/>
                             <div className='board-cover-inner'>
-                                <img className="cover2" src={pins[savedArr[1].pin_id] ? pins[savedArr[1].pin_id].imgUrl : null}/>
-                                <img className="cover3" src={pins[savedArr[2].pin_id] ? pins[savedArr[2].pin_id].imgUrl : null} />
+                                <img className="cover2" src={src2}/>
+                                <img className="cover3" src={src3}/>
                             </div>
                         </div>
                     </Link>
@@ -52,7 +78,8 @@ const mSTP = state => ({
 })
 
 const mDTP = dispatch => ({
-    openBoardModal: boardModal => dispatch(openBoardModal(boardModal))
+    openBoardModal: boardModal => dispatch(openBoardModal(boardModal)),
+    // fetchPins: () => dispatch(fetchPins())
 });
 
 export default connect(mSTP, mDTP)(BoardIndexItem);

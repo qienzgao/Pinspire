@@ -40,11 +40,11 @@ class SaveMenu extends React.Component {
 
        const currentSaved = savedPins.filter(saved => boardIds.includes(saved.board_id))
 
-        const savedItem = (pinId) => (
-            savedArr.findIndex(function (savedPin) {
-                return savedPin.pin_id === pinId
-            })
-        )
+        // const savedItem = (pinId) => (
+        //     savedArr.findIndex(function (savedPin) {
+        //         return savedPin.pin_id === pinId
+        //     })
+        // )
 
         const dropMenu = () => {
            
@@ -64,9 +64,9 @@ class SaveMenu extends React.Component {
                 }
 
                 return (
-                    <div key={board.id} className="board-save-item-container" >
+                    <div key={board.id} className="board-save-item-container" onClick={() => createSavedPin({ pin_id: pin.id, board_id: board.id })}>
                         <h3>{board.name}</h3>
-                        <button onClick={() => createSavedPin({ pin_id: pin.id, board_id: board.id })} className="board-save-item-button">Save</button>
+                        <button  className="board-save-item-button">Save</button>
                     </div>
                 )
             }
@@ -85,7 +85,7 @@ class SaveMenu extends React.Component {
                                 <h3>Profile</h3>
                                 {currentSaved.filter(saved => saved.pin_id === pin.id).length > 0 ?
                                     <button className="board-saved-button">Saved</button> :
-                                    <button onClick={() => createSavedPin({ pin_id: pin.id })}>Save</button>
+                                    <button onClick={() => createSavedPin({ pin_id: pin.id, board_id: usersBoards[0].id })}>Save</button>
                                 }
                             </div>
                         }

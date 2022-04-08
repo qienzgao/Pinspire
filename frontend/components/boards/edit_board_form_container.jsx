@@ -15,8 +15,8 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => ({
     // fetchBoards: () => dispatch(fetchBoards()),
-    fetchBoard: boardId => dispatch(fetchBoard(boardId)),
     fetchBoards: () => dispatch(fetchBoards()),
+    fetchBoard: boardId => dispatch(fetchBoard(boardId)),
     submitBoard: board => dispatch(updateBoard(board)),
     deleteBoard: board => dispatch(deleteBoard(board))
 })

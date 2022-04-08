@@ -123,4 +123,21 @@
     font-weight: 540;
 }
 
+.pin-edit {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    right: 15px;
+    bottom: 75px;
+    // transform: translate(50%, -50%);
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+    filter: brightness(100%);
+    cursor: pointer;
+    
+    &:hover {
+        filter: brightness(95%);
+    }
+}
 

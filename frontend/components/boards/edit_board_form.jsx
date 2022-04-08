@@ -27,6 +27,9 @@ class EditBoardForm extends React.Component {
         const {board, deleteBoard} = this.props;
         if (!board) return null;
 
+        console.log(this.props)
+        console.log(this.state)
+
         return (
             <div className="edit-board-background">
                 <form className="login-form-container" >

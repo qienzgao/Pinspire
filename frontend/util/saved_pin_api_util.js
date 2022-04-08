@@ -5,11 +5,11 @@ export const fetchSavedPins = () => (
     })
 );
 
-export const createSavedPin = savedPin => (
+export const createSavedPin = saved_pin => (
     $.ajax({
         url: '/api/saved_pins',
         method: 'POST',
-        data: { savedPin }
+        data: { saved_pin }
     })
 );
 

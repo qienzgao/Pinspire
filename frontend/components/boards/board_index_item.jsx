@@ -26,10 +26,10 @@ class BoardIndexItem extends React.Component {
                 <div className="board-container">
                     <Link to={`/boards/${board.id}`}>
                         <div className='board-cover-container'>
-                            <img className="cover1" src={pins[savedArr[0].pin_id].imgUrl}/>
+                            <img className="cover1" src={pins[savedArr[0].pin_id] ? pins[savedArr[0].pin_id].imgUrl : null}/>
                             <div className='board-cover-inner'>
-                                <img className="cover2" src={pins[savedArr[1].pin_id].imgUrl}/>
-                                <img className="cover3" src={pins[savedArr[2].pin_id].imgUrl} />
+                                <img className="cover2" src={pins[savedArr[1].pin_id] ? pins[savedArr[1].pin_id].imgUrl : null}/>
+                                <img className="cover3" src={pins[savedArr[2].pin_id] ? pins[savedArr[2].pin_id].imgUrl : null} />
                             </div>
                         </div>
                     </Link>

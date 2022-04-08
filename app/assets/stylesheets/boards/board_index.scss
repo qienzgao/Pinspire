@@ -32,6 +32,7 @@
     align-items: center;
     margin-bottom: 30px;
     z-index: -1;
+
     &:hover img{
         filter: brightness(90%);
     }
@@ -40,6 +41,45 @@
         z-index: 1;
         filter: brightness(100%);
     }
+}
+
+.board-cover-container {
+    width: 230px;
+    height: 155px;
+    background-color: transparent;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: row;
+
+    .cover1 {
+        width: 148px;
+        height: 100%;
+        background-color: silver;
+        margin-right: 2px;
+        border-radius: 18px 0 0 18px;
+    }
+
+    .board-cover-inner {
+        width: 80px;
+        height: 155px;
+
+        .cover2 {
+            width: 100%;
+            height: 76.5px;
+            background-color: silver;
+            margin-bottom: 2px;
+            border-radius: 0 18px 0 0;
+        }
+        
+        .cover3 {
+            width: 100%;
+            height: 76.5px;
+            // margin-top: 1px;
+            background-color: silver;
+            border-radius: 0 0 18px 0;
+        }
+    }
+
 }
 
 .board-edit {

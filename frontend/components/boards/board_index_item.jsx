@@ -16,22 +16,22 @@ class BoardIndexItem extends React.Component {
         if (!board) return null;
         if (!pins) return null;
         if (!savedPins) return null;
-        let savedArr = Object.values(savedPins)
-        let pinCount = 0;
+        let savedArr = Object.values(savedPins).filter(savedPin => savedPin.board_id === board.id)
 
-        for (let i = 0; i < savedArr.length; i++) {
-            let savedPin = savedArr[i];
-            if (savedPin.board_id === board.id) {
-                pinCount += 1;
-            }
-        }
-
+        let pinCount = savedArr.length;
+        // console.log(pins[savedArr[1].pin_id].imgUrl)
         return (
             <div>
                 <BoardModal board={board} boardId={board.id}/>
                 <div className="board-container">
                     <Link to={`/boards/${board.id}`}>
-                        <img src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/random/scaleshape.jpeg"/>
+                        <div className='board-cover-container'>
+                            <img className="cover1" src={pins[savedArr[0].pin_id].imgUrl}/>
+                            <div className='board-cover-inner'>
+                                <img className="cover2" src={pins[savedArr[1].pin_id].imgUrl}/>
+                                <img className="cover3" src={pins[savedArr[2].pin_id].imgUrl} />
+                            </div>
+                        </div>
                     </Link>
 
                     {board.user_id === currentUser.id ? <div className='hidden-button'>

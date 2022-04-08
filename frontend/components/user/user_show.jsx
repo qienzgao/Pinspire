@@ -1,10 +1,11 @@
 import React from 'react';
 import PinIndexItem from '../pin/pin_index_item';
 import { Link } from "react-router-dom";
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import BoardIndexContainer from '../boards/board_index_container';
-import { borderBottom } from '@mui/system';
-import BoardModal from "../modal/board_modal"
+
+// import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+// import { borderBottom } from '@mui/system';
+// import BoardModal from "../modal/board_modal"
 // import FollowingIndexContainer from '../follows/following_index_container';
 // import FollowerIndexContainer from '../follows/follower_index_container';
 
@@ -92,9 +93,16 @@ class UserShow extends React.Component {
                         this.props.fetchFollows();
                     })
             })
-
+            
         this.props.fetchPins()
-        this.props.fetchBoards();
+            .then(() => {
+                this.props.fetchBoards()
+            })
+                .then(() => {
+                    this.props.fetchSavedPins();
+                })
+
+
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 

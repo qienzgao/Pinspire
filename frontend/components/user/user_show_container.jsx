@@ -6,6 +6,7 @@ import { openBoardModal } from "../../actions/board_modal_actions";
 import { open } from '../../actions/modal_actions';
 import { fetchBoards } from '../../actions/board_actions';
 import { fetchFollows, deleteFollow, createFollow } from '../../actions/follow_actions';
+import { fetchSavedPins } from '../../actions/saved_pin_actions';
 
 const mSTP = (state, ownProps) => ({
     user: state.entities.users[ownProps.match.params.userId],
@@ -25,7 +26,8 @@ const mDTP = dispatch => ({
     openBoardModal: boardModal => dispatch(openBoardModal(boardModal)),
     deleteFollow: follow => dispatch(deleteFollow(follow)),
     submitFollow: follow => dispatch(createFollow(follow)),
-    fetchFollows: () => dispatch(fetchFollows())
+    fetchFollows: () => dispatch(fetchFollows()),
+    fetchSavedPins: () => dispatch(fetchSavedPins())
 })
 
 export default connect(mSTP, mDTP)(UserShow); 

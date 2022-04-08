@@ -24,9 +24,9 @@ export const fetchSavedPins = () => dispatch => (
         .then(SavedPins => dispatch(receiveSavedPins(SavedPins)))
 );
 
-export const createSavedPin = SavedPin => dispatch => (
-    SavedPinAPIUtil.createSavedPin(SavedPin)
-        .then(createdSavedPin => dispatch(receiveSavedPin(createdSavedPin)))
+export const createSavedPin = savedPin => dispatch => (
+    SavedPinAPIUtil.createSavedPin(savedPin)
+        .then(createSavedPin => dispatch(receiveSavedPin(createSavedPin)))
 );
 
 export const deleteSavedPin = SavedPinId => dispatch => (

@@ -5,7 +5,7 @@ import ModalReducer from './modal_reducer'
 import { combineReducers } from 'redux';
 import boardModalsReducer from './board_modal_reducer';
 import followsReducer from './follows_reducer';
-import UsersReducer from './usersReducer'
+import SavedPinsReducer from './saved_pins_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer, 
@@ -14,6 +14,7 @@ const RootReducer = combineReducers({
   modal: ModalReducer, 
   boardModal: boardModalsReducer, 
   follows: followsReducer, 
+  savedPins: SavedPinsReducer
 });
 
 export default RootReducer;

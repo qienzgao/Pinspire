@@ -9,7 +9,7 @@ export const createSavedPin = saved_pin => (
     $.ajax({
         url: '/api/saved_pins',
         method: 'POST',
-        data: { saved_pin }
+        data: { saved_pin },
     })
 );
 

@@ -6,7 +6,7 @@ class Api::SavedPinsController < ApplicationController
 
     def create
         @saved_pin = SavedPin.new(saved_pin_params)
-        if @saved_pin
+        if @saved_pin.save
             render :show
         else
             render json: @saved_pin.errors.full_messages, status: 401

@@ -55,7 +55,7 @@ class SaveMenu extends React.Component {
 
                     if (pinBoard.board_id === board.id) {
                         return (
-                            <div key={board.id} className="board-save-item-container" onClick={() => deleteSavedPin(pinBoard.id)}>
+                            <div key={board.id} className="board-save-item-container" onClick={() => deleteSavedPin(pinBoard.id).then(this.forceUpdate())}>
                                 <h3>{board.name}</h3>
                                 <button className="board-saved-button" >Saved</button>
                             </div>
@@ -75,7 +75,7 @@ class SaveMenu extends React.Component {
                 <div key={pin.id} className="board-dropmenu-container">
                     <h3 className='board-save-title'>Save</h3>
                     <div className="board-save-items">
-                        <span>Quick save and organize later</span>
+                        {/* <span>Quick save and organize later</span>
                         <br/>
                         {usersBoards.length === 0 ? 
                             <div className="board-save-item-container" >
@@ -88,7 +88,7 @@ class SaveMenu extends React.Component {
                                     <button onClick={() => createSavedPin({ pin_id: pin.id, board_id: usersBoards[0].id })}>Save</button>
                                 }
                             </div>
-                        }
+                        } */}
                         
                         <span>All boards</span>
                         <br/>
@@ -107,7 +107,7 @@ class SaveMenu extends React.Component {
             <div key={pin.id} className="save-menu-container">
                 <div className='save-board-wrapper'>
                     <div className="save-board-container" >
-                        <button onClick={this.showMenu} className="save-board">Profile</button>
+                        <button onClick={this.showMenu} className="save-board">Boards</button>
                     </div>
                     <ExpandMoreIcon className="expand-icon" onClick={this.showMenu}/>
                 </div>

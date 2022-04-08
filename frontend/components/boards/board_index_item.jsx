@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import BoardModal from '../modal/board_modal';
 import { openBoardModal } from '../../actions/board_modal_actions';
 import EditIcon from '@mui/icons-material/Edit';
-import {fetchPins} from '../../actions/pin_actions'; 
+import { fetchPins } from '../../actions/pin_actions';
 
 class BoardIndexItem extends React.Component {
     constructor(props) {
@@ -44,18 +44,18 @@ class BoardIndexItem extends React.Component {
         } else {
             src3 = pins[savedArr[2].pin_id].imgUrl
         }
-       
+
 
         return (
             <div>
-                <BoardModal board={board} boardId={board.id}/>
+                <BoardModal board={board} boardId={board.id} />
                 <div className="board-container">
                     <Link to={`/boards/${board.id}`}>
                         <div className='board-cover-container'>
-                            <img className="cover1" src={src1}/>
+                            <img className="cover1" src={src1} />
                             <div className='board-cover-inner'>
-                                <img className="cover2" src={src2}/>
-                                <img className="cover3" src={src3}/>
+                                <img className="cover2" src={src2} />
+                                <img className="cover3" src={src3} />
                             </div>
                         </div>
                     </Link>
@@ -63,10 +63,10 @@ class BoardIndexItem extends React.Component {
                     {board.user_id === currentUser.id ? <div className='hidden-button'>
                         <Link to={`/boards/${board.id}/edit`}><button className="board-edit" ><EditIcon fontSize='small' /></button></Link>
                     </div> : null}
-                        
+
                     <h2 className="board-title">{board.name}</h2>
                     <span className="board-count">{pinCount} pins</span>
-                </div>              
+                </div>
             </div>
 
         )

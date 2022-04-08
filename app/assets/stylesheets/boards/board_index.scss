@@ -54,7 +54,7 @@
     .cover1 {
         width: 148px;
         height: 100%;
-        background-color: silver;
+        background-color: rgba(192, 192, 192, 0.3);
         margin-right: 2px;
         border-radius: 18px 0 0 18px;
     }
@@ -66,7 +66,7 @@
         .cover2 {
             width: 100%;
             height: 76.5px;
-            background-color: silver;
+            background-color: rgba(192, 192, 192, 0.3);
             margin-bottom: 2px;
             border-radius: 0 18px 0 0;
         }
@@ -75,7 +75,7 @@
             width: 100%;
             height: 76.5px;
             // margin-top: 1px;
-            background-color: silver;
+            background-color: rgba(192, 192, 192, 0.3);
             border-radius: 0 0 18px 0;
         }
     }

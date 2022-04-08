@@ -10,28 +10,28 @@ import BoardIndexContainer from '../boards/board_index_container';
 // import FollowerIndexContainer from '../follows/follower_index_container';
 
 class UserShow extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
-            showMenu: false, 
-            created: false, 
-            saved: true, 
-            follower: false, 
+            showMenu: false,
+            created: false,
+            saved: true,
+            follower: false,
             following: false
         }
         this.dropdown = this.dropdown.bind(this);
         this.closeMenu = this.closeMenu.bind(this);
         this.createdTab = this.createdTab.bind(this);
-        this.savedTab = this.savedTab.bind(this); 
-        this.openFollowerModal = this.openFollowerModal.bind(this); 
-        this.openFollowingModal = this.openFollowingModal.bind(this); 
+        this.savedTab = this.savedTab.bind(this);
+        this.openFollowerModal = this.openFollowerModal.bind(this);
+        this.openFollowingModal = this.openFollowingModal.bind(this);
         this.closeModal = this.closeModal.bind(this)
     }
 
     openFollowerModal(e) {
-        e.preventDefault(); 
+        e.preventDefault();
         this.setState({
-            follower: true, 
+            follower: true,
             following: false
         })
     }
@@ -46,15 +46,15 @@ class UserShow extends React.Component {
 
     closeModal() {
         this.setState({
-            follower: false, 
+            follower: false,
             following: false
         })
     }
 
     createdTab(e) {
-        e.preventDefault(); 
+        e.preventDefault();
         this.setState({
-            created: true, 
+            created: true,
             saved: false
         })
     }
@@ -62,7 +62,7 @@ class UserShow extends React.Component {
     savedTab(e) {
         e.preventDefault();
         this.setState({
-            saved: true, 
+            saved: true,
             created: false
         })
     }
@@ -75,11 +75,11 @@ class UserShow extends React.Component {
     }
 
     closeMenu() {
-        this.setState({ showMenu: false}, () => {
+        this.setState({ showMenu: false }, () => {
             document.removeEventListener('click', this.closeMenu);
         });
     }
-    
+
     handleClick() {
         this.props.openBoardModal('create')
         this.closeMenu()
@@ -88,12 +88,12 @@ class UserShow extends React.Component {
     componentDidMount() {
 
         this.props.fetchUsers()
-            .then(()=> {
+            .then(() => {
                 this.props.fetchUser(this.props.match.params.userId)
                     .then(() => {
                         this.props.fetchFollows()
-                            .then(()=> {
-                                
+                            .then(() => {
+
                             })
                     })
             })
@@ -104,7 +104,7 @@ class UserShow extends React.Component {
                     .then(() => {
                         this.props.fetchPins();
                     })
-        })
+            })
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -144,14 +144,14 @@ class UserShow extends React.Component {
 
     render() {
         const { pins, user, users, openBoardModal, follows, session, submitFollow, deleteFollow } = this.props;
-        if (!users || !user  ) return null;
-        if (!pins || pins.length === 0) return null; 
+        if (!users || !user) return null;
+        if (!pins || pins.length === 0) return null;
         if (this.state.follower || this.state.following) {
             document.body.style.overflow = 'hidden';
         } else {
             document.body.style.overflow = 'scroll'
         }
-        
+
 
         const defaultAvatar = "https://pinspire-seeds.s3.us-east-1.amazonaws.com/defaultavatar.png";
         const avatar = user.imgUrl ? <img className='avatar' src={user.imgUrl} /> : <img className='avatar-default' src={defaultAvatar} />
@@ -159,16 +159,16 @@ class UserShow extends React.Component {
         const cover = user.coverUrl ? <img className='cover-img' src={user.coverUrl} /> : <img className='cover-img' src={defaultCover} />
         const sizes = ["ex-small", "small", "medium", "large", "ex-large"];
         let cStyle = this.state.created ? "solid 3px black" : "none";
-        let sStyle = this.state.saved ? "solid 3px black" : "none"; 
+        let sStyle = this.state.saved ? "solid 3px black" : "none";
 
         const followers = Object.values(follows).filter(follow => follow.following_id === user.id);
         const followings = Object.values(follows).filter(follow => follow.follower_id === user.id);
-        const followerCount = followers.length; 
-        const followingCount = followings.length; 
+        const followerCount = followers.length;
+        const followingCount = followings.length;
         const currentFollowings = Object.values(follows).filter(follow => follow.follower_id === session.id);
 
         const followerList = followers.map(follower => {
-            const followerBtn = 
+            const followerBtn =
                 currentFollowings.filter(currentFollowing => currentFollowing.following_id === follower.follower_id).length === 0 ?
                     <button className="follow-btn" onClick={() => submitFollow({ follower_id: session.id, following_id: follower.follower_id })} >
                         Follow
@@ -184,7 +184,7 @@ class UserShow extends React.Component {
                         <Link to={`/users/${follower.follower_id}`}>
                             <img src={users[follower.follower_id].imgUrl ||= defaultAvatar}></img>
                         </Link>
-                            <span>{this.parseEmail(users[follower.follower_id].email)}</span>
+                        <span>{this.parseEmail(users[follower.follower_id].email)}</span>
                     </div>
                     {follower.follower_id === session.id ? null : followerBtn}
                 </div>
@@ -192,7 +192,7 @@ class UserShow extends React.Component {
         })
 
         const followingList = followings.map(following => {
-            const followingBtn = 
+            const followingBtn =
                 currentFollowings.filter(currentFollowing => currentFollowing.following_id === following.following_id).length === 0 ?
                     <button className="follow-btn" onClick={() => submitFollow({ follower_id: session.id, following_id: following.following_id })} >
                         Follow
@@ -201,14 +201,14 @@ class UserShow extends React.Component {
                         onClick={() => deleteFollow(currentFollowings.filter(currentFollowing => currentFollowing.following_id === following.following_id)[0])} >
                         Unfollow
                     </button>
-            
+
             return (
                 <div key={following.following_id} className="follow-item">
                     <div className="follow-info">
                         <Link to={`/users/${following.following_id}`}>
                             <img src={users[following.following_id].imgUrl ||= defaultAvatar}></img>
                         </Link>
-                            <span>{this.parseEmail(users[following.following_id].email)}</span>
+                        <span>{this.parseEmail(users[following.following_id].email)}</span>
                     </div>
                     {following.following_id === session.id ? null : followingBtn}
                 </div>
@@ -216,7 +216,7 @@ class UserShow extends React.Component {
         })
 
         return (
-            <div >                
+            <div >
                 <section className='profile-background' onClick={this.closeMenu}>
                     <div className="profile-cover">
                         {cover}
@@ -243,7 +243,7 @@ class UserShow extends React.Component {
                         <button onClick={this.openFollowingModal}>{followingCount} following</button>
                     </div>
 
-                    {user.id === session.id ? null : 
+                    {user.id === session.id ? null :
                         <div className='profile-follow-btn'>
                             {currentFollowings.filter(currentFollowing => currentFollowing.following_id === user.id).length === 0 ?
                                 <button className="follow-btn" onClick={() => submitFollow({ follower_id: session.id, following_id: user.id })} >
@@ -259,20 +259,20 @@ class UserShow extends React.Component {
 
                 <section >
                     <div >
-                        {this.state.follower ? 
-                        <div className='modal-background' onClick={this.closeModal}>
-                            <div className='modal-child'>
-                                <div className='follow-modal'>
-                                    <div className='follow-title'>
-                                        <h3>{followerCount} Followers</h3>
+                        {this.state.follower ?
+                            <div className='modal-background' onClick={this.closeModal}>
+                                <div className='modal-child'>
+                                    <div className='follow-modal'>
+                                        <div className='follow-title'>
+                                            <h3>{followerCount} Followers</h3>
+                                        </div>
+                                        <button onClick={this.closeModal} className="close-button">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        {followerList}
                                     </div>
-                                    <button onClick={this.closeModal} className="close-button">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                    {followerList}
                                 </div>
-                            </div>
-                        </div> : null }
+                            </div> : null}
                     </div>
 
                     <div>
@@ -299,7 +299,7 @@ class UserShow extends React.Component {
                 </div>
 
                 <section className='ideas' onClick={this.closeMenu}>
-                    {this.state.created ? 
+                    {this.state.created ?
                         <div className="user-ideas">
                             <div className="ideas-container">
                                 {pins.map(pin => (
@@ -312,15 +312,15 @@ class UserShow extends React.Component {
                                 ))}
                             </div>
                         </div> : null}
-                    {this.state.saved ? 
-        
+                    {this.state.saved ?
+
                         <div className='board-index' onClick={this.closeMenu}>
                             <BoardIndexContainer user={user} user_id={user.id} />
                         </div> : null}
-                    
+
                 </section>
-                
-                    {/* <BoardModal followers={followers} followings={followings} user={user}/> */}
+
+                {/* <BoardModal followers={followers} followings={followings} user={user}/> */}
 
                 <div className='dropdown-container'>
                     {this.state.showMenu ?

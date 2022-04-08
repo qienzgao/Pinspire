@@ -51,14 +51,6 @@ class PinEdit extends React.Component {
             <img className="preview" src={pin.imgUrl} />
         </div>
 
-        // const upload = <div className="upload-wrapper">
-        //     <div className='img-upload'>
-        //         <ArrowCircleUpRoundedIcon className='upload-icon' />
-        //         <span className='drag-text'>Drag and drop or click to upload</span>
-        //         <input className="input-button" type="file" onChange={this.handleFile} />
-        //     </div>
-        // </div>
-
         return (
             <div className="background">
                 {/* <div className='form-wrapper'> */}
@@ -98,6 +90,9 @@ class PinEdit extends React.Component {
                             className="details-input"
                             // placeholder='Tell everyone what your pin is about'
                         />
+                    </div>
+                    <div className='submit-create'>
+                        <button className="create-button" onClick={() => deletePin(pin.id).then(this.props.history.push(`/users/${this.props.user.id}`))}>Delete</button>
                     </div>
                 </form>
 

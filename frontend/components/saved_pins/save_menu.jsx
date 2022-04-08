@@ -26,9 +26,10 @@ class SaveMenu extends React.Component {
         // this.props.fetchSavedPins();
     }
 
+
     render() {
 
-        const { currentUser, boards, savedPins, pin, pins, createPinstoboard, deletePinstoboard } = this.props;
+        const { currentUser, boards, savedPins, pin, pins, deleteSavedPin, createSavedPin } = this.props;
         const usersBoards = boards.filter(board => board.user_id === currentUser.id);
         const savedArr = Object.values(savedPins);
         const pinBoards = savedArr.filter(savedPin => savedPin.pin_id === pin.id);
@@ -47,15 +48,13 @@ class SaveMenu extends React.Component {
         // )
 
         const dropMenu = () => {
-           
-
             const saveStatus = (board) => {
                 for (let i = 0; i < pinBoards.length; i++) {
                     let pinBoard = pinBoards[i];
 
                     if (pinBoard.board_id === board.id) {
                         return (
-                            <div key={board.id} className="board-save-item-container" onClick={() => deleteSavedPin(pinBoard.id).then(this.forceUpdate())}>
+                            <div key={board.id} className="board-save-item-container" onClick={() => deleteSavedPin(pinBoard.id)}>
                                 <h3>{board.name}</h3>
                                 <button className="board-saved-button" >Saved</button>
                             </div>
@@ -114,11 +113,11 @@ class SaveMenu extends React.Component {
                 {currentSaved.filter(saved => saved.pin_id === pin.id).length > 0 ?
                     <button className="board-saved-button">Saved</button> :
                     <button className="save-button" 
-                        onClick={() => createSavedPin({ pin_id: pin.id, board_id: usersBoards[0].id})}>
+                        onClick={() => createSavedPin({ pin_id: pin.id, board_id: usersBoards[0].id }) }>
                         Save
                     </button>
                 }
-
+                
                 {this.state.showMenu ? dropMenu() : null}
             </div>
         )

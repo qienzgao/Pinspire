@@ -25,6 +25,7 @@ class PinShow extends React.Component {
                             this.props.fetchBoards()
                         })
             })
+        this.props.fetchPins(); 
         this.props.fetchSavedPins();
         this.props.fetchUsers();
         this.handleSubmit = this.handleSubmit.bind(this);

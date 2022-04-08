@@ -19,7 +19,7 @@ class BoardIndexItem extends React.Component {
     render() {
         const { board, deleteBoard, savedPins, pins, currentUser } = this.props;
         if (!board) return null;
-        if (!pins) return null;
+        if (!pins || pins.length === 0) return null;
         if (!savedPins) return null;
         let savedArr = Object.values(savedPins).filter(savedPin => savedPin.board_id === board.id)
 

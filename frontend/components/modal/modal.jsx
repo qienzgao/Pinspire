@@ -19,7 +19,7 @@ const Modal = ({ modal, users, close, session }) => {
             component = <LoginForm />;
             break;
         case 'signup':
-            component = <SignupForm />;
+            component = <SignupForm showClose={true}/>;
             break;
         case 'saved':
             component = <SavedModal/>;

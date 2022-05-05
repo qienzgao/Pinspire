@@ -82,7 +82,7 @@ class Splash extends React.Component {
                             <h2 className="signup-text">Sign up to get your ideas</h2>
                         </div>
                         <div className="landing-signup-container">
-                            <SignupFormContainer/>
+                            <SignupFormContainer showClose={false}/>
                         </div>
                     </section>
                     

@@ -49,7 +49,7 @@ class SignupForm extends React.Component {
             password: "oolongtea",
         }
         this.setState(demo);
-        this.props.submit(demo).then(this.props.close);
+        this.props.loginDemo(demo).then(this.props.close);
     }
 
     renderError() {
@@ -76,9 +76,10 @@ class SignupForm extends React.Component {
         // let errors = this.renderError();
         return (
             <form className="signup-form-container" onSubmit={this.handleSubmit}>
-                <button onClick={this.props.close} className="close-button">
+                {this.props.showClose === true ? <button onClick={this.props.close} className="close-button">
                     <span>&times;</span>
-                </button>
+                </button> : null}
+
                 <div className='pinspire-sign'>
                     <img className="pinspire-img" src="https://pinspire-seeds.s3.us-east-1.amazonaws.com/p_favicon.png"/>
                 </div>

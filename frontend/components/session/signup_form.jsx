@@ -125,11 +125,12 @@ class SignupForm extends React.Component {
                             beautiful and brilliant!
                             <br />
                         </span>
-                        <span>________________</span>
+                    <span>________________</span>
                     </div>
+                    {this.props.showClose === true ?
                     <button className="otherwise" onClick={this.props.login}>
                         Already a member? Log in
-                    </button>
+                    </button>: null}
                 </div>
             </form>
         );
